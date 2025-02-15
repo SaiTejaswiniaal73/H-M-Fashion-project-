@@ -1,0 +1,175 @@
+body {
+  background: url("./images/loginback.webp") no-repeat center center;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.page-heading {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: red;
+  margin-bottom: 20px;
+  background-color:white;
+  padding: 10px;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 350px;
+  margin-top: 30px;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color:#e91e63;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #e91e63;
+}
+
+.links {
+  margin-top: 10px;
+}
+
+#signin {
+  display: none;
+}
+
+/* Responsive Background Image & Layout */
+@media (max-width: 1024px) {
+  body {
+    background-attachment: fixed;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background-size: contain;
+    background-position: center top;
+  }
+  .container {
+    width: 90%;
+    padding: 15px;
+  }
+  .page-heading {
+    font-size: 24px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    background-size: cover;
+    background-position: top center;
+  }
+  .container {
+    width: 95%;
+    padding: 10px;
+  }
+  .page-heading {
+    font-size: 20px;
+    padding: 5px;
+  }
+  input {
+    padding: 8px;
+  }
+  .btn {
+    padding: 8px;
+  }
+}
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  background-color:brown;
+}
+#navbarNav{
+  background-color:brown;
+
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.2rem;
+  margin-right: 15px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f8d210 !important; /* Change color on hover */
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.nav-item a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Product Card */
+.product {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.product:hover {
+  transform: scale(1.05);
+}
+
+.product-image {
+  width: 100%;
+  height: 250px; /* Ensures uniform height */
+  object-fit: contain; /* Displays full image without cropping */
+  background-color: #f8f8f8; /* Light background for transparency */
+}
+
+.card-body {
+  flex-grow: 1;
+}
+
+/* Buttons */
+.btn-custom {
+  width: 32%;
+}
