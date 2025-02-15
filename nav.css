@@ -1,0 +1,85 @@
+/* Hide search input by default on small devices */
+.search-input {
+  display: none;
+  width: 150px; /* Adjust width */
+}
+#nav{
+  background-color: aqua;
+}
+
+
+/* Keep large device layout unchanged */
+@media (min-width: 992px) {
+  .navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar-nav {
+    flex-direction: row;
+    gap: 20px; /* Space between links */
+  }
+  .search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center; /* Center search bar */
+  }
+  .user-icons {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+/* Small devices: Keep only logo, search icon, sign-in, fav, bag */
+@media (max-width: 991px) {
+  .navbar-brand {
+    display: none; /* Hide extra logo */
+  }
+  .navbar-nav,
+  .search-container {
+    display: none !important; /* Hide all extra elements */
+  }
+  .small-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .small-nav .search-box {
+    display: flex;
+    align-items: center;
+  }
+  .small-nav .search-input {
+    display: none;
+    width: 150px;
+    margin-left: 10px;
+  }
+}
+
+/* Fix: Keep H&M logo in small devices */
+@media (max-width: 991px) {
+  .navbar-brand {
+    display: none; /* Hide extra logo in large nav */
+  }
+  .small-nav .navbar-brand {
+    display: block; /* Keep logo visible in small devices */
+  }
+}
+/* Styling for the small count inside the heart & cart */
+.badge-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  background-color:white;
+  color:pink;
+  font-size: 10px;
+  font-weight: bolder;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid white; /* Creates a white outline */
+}
