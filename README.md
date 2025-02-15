@@ -1,2 +1,2 @@
 # H-M-Fashion-project-
-H&amp;M fashion Clothing App using HTML,CSS,JS
+H&M fashion Clothing App using HTML,CSS,JS

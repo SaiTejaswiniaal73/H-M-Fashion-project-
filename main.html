@@ -12,12 +12,18 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="./media.css" />
-    <link rel="stylesheet" href="./nav.css" />
+    <link rel="stylesheet" href="./css_files/media.css" />
+    <link rel="stylesheet" href="./css_files/nav.css" />
+    <link rel="stylesheet" href="./css_files/carousel.css" />
+    <link rel="stylesheet" href="./css_files/offers.css" />
+    <link rel="stylesheet" href="./css_files/slide_product.css" />
+    <link rel="stylesheet" href="./css_files/footer.css" />
+    <link rel="stylesheet" href="./css_files/main.css" />
+    <!-- <link rel="stylesheet" href="./css_files/offers.css" /> -->
   </head>
   <body>
-    <!-- Navigation Bar -->
-    <nav  id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Navigation Bar--------------------------section 1----------------- -->
+    <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <!-- H&M Logo (Only for Large Devices) -->
         <a class="navbar-brand d-none d-lg-block" href="#">
@@ -47,18 +53,17 @@
 
         <!-- User Actions (Icons for All Devices) -->
         <ul class="navbar-nav user-icons d-none d-lg-flex">
-          <li class="nav-item" >
+          <li class="nav-item">
             <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
           </li>
           <ul class="navbar-nav user-icons d-none d-lg-flex">
             <!-- Favorites Icon -->
             <li class="nav-item" id="fav_nav">
-                <a class="nav-link position-relative" href="#">
-                    <i class="fas fa-heart text-danger"></i> 
-                    <span id="fav-count" class="badge-count">0</span>
-                </a>
+              <a class="nav-link position-relative" href="#">
+                <i class="fas fa-heart text-danger"></i>
+                <span id="fav-count" class="badge-count">0</span>
+              </a>
             </li>
-            
 
             <!-- Shopping Bag Icon -->
             <li class="nav-item">
@@ -87,60 +92,386 @@
             />
           </div>
           <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
-           <!-- Favorites Icon -->
-           
-            <a class="nav-link position-relative" href="#">
-                <i class="fas fa-heart text-danger"></i> 
-                <span id="fav-count" class="badge-count">0</span>
-            </a>
-          
+          <!-- Favorites Icon -->
+
+          <a class="nav-link position-relative" href="#">
+            <i class="fas fa-heart text-danger"></i>
+            <span id="fav-count" class="badge-count">0</span>
+          </a>
 
           <!-- Shopping Bag Icon -->
-          
-            <a class="nav-link position-relative" href="#">
-              <i class="fas fa-shopping-bag text-dark"></i>
-              <span id="bag-count" class="badge-count">0</span>
-            </a>
-          
-        </ul>
-      </ul>
+
+          <a class="nav-link position-relative" href="#">
+            <i class="fas fa-shopping-bag text-dark"></i>
+            <span id="bag-count" class="badge-count">0</span>
+          </a>
         </div>
       </div>
     </nav>
+    <!-- Navigation Bar--------------------------section 1 end----------------- -->
 
-    <script>
-      // Show search bar when clicking the search button (Small Devices)
-      document
-        .getElementById("searchBtn")
-        .addEventListener("click", function () {
-          var searchInput = document.getElementById("searchInput");
-          if (
-            searchInput.style.display === "none" ||
-            searchInput.style.display === ""
-          ) {
-            searchInput.style.display = "block";
-            searchInput.focus(); // Focus on the search input when shown
-          } else {
-            searchInput.style.display = "none";
-          }
-        });
+    <!----------------------------------------------------SECTION-2----------------------------------------------------------->
+    <section class="el2" id="home">
+      <div
+        id="carouselExampleCaptions"
+        class="carousel slide mx-auto"
+        style="width: 90%"
+        data-bs-ride="carousel"
+        data-bs-interval="3000"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner" style="margin-top: 2em">
+          <div class="carousel-item active">
+            <img
+              src="./images/shoppimgwomen.png"
+              class="d-block w-100"
+              style="height: 650px"
+              alt="Slide 1"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Elevate Your Wardrobe</h3>
+              <br />
+              <h4>Trendy Styles, Unbeatable Prices</h4>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./images/childshopping.png"
+              class="d-block w-100"
+              style="height: 650px"
+              alt="Slide 2"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Adorable Fashion for Kids</h3>
+              <br />
+              <h4>Comfort Meets Style for Your Little Ones</h4>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img
+              src="./images/menshoppimg.png"
+              class="d-block w-100"
+              style="height: 650px"
+              alt="Slide 3"
+            />
+            <div class="carousel-caption d-none d-md-block">
+              <h3>Sharp & Stylish Menswear</h3>
+              <br />
+              <h4>Refined Looks for Every Occasion</h4>
+            </div>
+          </div>
+        </div>
 
-      function updateCount(type, count) {
-        let countElement = document.getElementById(type + "-count");
-        countElement.textContent = count;
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
 
-        // Show badge only if count > 0
-        if (count > 0) {
-          countElement.style.display = "flex";
-        } else {
-          countElement.style.display = "none";
-        }
-      }
+    <!-- sliding products -->
+    <div
+      id="sliding_products"
+      style="display: flex; overflow-x: auto; gap: 30px; padding: 15px"
+    ></div>
+    <!-- premium products for life showing text -->
+    <p id="slide_heading">
+      <i>Elite Savings on Your Unique Fashion </i> &#128150;
+    </p>
+    <!-- div box of offer page       section 3------------------------ -->
+    <div class="offer-box">
+      <h2>Weekend Offer</h2>
+      <p class="offer-discount">Flat 15% off</p>
+      <p>Shop t-shirts, polos & more at slashed prices.</p>
 
-      // Example: Simulating adding items
-      updateCount("fav", 0); // Set favorites count to 3
-      updateCount("bag", 0); // Set cart count to 2
-    </script>
+      <div class="offer-links">
+        <a href="men.html" class="offer-btn">Men</a>
+        <a href="women.html" class="offer-btn">Women</a>
+        <a href="kids.html" class="offer-btn">Kids & Baby</a>
+      </div>
+    </div>
+
+    <!------------------------------------------------SECTION-3------------------------------------------------------------------->
+    <section class="el3" id="womens-section">
+      <article class="sec3-content">
+        <h1>"Your One-Stop Style Destination"</h1>
+        <p>It's the biggest sale of the year!</p>
+        <p>Upgrade your wardrobe today.</p>
+        <p>Enjoy the best rates!</p>
+        <button id="btn1" onclick="navigateToCategory('women')">Womens</button>
+      </article>
+      <article class="sec3-img">
+        <img class="img1" src="./images/w1.png" alt="womens images" />
+        <img class="img2" src="./images/w4.png" alt="models" />
+        <img class="img3" src="./images/w3.png" alt="womens skirts" />
+        <img class="img4" src="./images/w2.png" alt="womens traditional" />
+      </article>
+    </section>
+   
+
+    <!-------------------------------------------------SECTION-4---------------------------------------------------------------------------->
+    <section class="el4" id="mens-section">
+      <article class="sec4-img">
+        <img
+          class="img5"
+          src="./images/m1.png"
+          alt="casual denim jacket with white t-shirt"
+        />
+        <img
+          class="img6"
+          src="./images/m2.png"
+          alt="formal business suit with tie"
+        />
+        <img
+          class="img7"
+          src="./images/m3.png"
+          alt="comfortable loungewear set"
+        />
+        <img
+          class="img8"
+          src="./images/m4.png"
+          alt="comfortable loungewear set"
+        />
+      </article>
+      <article class="sec4-content">
+        <h1>"Redefine Your Style with Every Look"</h1>
+        <p>Discover top trends for every occasion.</p>
+        <p>From smart casuals to formal sophistication.</p>
+        <p>Upgrade your wardrobe today.</p>
+        <a href="#">
+          <button id="btn2" onclick="navigateToCategory('men')">Mens</button></a
+        >
+      </article>
+    </section>
+
+    <!------------------------------------------------SECTION-5---------------------------------- -->
+
+    <!-- --------------------------------------------Section-6----------------------------------------- -->
+    <section class="el6">
+      <!-- Background Image and Heading -->
+      <div class="heading-container">
+        <h2 class="section-heading">Explore Our Kids Section</h2>
+      </div>
+
+      <!-- Cards -->
+      <div class="cards-container">
+        <div class="card">
+          <img src="./images/cc.png"Card Image 1">
+          <div class="card-content">
+            <h3>Newborn Care</h3>
+            <p>
+              Learn the essentials of caring for your newborn, including
+              feeding, sleeping, and nurturing.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/cc2.png"Card Image 2">
+          <div class="card-content">
+            <h3>Child Health</h3>
+            <p>
+              Explore tips and advice on maintaining your child's health and
+              well-being.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/cc3.png"Card Image 3">
+          <div class="card-content">
+            <h3>Play and Learn</h3>
+            <p>
+              Discover engaging activities that combine playtime with learning
+              for kids of all ages.
+            </p>
+          </div>
+        </div>
+      </div>
+      <a href="#">
+        <button id="btn-12" onclick="navigateToCategory('newborn')">
+          <span>Newborn</span>
+        </button></a
+      >
+    </section>
+
+    <sectionn -5-------------------></sectionn>
+
+    <section class="el5" id="kids-section">
+      <h2 class="sec5-heading">"Explore For Your Kiddo's"</h2>
+      <article class="sec5-img">
+        <div class="img-container">
+          <img src="./images/c1.png" />
+          <p class="img-text">Trendy Kidswear</p>
+        </div>
+        <div class="img-container">
+          <img src="./images/c4.png" />
+          <p class="img-text">Comfortable & Stylish</p>
+        </div>
+        <div class="img-container">
+          <img src="./images/c3.png" />
+          <p class="img-text">Playtime Ready</p>
+        </div>
+        <div class="img-container">
+          <img src="./images/c2.png" />
+          <p class="img-text">Adorable Outfits</p>
+        </div>
+      </article>
+      <a href="#">
+        <button id="btn-12" onclick="navigateToCategory('kids')">
+          <span>Explore Kids Collection</span>
+        </button></a
+      >
+    </section>
+    <div class="sound-style-box">
+        <h2>The Sound of Style just dropped</h2>
+        <p>
+          Win Lollapalooza tickets, giveaways, unlock VIP access & so much more.
+        </p>
+        <div class="buttons">
+          <a href="#" class="btn btn-light">Become a member</a>
+          <a href="#" class="btn btn-outline-light">Shop now</a>
+          <a href="#" class="btn btn-outline-light">Learn more</a>
+        </div>
+      </div>
+    <div class="denim-section">
+      <h2>A New Take on Denim</h2>
+      <p>Age [2-9]</p>
+    </div>
+    
+
+    <script src="./js_files/nav.js"></script>
+    <script src="./js_files/sliede_products.js"></script>
+    <script src="./js_files/nav.js"></script>
+    <script src="./js_files/nav.js"></script>
+    <script src="./js_files/nav.js"></script>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- Shopping Categories -->
+          <div class="col-md-3">
+            <h5>Shopping</h5>
+            <a href="#">Ladies</a><br />
+            <a href="#">Men</a><br />
+            <a href="#">Baby</a><br />
+            <a href="#">Kids</a><br />
+            <a href="#">Home</a><br />
+            <a href="#">Magazine</a><br />
+          </div>
+
+          <!-- Corporate Info -->
+          <div class="col-md-3">
+            <h5>Corporate Info</h5>
+            <a href="#">Career at H&M</a><br />
+            <a href="#">About H&M Group</a><br />
+            <a href="#">Sustainability H&M Group</a><br />
+            <a href="#">Press</a><br />
+            <a href="#">Investor Relations</a><br />
+            <a href="#">Corporate Governance</a><br />
+          </div>
+
+          <!-- Help Section -->
+          <div class="col-md-3">
+            <h5>Help</h5>
+            <a href="#">Customer Service</a><br />
+            <a href="#">My H&M</a><br />
+            <a href="#">Find a Store</a><br />
+            <a href="#">Legal & Privacy</a><br />
+            <a href="#">Contact</a><br />
+            <a href="#">Secure Shopping</a><br />
+            <a href="#">Cookie Notice</a><br />
+            <a href="#">Cookie Settings</a><br />
+          </div>
+
+          <!-- Newsletter Signup -->
+          <div class="col-md-3 newsletter">
+            <h5>Sign Up & Stay Updated</h5>
+            <p>
+              Be the first to know about exclusive offers, latest fashion news &
+              style tips!
+            </p>
+            <h6>Contact:+91 9876543012</h6>
+            <h5>Thank you</h5>
+            <!-- <input type="email" placeholder="Enter your email">
+                    <button>Subscribe</button> -->
+          </div>
+        </div>
+
+        <hr class="my-4" style="border-color: #444" />
+
+        <!-- Social Media Icons -->
+        <div class="text-center social-icons">
+          <a
+            href="https://www.instagram.com/hm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+
+          <a href="https://www.tiktok.com/@hm" target="_blank"
+            ><i class="fab fa-tiktok"></i
+          ></a>
+          <a href="https://open.spotify.com/user/hm" target="_blank"
+            ><i class="fab fa-spotify"></i
+          ></a>
+          <a
+            href="https://www.youtube.com/user/hennesandmauritz"
+            target="_blank"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a href="https://www.pinterest.com/hm" target="_blank"
+            ><i class="fab fa-pinterest"></i
+          ></a>
+          <a href="https://www.facebook.com/hm" target="_blank"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="https://www.linkedin.com/company/h&m" target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </div>
+
+        <!-- Copyright & Country -->
+        <div class="footer-bottom">
+          <p>&copy; 2025 H&M Hennes & Mauritz AB. All Rights Reserved.</p>
+          <p><strong>H&M</strong> | INDIA | Rs.</p>
+        </div>
+      </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>

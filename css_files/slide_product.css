@@ -1,0 +1,47 @@
+* Premium products line  and slide heading */
+#slide_heading {
+  margin-top: 40px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: 'Garamond', serif;
+  animation: wave 5s infinite;
+  color: black;
+
+}
+#slide_heading {
+  margin-top: 40px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: 'Garamond', serif;
+  animation: wave 5s infinite;
+  color: black;
+
+}
+/* animation for slide heading */
+@keyframes wave {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+/* styling for sliding  products below the corousal  */
+
+#sliding_products {
+  height: 400px;
+  width: 90%;
+  margin: auto;
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  overflow: hidden;
+}
+

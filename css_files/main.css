@@ -4,6 +4,9 @@
     font-family: Arial, sans-serif;
     box-sizing: border-box;
   }
+  body{
+    background-color: #f7c2c7;
+  }
   /* .el7{
     border: 1px solid red;
     width: 100%;

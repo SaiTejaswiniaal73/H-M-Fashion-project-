@@ -1,0 +1,96 @@
+.offer-box {
+    background-color: #ffdf00; /* Light yellow background */
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 80%; /* Now it takes 80% of the page width */
+    max-width: 100%; /* Ensure it doesn't exceed screen width */
+    margin: 30px auto; /* Center align */
+}
+
+
+.offer-box h2 {
+    font-size: 1.8rem;
+    color: #d32f2f; /* Red color */
+    margin-bottom: 10px;
+}
+
+.offer-discount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.offer-links {
+    margin-top: 15px;
+}
+
+.offer-btn {
+    display: inline-block;
+    background-color: #d32f2f; /* Red */
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.offer-btn:hover {
+    background-color: #b71c1c; /* Darker Red */
+}
+
+.sound-style-box {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    text-align: center;
+    padding: 30px;
+    width: 80%; /* 80% of page width */
+    margin: 30px auto; /* Center align */
+    border-radius: 10px;
+}
+
+.sound-style-box h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.sound-style-box p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.buttons .btn {
+    margin: 10px;
+    padding: 10px 20px;
+}
+.denim-section {
+    position: relative;
+    background: url('../images/denimchild.jpg') no-repeat center center/cover;
+    width: 80%;
+    height: 400px; /* Adjust as needed */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white; /* Text color */
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.denim-section h2 {
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.denim-section p {
+    font-size: 1.2rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 5px 15px;
+    border-radius: 5px;
+}

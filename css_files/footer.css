@@ -1,0 +1,73 @@
+.footer {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer h5 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.footer a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+.footer .social-icons a {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #bbb;
+}
+
+.footer .social-icons a:hover {
+    color: #fff;
+}
+
+.footer .newsletter {
+    margin-top: 20px;
+}
+
+.footer .newsletter input {
+    width: 70%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.footer .newsletter button {
+    padding: 8px 15px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 13px;
+    color: #bbb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer .row {
+        text-align: center;
+    }
+    .footer .newsletter input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .footer .newsletter button {
+        width: 100%;
+    }
+}
