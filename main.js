@@ -64,9 +64,15 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll("#cart-link, #cart-link-large").forEach((cartLink) => {
     cartLink.addEventListener("click", function (event) {
       event.preventDefault(); // Prevent default action
-      window.location.href = "products.html";
+      window.location.href = "cart.html";
     });
   });
+
+  // ✅ NAVIGATE TO CATEGORY (STORE IN LOCAL STORAGE)
+  function navigateToCategory(category) {
+    localStorage.setItem('selectedCategory', category);
+    window.location.href = 'cart.html';
+  }
 
   // ✅ SEARCH FUNCTION
   function handleSearch(event) {
@@ -95,4 +101,13 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("No matching category found! Try searching 'Men', 'Women', 'Kids', or 'Baby'.");
     }
   }
+
+  // ✅ TOGGLE FILTER OPTIONS
+  function toggleFilterOptions() {
+    const filterOptions = document.getElementById("filter-options");
+    if (filterOptions) {
+      filterOptions.classList.toggle("hidden");
+    }
+  }
+
 });

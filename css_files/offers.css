@@ -9,8 +9,8 @@
     margin: 30px auto; /* Center align */
 }
 
-..ob {
-    background: url('../login/images/sale2.avif') no-repeat center center/cover;
+.ob {
+    background-color: rgba(0, 0, 0, 0.253);
     width: 100%; /* Adjust as needed */
     height: 400px; /* Adjust as needed */
     display: flex;
@@ -55,7 +55,7 @@
 }
 
 .sound-style-box {
-    background-color: #000; /* Black background */
+    background-color:rgba(133, 3, 3, 0.199); /* Black background */
     color: #fff; /* White text */
     text-align: center;
     padding: 30px;
@@ -63,7 +63,7 @@
     margin: 30px auto; /* Center align */
     border-radius: 10px;
 }.Sound {
-    background-color: #D32F2F; /* Elegant red shade */
+    background-color:rgba(255, 255, 0, 0.55); /* Elegant red shade */
     padding: 40px 20px; /* Adds spacing inside the section */
     border-radius: 15px; /* Soft rounded edges */
 }
