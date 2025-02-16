@@ -23,50 +23,31 @@
     <link rel="stylesheet" href="./css_files/body.css" />
   </head>
   <body>
-    <!-- ------------------Navigation Bar--------------------------section 1----------------- -->
 
-    <nav
-      id="nav"
-      class="navbar navbar-expand-lg navbar-light w-100"
-      style="background: linear-gradient(135deg, #8a2be2, #da70d6) !important"
-    >
-      <div class="container">
+    <!-- ------------------Navigation Bar--------------------------section 1----------------- -->
+    
+      <nav id="nav" class="navbar navbar-expand-lg navbar-light w-100" style="background: linear-gradient(135deg, #8A2BE2, #DA70D6) !important;">   
+      
+        <div class="container">
         <!-- H&M Logo (Only for Large Devices) -->
-        <a class="navbar-brand d-none d-lg-block" href="#home">
+        <a class="navbar-brand d-none d-lg-block" href="#">
           <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
         </a>
 
         <!-- Large Device Links (No Changes Here) -->
         <ul class="navbar-nav d-none d-lg-flex">
-          <li class="nav-item me-3">
-            <a class="nav-link active" aria-current="page" href="#home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#mens-section">Men</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#womens-section">Women</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#kids-section">Kids</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#baby-section">Baby</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Men</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Women</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Kids</a></li>a
+          <li class="nav-item"><a class="nav-link" href="#">Accessories</a></li>
         </ul>
 
         <!-- Search Bar (Large Devices - No Changes) -->
-
-        <form
-          class="d-flex search-container"
-          role="search"
-          onsubmit="handleSearch(event)"
-        >
+        <form class="d-none d-lg-flex search-container">
           <input
-            id="search-input"
             class="form-control me-2"
             type="search"
-            placeholder="Search here..."
+            placeholder="Search"
             aria-label="Search"
           />
           <button class="btn btn-outline-dark" type="submit">
@@ -77,7 +58,7 @@
         <!-- User Actions (Icons for All Devices) -->
         <ul class="navbar-nav user-icons d-none d-lg-flex">
           <li class="nav-item">
-            <a class="nav-link" href="#home"><i class="fas fa-user"></i></a>
+            <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
           </li>
           <ul class="navbar-nav user-icons d-none d-lg-flex">
             <!-- Favorites Icon -->
@@ -117,34 +98,10 @@
           <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
           <!-- Favorites Icon -->
 
-          <!-- <a class="nav-link position-relative" href="#">
+          <a class="nav-link position-relative" href="#">
             <i class="fas fa-heart text-danger"></i>
             <span id="fav-count" class="badge-count">0</span>
           </a>
-          <a class="nav-link position-relative" href="wishlist.html">
-            <i class="fas fa-heart text-danger"></i>
-            <span id="fav-count" class="badge-count">0</span>
-        </a>
-        
-          <div class="wishlist-container">
-            <button id="wishlist-icon" class="icon-btn" onclick="window.location.href = 'wishlist.html';">
-              <i class="fas fa-heart" style="color: red;"></i>
-            </button>
-          </div> -->
-          <a id="wishlist-link" class="nav-link position-relative" href="#">
-            <i class="fas fa-heart text-danger"></i>
-            <span id="fav-count" class="badge-count">0</span>
-        </a>
-        
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                document.getElementById("wishlist-link").addEventListener("click", function(event) {
-                    event.preventDefault(); // Prevent default action
-                    window.location.href = "wishlist.html";
-                });
-            });
-        </script>
-        
 
           <!-- Shopping Bag Icon -->
 
@@ -251,23 +208,22 @@
       </div>
     </section>
     <!-- div box of offer page-------------------------------------section 3------------------------ -->
-    <div class="ob">
-      <div class="offer-box">
-        <h2>Weekend Offer</h2>
-        <p class="offer-discount">Flat 15% off</p>
-        <p>Shop t-shirts, polos & more at slashed prices.</p>
+     <div class="ob">
+    <div class="offer-box">
+      <h2>Weekend Offer</h2>
+      <p class="offer-discount">Flat 15% off</p>
+      <p>Shop t-shirts, polos & more at slashed prices.</p>
 
-        <div class="offer-links">
-          <a href="#mens-section" class="offer-btn">Men</a>
-          <a href="#womens-section" class="offer-btn">Women</a>
-          <a href="#kids-section" class="offer-btn">Kids</a>
-          <a href="#baby-section" class="offer-btn">Baby</a>
-        </div>
+      <div class="offer-links">
+        <a href="men.html" class="offer-btn">Men</a>
+        <a href="women.html" class="offer-btn">Women</a>
+        <a href="kids.html" class="offer-btn">Kids</a>
+        <a href="baby.html" class="offer-btn">baby</a>
       </div>
     </div>
-
+  </div>
     <!-- try -->
-
+     
     <!-------------------------womens section-----------------------SECTION-3------------------------------------------------------------------->
     <section class="el3" id="womens-section">
       <article class="sec3-content">
@@ -285,9 +241,9 @@
       </article>
     </section>
 
-    <!-- kids scetion-------------------------sectionn -5----------------  -->
+      <!-- kids scetion-------------------------sectionn -5----------------  -->
 
-    <section class="el5" id="kids-section">
+     <section class="el5" id="kids-section">
       <h2 class="sec5-heading">"Explore For Your Kiddo's"</h2>
       <article class="sec5-img">
         <div class="img-container">
@@ -313,7 +269,7 @@
         </button></a
       >
     </section>
-
+  
     <!----------------------mens sction---------------------------SECTION-4---------------------------------------------------------------------------->
     <section class="el4" id="mens-section">
       <article class="sec4-img">
@@ -350,38 +306,36 @@
     </section>
 
     <!-------------------------- Baby Section ---------------------- SECTION-6 ---------------------------------->
-    <section class="el6" id="baby-section">
-      <div class="sec6-content">
-        <h1 class="sec6-heading">"Adorable Collections"</h1>
-        <p>Find the cutest comfortable outfits for your little ones.</p>
-        <p>
-          Soft fabrics, playful designs, and a touch of love in every piece.
-        </p>
-        <button id="btn-12" onclick="navigateToCategory('baby')">
-          Explore Baby Collection
-        </button>
-      </div>
+<section class="el6">
+  <div class="sec6-content">
+    <h1 class="sec6-heading">"Adorable Collections"</h1>
+    <p>Find the cutest comfortable outfits for your little ones.</p>
+    <p>Soft fabrics, playful designs, and a touch of love in every piece.</p>
+    <button id="btn-12" onclick="navigateToCategory('baby')">Explore Baby Collection</button>
+  </div>
 
-      <div class="sec6-img">
-        <img src="./images/cc4.jpg" alt="Newborn Care" class="img9" />
-        <img src="./images/cc2.png" alt="Child Health" class="img10" />
-        <img src="./images/cc5.jpeg" alt="Play and Learn" class="img11" />
-        <img src="./images/cc4.avif" alt="Soft & Cozy Wear" class="img12" />
-      </div>
-    </section>
+  <div class="sec6-img">
+    <img src="./images/cc4.jpg" alt="Newborn Care" class="img9" />
+    <img src="./images/cc2.png" alt="Child Health" class="img10" />
+    <img src="./images/cc5.jpeg" alt="Play and Learn" class="img11" />
+    <img src="./images/cc4.avif" alt="Soft & Cozy Wear" class="img12" />
+  </div>
+</section>
+
 
     <!-- premium products for life showing text -->
     <p id="slide_heading">
       <i>Elite Savings on Your Unique Fashion </i> &#128150;
     </p>
-    <!-- sliding products -->
+      <!-- sliding products -->
     <div
       id="sliding_products"
       style="display: flex; overflow-x: auto; gap: 30px; padding: 15px"
     ></div>
+   
 
-    <div class="Sound">
-      <div class="sound-style-box">
+   <div class="Sound">
+    <div class="sound-style-box">
         <h2>The Sound of Style just dropped</h2>
         <p>
           Win Lollapalooza tickets, giveaways, unlock VIP access & so much more.
@@ -498,8 +452,9 @@
     <script src=".//js_files/SLIDE.JS"></script>
     <script src="./js_files/nav.js"></script>
     <!-- <script src="./js_files/sliede_products.js"></script> -->
-    <script src="./js_files/main.js"></script>
-    <!-- <script src="./js_files/nav.js"></script>
-    <script src="./js_files/nav.js"></script> -->
+    <script src="./js_files/nav.js"></script>
+    <script src="./js_files/nav.js"></script>
+    <script src="./js_files/nav.js"></script>
+
   </body>
 </html>
