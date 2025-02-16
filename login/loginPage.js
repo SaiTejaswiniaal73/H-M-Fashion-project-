@@ -83,6 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Guest Login
   guestButton.addEventListener("click", () => {
     localStorage.setItem("guest", "true");
-    window.location.href = "main.html"; // Redirect as guest
+    window.location.href = ""; // Redirect as guest
   });
 });
