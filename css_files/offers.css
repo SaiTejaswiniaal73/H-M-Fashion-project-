@@ -9,6 +9,19 @@
     margin: 30px auto; /* Center align */
 }
 
+..ob {
+    background: url('../login/images/sale2.avif') no-repeat center center/cover;
+    width: 100%; /* Adjust as needed */
+    height: 400px; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white; /* Adjust text color for readability */
+    font-weight: bold;
+    border-radius: 10px; /* Optional for rounded corners */
+    padding: 20px;
+}
 
 .offer-box h2 {
     font-size: 1.8rem;
@@ -49,10 +62,20 @@
     width: 80%; /* 80% of page width */
     margin: 30px auto; /* Center align */
     border-radius: 10px;
+}.Sound {
+    background-color: #D32F2F; /* Elegant red shade */
+    padding: 40px 20px; /* Adds spacing inside the section */
+    border-radius: 15px; /* Soft rounded edges */
+}
+
+.sound-style-box {
+    text-align: center;
+    color: white; /* Ensures text remains readable */
+    padding: 20px;
 }
 
 .sound-style-box h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
@@ -65,32 +88,38 @@
     margin: 10px;
     padding: 10px 20px;
 }
+
+.denim_box {
+    background: linear-gradient(to right, #E6E6FA, #D8BFD8); /* Soft lavender gradient */
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 .denim-section {
-    position: relative;
     background: url('../images/denimchild.jpg') no-repeat center center/cover;
     width: 80%;
-    height: 400px; /* Adjust as needed */
+    height: 400px;
     margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white; /* Text color */
+    color: white;
     font-weight: bold;
     border-radius: 10px;
+    padding: 20px;
 }
 
-.denim-section h2 {
-    font-size: 2rem;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+.denim-section h2,
+.denim-section p {
+    background: rgba(0, 0, 0, 0.5);
     padding: 10px 20px;
     border-radius: 5px;
-}
-
-.denim-section p {
-    font-size: 1.2rem;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 5px 15px;
-    border-radius: 5px;
+    justify-content: center;
+    margin-left: 200px;
+    color: skyblue;
 }

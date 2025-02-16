@@ -13,19 +13,22 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="./css_files/media.css" />
+    <link rel="stylesheet" href="./css_files/media_mwkb.css" />
     <link rel="stylesheet" href="./css_files/nav.css" />
     <link rel="stylesheet" href="./css_files/carousel.css" />
     <link rel="stylesheet" href="./css_files/offers.css" />
     <link rel="stylesheet" href="./css_files/slide_product.css" />
     <link rel="stylesheet" href="./css_files/footer.css" />
-    <link rel="stylesheet" href="./css_files/main.css" />
-    <!-- <link rel="stylesheet" href="./css_files/offers.css" /> -->
+    <link rel="stylesheet" href="./css_files/w_m_k.css" />
+    <link rel="stylesheet" href="./css_files/body.css" />
   </head>
   <body>
-    <!-- Navigation Bar--------------------------section 1----------------- -->
-    <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container">
+
+    <!-- ------------------Navigation Bar--------------------------section 1----------------- -->
+    
+      <nav id="nav" class="navbar navbar-expand-lg navbar-light w-100" style="background: linear-gradient(135deg, #8A2BE2, #DA70D6) !important;">   
+      
+        <div class="container">
         <!-- H&M Logo (Only for Large Devices) -->
         <a class="navbar-brand d-none d-lg-block" href="#">
           <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
@@ -34,7 +37,7 @@
         <!-- Large Device Links (No Changes Here) -->
         <ul class="navbar-nav d-none d-lg-flex">
           <li class="nav-item"><a class="nav-link" href="#">Men</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Women</a></li>
+          <li class="nav-item"><a class="nav-link" href="">Women</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Kids</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Accessories</a></li>
         </ul>
@@ -109,10 +112,10 @@
         </div>
       </div>
     </nav>
-    <!-- Navigation Bar--------------------------section 1 end----------------- -->
+    <!-- -----------------------Navigation Bar--------------------------section 1 end----------------- -->
 
-    <!----------------------------------------------------SECTION-2----------------------------------------------------------->
-    <section class="el2" id="home">
+    <!-----------------carosals total 3-----------------------------------SECTION-2----------------------------------------------------------->
+    <section class="carosal" id="home">
       <div
         id="carouselExampleCaptions"
         class="carousel slide mx-auto"
@@ -204,17 +207,8 @@
         </button>
       </div>
     </section>
-
-    <!-- sliding products -->
-    <div
-      id="sliding_products"
-      style="display: flex; overflow-x: auto; gap: 30px; padding: 15px"
-    ></div>
-    <!-- premium products for life showing text -->
-    <p id="slide_heading">
-      <i>Elite Savings on Your Unique Fashion </i> &#128150;
-    </p>
-    <!-- div box of offer page       section 3------------------------ -->
+    <!-- div box of offer page-------------------------------------section 3------------------------ -->
+     <div class="ob">
     <div class="offer-box">
       <h2>Weekend Offer</h2>
       <p class="offer-discount">Flat 15% off</p>
@@ -223,11 +217,14 @@
       <div class="offer-links">
         <a href="men.html" class="offer-btn">Men</a>
         <a href="women.html" class="offer-btn">Women</a>
-        <a href="kids.html" class="offer-btn">Kids & Baby</a>
+        <a href="kids.html" class="offer-btn">Kids</a>
+        <a href="baby.html" class="offer-btn">baby</a>
       </div>
     </div>
-
-    <!------------------------------------------------SECTION-3------------------------------------------------------------------->
+  </div>
+    <!-- try -->
+     
+    <!-------------------------womens section-----------------------SECTION-3------------------------------------------------------------------->
     <section class="el3" id="womens-section">
       <article class="sec3-content">
         <h1>"Your One-Stop Style Destination"</h1>
@@ -243,9 +240,37 @@
         <img class="img4" src="./images/w2.png" alt="womens traditional" />
       </article>
     </section>
-   
 
-    <!-------------------------------------------------SECTION-4---------------------------------------------------------------------------->
+      <!-- kids scetion-------------------------sectionn -5----------------  -->
+
+     <section class="el5" id="kids-section">
+      <h2 class="sec5-heading">"Explore For Your Kiddo's"</h2>
+      <article class="sec5-img">
+        <div class="img-container">
+          <img src="./images/c1.png" />
+          <p class="img-text">Trendy Kidswear</p>
+        </div>
+        <div class="img-container">
+          <img src="./images/c4.png" />
+          <p class="img-text">Comfortable & Stylish</p>
+        </div>
+        <div class="img-container">
+          <img src="./images/c3.png" />
+          <p class="img-text">Playtime Ready</p>
+        </div>
+        <div class="img-container">
+          <img src="./images/c2.png" />
+          <p class="img-text">Adorable Outfits</p>
+        </div>
+      </article>
+      <a href="#">
+        <button id="btn-12" onclick="navigateToCategory('kids')">
+          <span>Explore Kids Collection</span>
+        </button></a
+      >
+    </section>
+  
+    <!----------------------mens sction---------------------------SECTION-4---------------------------------------------------------------------------->
     <section class="el4" id="mens-section">
       <article class="sec4-img">
         <img
@@ -280,13 +305,11 @@
       </article>
     </section>
 
-    <!------------------------------------------------SECTION-5---------------------------------- -->
-
-    <!-- --------------------------------------------Section-6----------------------------------------- -->
+    <!--------------------------baby section----------------------SECTION-5---------------------------------- -->
     <section class="el6">
       <!-- Background Image and Heading -->
       <div class="heading-container">
-        <h2 class="section-heading">Explore Our Kids Section</h2>
+        <h2 class="section-heading">Explore Our baby Section</h2>
       </div>
 
       <!-- Cards -->
@@ -329,34 +352,18 @@
       >
     </section>
 
-    <sectionn -5-------------------></sectionn>
+    <!-- premium products for life showing text -->
+    <p id="slide_heading">
+      <i>Elite Savings on Your Unique Fashion </i> &#128150;
+    </p>
+      <!-- sliding products -->
+    <div
+      id="sliding_products"
+      style="display: flex; overflow-x: auto; gap: 30px; padding: 15px"
+    ></div>
+   
 
-    <section class="el5" id="kids-section">
-      <h2 class="sec5-heading">"Explore For Your Kiddo's"</h2>
-      <article class="sec5-img">
-        <div class="img-container">
-          <img src="./images/c1.png" />
-          <p class="img-text">Trendy Kidswear</p>
-        </div>
-        <div class="img-container">
-          <img src="./images/c4.png" />
-          <p class="img-text">Comfortable & Stylish</p>
-        </div>
-        <div class="img-container">
-          <img src="./images/c3.png" />
-          <p class="img-text">Playtime Ready</p>
-        </div>
-        <div class="img-container">
-          <img src="./images/c2.png" />
-          <p class="img-text">Adorable Outfits</p>
-        </div>
-      </article>
-      <a href="#">
-        <button id="btn-12" onclick="navigateToCategory('kids')">
-          <span>Explore Kids Collection</span>
-        </button></a
-      >
-    </section>
+   <div class="Sound">
     <div class="sound-style-box">
         <h2>The Sound of Style just dropped</h2>
         <p>
@@ -368,10 +375,15 @@
           <a href="#" class="btn btn-outline-light">Learn more</a>
         </div>
       </div>
-    <div class="denim-section">
-      <h2>A New Take on Denim</h2>
-      <p>Age [2-9]</p>
     </div>
+    <div class="denim_box">
+      <div class="denim-section">
+        <h2>A New Take on Denim</h2>
+        <p>Age [2-9]</p>
+      </div>
+    </div>
+   
+  
     
 
     <script src="./js_files/nav.js"></script>

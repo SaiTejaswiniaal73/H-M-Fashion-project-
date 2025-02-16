@@ -3,6 +3,7 @@
     bottom: 70%; /* Position caption near the bottom */
     left: 5%;    /* Position caption near the left side */
     text-align: left; /* Aligns text to the left */
+    /* background-color: #ffdf00; */
   }
   
   .carousel-caption h3,
@@ -55,4 +56,7 @@
     font-size: 1.2rem;
     font-weight: normal;
     color: #ffdf00; /* Goldish color for extra highlight */
+}
+.carosal{
+  background-color:rgb(246, 183, 183);
 }

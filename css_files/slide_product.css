@@ -7,7 +7,11 @@
   font-family: 'Garamond', serif;
   animation: wave 5s infinite;
   color: black;
+  /* background-color: brown; */
 
+}
+#slide_heading{
+  background-color:rgb(244, 12, 197);
 }
 #slide_heading {
   margin-top: 40px;
@@ -39,9 +43,12 @@
   margin: auto;
   scroll-behavior: smooth;
   overflow: hidden;
+  background-color:whitesmoke;
 }
 
 ::-webkit-scrollbar {
   overflow: hidden;
 }
+
+
 
