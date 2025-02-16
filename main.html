@@ -283,7 +283,9 @@
         <p>It's the biggest sale of the year!</p>
         <p>Upgrade your wardrobe today.</p>
         <p>Enjoy the best rates!</p>
-        <button id="btn1" onclick="navigateToCategory('women')">Womens</button>
+        <button id="btn1" onclick="window.location.href='women.html'">
+          Womens
+        </button>
       </article>
       <article class="sec3-img">
         <img class="img1" src="./images/w1.png" alt="womens images" />
@@ -293,9 +295,7 @@
       </article>
     </section>
 
-   
-    <!-- kids scetion-------------------------sectionn -5----------------  -->
-
+    <!-- kids section-------------------------sectionn -5----------------  -->
     <section class="el5" id="kids-section">
       <h2 class="sec5-heading">"Explore For Your Kiddo's"</h2>
       <article class="sec5-img">
@@ -316,11 +316,11 @@
           <p class="img-text">Adorable Outfits</p>
         </div>
       </article>
-      <a href="#">
-        <button id="btn-12" onclick="navigateToCategory('kids')">
+      <a href="kids.html">
+        <button id="btn-12">
           <span>Explore Kids Collection</span>
-        </button></a
-      >
+        </button>
+      </a>
     </section>
 
     <!----------------------mens sction---------------------------SECTION-4---------------------------------------------------------------------------->
@@ -352,13 +352,14 @@
         <p>Discover top trends for every occasion.</p>
         <p>From smart casuals to formal sophistication.</p>
         <p>Upgrade your wardrobe today.</p>
-        <a href="#">
-          <button id="btn2" onclick="navigateToCategory('men')">Mens</button></a
-        >
+        <a href="men.html">
+          <button id="btn2">Mens</button>
+        </a>
       </article>
     </section>
 
     <!-------------------------- Baby Section ---------------------- SECTION-6 ---------------------------------->
+    <!-- Baby Section -------------------- SECTION-6 ---------------------------- -->
     <section class="el6" id="baby-section">
       <div class="sec6-content">
         <h1 class="sec6-heading">"Adorable Collections"</h1>
@@ -366,16 +367,9 @@
         <p>
           Soft fabrics, playful designs, and a touch of love in every piece.
         </p>
-        <button id="btn-12" onclick="navigateToCategory('baby')">
+        <button id="btn-12" onclick="window.location.href='baby.html'">
           Explore Baby Collection
         </button>
-      </div>
-
-      <div class="sec6-img">
-        <img src="./images/cc4.jpg" alt="Newborn Care" class="img9" />
-        <img src="./images/cc2.png" alt="Child Health" class="img10" />
-        <img src="./images/cc5.jpeg" alt="Play and Learn" class="img11" />
-        <img src="./images/cc4.avif" alt="Soft & Cozy Wear" class="img12" />
       </div>
     </section>
 
@@ -507,6 +501,5 @@
     <script src=".//js_files/SLIDE.JS"></script>
     <script src="./js_files/nav.js"></script>
     <script src="main.js"></script>
-    
   </body>
 </html>

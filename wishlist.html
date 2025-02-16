@@ -1,12 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>hi</p>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="./css_files/wishlist.css"/>
+    <!-- <link rel="stylesheet" href="./css_files/products.css"> -->
+    <link rel="stylesheet" href="./css_files/body.css" />
+    <link rel="stylesheet" href="./css_files/products.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  </head>
+  <body>
+    <nav
+      id="nav"
+      class="navbar navbar-expand-lg navbar-light w-100"
+      style="background: linear-gradient(135deg, #8a2be2, #da70d6) !important"
+    >
+      <div class="container">
+        <!-- H&M Logo (Only for Large Devices) -->
+        <a class="navbar-brand d-none d-lg-block" href="">
+          <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
+        </a>
+
+        <!-- Large Device Links (No Changes Here) -->
+        <ul class="navbar-nav d-none d-lg-flex">
+          <li class="nav-item me-3">
+            <a class="nav-link active" aria-current="page" href="main.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="men.html">Men</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="women.html">Women</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="kids.html">Kids</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="baby.html">Baby</a>
+          </li>
+        </ul>
+
+        <!-- Large Device Search Bar (Visible only on large devices) -->
+        <form class="d-flex search-container d-none d-lg-flex" role="search" onsubmit="handleSearch(event)">
+          <input id="search-input" class="form-control me-2" type="search" placeholder="Search here..." aria-label="Search" />
+          <button class="btn btn-outline-dark" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+
+        <!-- User Actions (Icons for All Devices) -->
+        <ul class="navbar-nav user-icons d-none d-lg-flex">
+          <li class="nav-item">
+            <a class="nav-link" href="#home"><i class="fas fa-user"></i></a>
+          </li>
+          <li class="nav-item" id="fav_nav">
+            <a
+              id="wishlist-link-large"
+              class="nav-link position-relative"
+              href="#wishlist.html"
+              onclick="addToFavorites()"
+            >
+              <i class="fas fa-heart text-danger"></i>
+              <span id="fav-count-large" class="badge-count">0</span> <!-- Favorite count -->
+            </a>
+          </li>
+          <li class="nav-item" id="cart_nav">
+            <a
+              id="cart-link-large"
+              class="nav-link position-relative"
+              href="#cart.html"
+              onclick="addToCart()"
+            >
+              <i class="fas fa-shopping-cart text-primary"></i>
+              <span id="cart-count-large" class="badge-count">0</span> <!-- Cart count -->
+            </a>
+          </li>
+        </ul>
+
+        <!-- Small Device Layout (Only Logo, Search, Sign-in, Fav, Bag) -->
+        <div class="d-flex d-lg-none small-nav">
+          <a class="navbar-brand" href="#">
+            <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
+          </a>
+
+          <!-- Small Device Search Bar (Visible only on small devices) -->
+          <div class="search-box">
+            <button class="btn btn-outline-dark" id="searchBtn">
+              <i class="fas fa-search"></i>
+            </button>
+            <input class="form-control search-input" type="search" placeholder="Search" id="searchInput" />
+          </div>
+          <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
+
+          <!-- Favorites Icon -->
+          <a
+            id="wishlist-link-small"
+            class="nav-link position-relative"
+            href="#wishlist.html"
+            onclick="addToFavorites()"
+          >
+            <i class="fas fa-heart text-danger"></i>
+            <span id="fav-count-small" class="badge-count">0</span> <!-- Favorite count -->
+          </a>
+
+          <!-- Shopping Bag Icon -->
+          <a
+            id="cart-link-small"
+            class="nav-link position-relative"
+            href="#cart.html"
+            onclick="addToCart()"
+          >
+            <i class="fas fa-shopping-cart text-primary"></i>
+            <span id="cart-count-small" class="badge-count">0</span> <!-- Cart count -->
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ------------------------------------------------------------------------------------------- -->
+    <!-- <div class="wishlist-container">
+      <h1 class="wishlist-title">Your Wishlist</h1>
+      <div id="wishlistItems" class="wishlist-items">
+        <!-- Wishlist items will be dynamically added here -->
+      <!-- </div>
+      <a href="products.html" class="back-to-products" style=" margin-top: px;">Back to Products</a>
+    </div>
+    <div class="container mt-5">
+        <h1 class="text-center">My Wishlist</h1>
+        <div id="wishlist-container" class="row mt-4"></div>
+      </div>  -->
+<!-- hey -->
+<div class="container">
+    <h1 class="text-center mt-4">Your Wishlist</h1>
+
+    <!-- Wishlist Container -->
+    <div id="wishlist-container" class="row mt-4">
+      <!-- Wishlist items will be populated here dynamically -->
+    </div>
+
+    <!-- Link back to the main page -->
+    <div class="text-center mt-4">
+      <a href="main.html" class="btn btn-primary">Back to Home</a>
+    </div>
+  </div>
+      
+  
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+  // Fetch wishlist items from localStorage
+  const wishlistItems = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+  // Check if there are any products in the wishlist
+  if (wishlistItems.length === 0) {
+    document.getElementById("wishlist-container").innerHTML = "<p>Your wishlist is empty.</p>";
+  } else {
+    displayWishlistItems(wishlistItems); // Display the wishlist items
+  }
+});
+
+// Function to display wishlist items
+function displayWishlistItems(wishlistItems) {
+  const container = document.getElementById("wishlist-container");
+  container.innerHTML = ""; // Clear any existing content
+
+  wishlistItems.forEach((product) => {
+    const productCard = `
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+        <div class="product card h-100">
+          <img src="${product.image}" class="card-img-top product-image" alt="${product.name}">
+          <div class="card-body text-center">
+            <h5 class="card-title">${product.name}</h5>
+            <p>Category: ${product.category}</p>
+            <p>Price: $${product.price.toFixed(2)}</p>
+            <p>Sizes: ${product.sizes.join(", ")}</p>
+            <p>Colors: ${product.colors.join(", ")}</p>
+            <div class="d-flex justify-content-center gap-2">
+              <button class="btn btn-outline-danger btn-custom" onclick="removeFromWishlist('${product.id}')">❌ Remove</button>
+            </div>
+          </div>
+        </div>
+      </div>`;
     
-</body>
+    container.innerHTML += productCard; // Append each product card to the container
+  });
+}
+
+// Function to remove a product from the wishlist
+function removeFromWishlist(productId) {
+  let wishlistItems = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+  // Remove product from wishlist
+  wishlistItems = wishlistItems.filter(product => product.id !== productId);
+
+  // Save the updated wishlist back to localStorage
+  localStorage.setItem("wishlist", JSON.stringify(wishlistItems));
+
+  // Reload the wishlist
+  displayWishlistItems(wishlistItems);
+}
+
+
+      </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./js_files/products.js"></script>
+    <script src="./js_files/nav.js"></script>
+  </body>
 </html>
