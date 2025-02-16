@@ -79,18 +79,27 @@
           <li class="nav-item">
             <a class="nav-link" href="#home"><i class="fas fa-user"></i></a>
           </li>
+
           <ul class="navbar-nav user-icons d-none d-lg-flex">
-            <!-- Favorites Icon -->
+            <!-- Favorites Icon (Large Screen) -->
             <li class="nav-item" id="fav_nav">
-              <a class="nav-link position-relative" href="#">
+              <a
+                id="wishlist-link-large"
+                class="nav-link position-relative"
+                href="#wishlist.html"
+              >
                 <i class="fas fa-heart text-danger"></i>
                 <span id="fav-count" class="badge-count">0</span>
               </a>
             </li>
 
             <!-- Shopping Bag Icon -->
-            <li class="nav-item">
-              <a class="nav-link position-relative" href="#">
+            <li class="nav-item d-none d-lg-block">
+              <a
+                id="cart-link-large"
+                class="nav-link position-relative"
+                href="#"
+              >
                 <i class="fas fa-shopping-bag text-dark"></i>
                 <span id="bag-count" class="badge-count">0</span>
               </a>
@@ -99,10 +108,12 @@
         </ul>
 
         <!-- Small Device Layout (Only Logo, Search, Sign-in, Fav, Bag) -->
+
         <div class="d-flex d-lg-none small-nav">
           <a class="navbar-brand" href="#">
             <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
           </a>
+
           <div class="search-box">
             <button class="btn btn-outline-dark" id="searchBtn">
               <i class="fas fa-search"></i>
@@ -115,43 +126,40 @@
             />
           </div>
           <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
+
           <!-- Favorites Icon -->
 
-          <!-- <a class="nav-link position-relative" href="#">
-            <i class="fas fa-heart text-danger"></i>
-            <span id="fav-count" class="badge-count">0</span>
-          </a>
-          <a class="nav-link position-relative" href="wishlist.html">
-            <i class="fas fa-heart text-danger"></i>
-            <span id="fav-count" class="badge-count">0</span>
-        </a>
-        
-          <div class="wishlist-container">
-            <button id="wishlist-icon" class="icon-btn" onclick="window.location.href = 'wishlist.html';">
-              <i class="fas fa-heart" style="color: red;"></i>
-            </button>
-          </div> -->
           <a id="wishlist-link" class="nav-link position-relative" href="#">
             <i class="fas fa-heart text-danger"></i>
             <span id="fav-count" class="badge-count">0</span>
-        </a>
-        
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                document.getElementById("wishlist-link").addEventListener("click", function(event) {
-                    event.preventDefault(); // Prevent default action
-                    window.location.href = "wishlist.html";
-                });
-            });
-        </script>
-        
+          </a>
 
           <!-- Shopping Bag Icon -->
-
-          <a class="nav-link position-relative" href="#">
+          <!-- Shopping Bag Icon for Small Screens -->
+          <a
+            id="cart-link"
+            class="nav-link position-relative d-lg-none"
+            href="#"
+          >
             <i class="fas fa-shopping-bag text-dark"></i>
             <span id="bag-count" class="badge-count">0</span>
           </a>
+          <!-- Filter Icon (Only for Small Devices) -->
+          <!-- Filter Icon for Small Screens -->
+          <div class="filter-container d-lg-none">
+            <button class="filter-btn" id="filter-toggle">
+              <i class="fas fa-filter"></i>
+              <!-- FontAwesome Filter Icon -->
+            </button>
+
+            <!-- Filter Menu -->
+            <ul class="filter-menu" id="filter-menu">
+              <li><a class="nav-link" href="#mens-section">Men</a></li>
+              <li><a class="nav-link" href="#womens-section">Women</a></li>
+              <li><a class="nav-link" href="#kids-section">Kids</a></li>
+              <li><a class="nav-link" href="#baby-section">Baby</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>
@@ -498,7 +506,7 @@
     <script src=".//js_files/SLIDE.JS"></script>
     <script src="./js_files/nav.js"></script>
     <!-- <script src="./js_files/sliede_products.js"></script> -->
-    <script src="./js_files/main.js"></script>
+    <script src="main.js"></script>
     <!-- <script src="./js_files/nav.js"></script>
     <script src="./js_files/nav.js"></script> -->
   </body>
