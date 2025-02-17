@@ -1,70 +1,137 @@
-const apiUrl = 'https://67a3589d31d0d3a6b78335fc.mockapi.io/clothing/CLOTH';
-let currentCategory = '';
-let allProducts = [];
-let currentPage = 1;
-const productsPerPage = 8;
+// Fetch products from API
+function fetchProducts(category = "") {
+  fetch("https://67a3589d31d0d3a6b78335fc.mockapi.io/clothing/CLOTH")
+    .then((response) => response.json())
+    .then((products) => {
+      let main_div = document.getElementById("products-container");
+      main_div.innerHTML = ""; // Clear previous products
 
-async function fetchProducts(category = '') {
-    try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) throw new Error("Failed to fetch products");
+      let categories = ["women", "men", "kids", "baby"];
+      let filteredProducts = [];
 
-        const data = await response.json();
-        allProducts = category ? data[0].products[category] || [] : [...data[0].products.men, ...data[0].products.women, ...data[0].products.kids, ...data[0].products.baby];
-        displayProducts();
-    } catch (error) {
-        console.error('Error fetching products:', error);
-        document.getElementById('products-container').innerHTML = '<p class="text-danger text-center">Failed to load products.</p>';
-    }
-}
+      if (category && categories.includes(category)) {
+        filteredProducts = products[0].products[category]; // Get products for selected category
+      } else {
+        // If no category is selected, display all products
+        categories.forEach((cat) => {
+          filteredProducts = [
+            ...filteredProducts,
+            ...products[0].products[cat],
+          ];
+        });
+      }
 
-function displayProducts() {
-    const container = document.getElementById('products-container');
-    container.innerHTML = '';
-    const start = (currentPage - 1) * productsPerPage;
-    const end = start + productsPerPage;
-    const paginatedProducts = allProducts.slice(start, end);
-    if (!paginatedProducts.length) {
-        container.innerHTML = '<p class="text-center text-muted">No products found.</p>';
-        return;
-    }
-    paginatedProducts.forEach(product => {
-        const productCard = document.createElement('div');
-        productCard.classList.add('product-card');
-        productCard.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <div class="product-details">
-                <div class="product-name"><strong>${product.name}</strong></div>
-                <div class="product-price">₹${product.price}</div>
-                <div class="product-sizes"><strong>Sizes:</strong> ${product.sizes.join(', ')}</div>
-                <div class="product-colors"><strong>Colors:</strong> ${product.colors.join(', ')}</div>
-            </div>
-            <div class="button-box">
-                <button class="btn btn-heart" onclick="addToFavorites(${product.id})">❤️ Favorite</button>
-                <button class="btn btn-cart" onclick="addToCart(${product.id})">🛒 Cart</button>
-            </div>
-        `;
-        container.appendChild(productCard);
+      // Display the filtered products
+      filteredProducts.forEach((product) => {
+        let box = document.createElement("div");
+        box.classList.add("product-box");
+
+        let title = document.createElement("h3");
+        let poster = document.createElement("img");
+        let price = document.createElement("h4");
+        let description = document.createElement("p");
+        let sizes = document.createElement("p");
+        let colors = document.createElement("p");
+        let buttonsDiv = document.createElement("div");
+        buttonsDiv.classList.add("product-buttons");
+
+        // Title (Product name)
+        title.innerHTML = product.name;
+        title.classList.add("product-title");
+
+        // Product image
+        poster.src = product.image;
+        poster.classList.add("product-image");
+
+        // Price
+        price.innerHTML = `₹${product.price}`;
+        price.classList.add("product-price");
+        price.style.color = "green";
+        price.style.backgroundColor = "red";
+        price.style.fontWeight = "bold"; // Makes the text bold
+        price.style.fontSize = "20px"; // Increases the font size to 20px (you can adjust as needed)
+
+        // Description
+        description.innerHTML = product.description;
+        description.classList.add("product-description");
+
+        // Change background color using JavaScript
+        description.style.backgroundColor = "yellow";
+
+        // Sizes
+        sizes.innerHTML = `Sizes: ${product.sizes.join(", ")}`;
+        sizes.classList.add("product-sizes");
+        sizes.style.backgroundColor = "violet";
+
+        // Colors
+        colors.innerHTML = `Colors: ${product.colors.join(", ")}`;
+        colors.classList.add("product-colors");
+        colors.style.backgroundColor = "aqua";
+
+        // For the heart button (add to favorites)
+        let heartButton = document.createElement("button");
+        heartButton.innerHTML = "❤️ Add to Favorites"; // Button text
+        heartButton.classList.add("heart-button"); // Apply default heart button class
+        heartButton.onclick = function () {
+          addToFavorites(product.id);
+        };
+        heartButton.style.backgroundColor = "#ffcc00";
+
+        // For the cart button (add to cart)
+        let cartButton = document.createElement("button");
+        cartButton.innerHTML = "🛒 Add to Cart"; // Button text
+        cartButton.classList.add("cart-button"); // Apply default cart button class
+        cartButton.onclick = function () {
+          addToCart(product.id);
+        };
+        cartButton.style.backgroundColor = "green";
+
+        // Append buttons to buttonsDiv
+        buttonsDiv.append(heartButton, cartButton);
+
+        // Append elements to the product box
+        box.append(
+          poster,
+          title,
+          price,
+          description,
+          sizes,
+          colors,
+          buttonsDiv
+        );
+
+        // Append the product box to the main div
+        main_div.append(box);
+      });
+    })
+    .catch((error) => {
+      console.error("Error fetching products:", error);
     });
-    document.getElementById('pageIndicator').innerText = `Page ${currentPage}`;
 }
 
-function changePage(direction) {
-    const totalPages = Math.ceil(allProducts.length / productsPerPage);
-    if ((currentPage + direction) > 0 && (currentPage + direction) <= totalPages) {
-        currentPage += direction;
-        displayProducts();
-    }
-}
+// Event listeners for category clicks
+document
+  .getElementById("women")
+  .addEventListener("click", () => fetchProducts("women"));
+document
+  .getElementById("men")
+  .addEventListener("click", () => fetchProducts("men"));
+document
+  .getElementById("kids")
+  .addEventListener("click", () => fetchProducts("kids"));
+document
+  .getElementById("baby")
+  .addEventListener("click", () => fetchProducts("baby"));
 
-function addToCart(productId) {
-    console.log(`Product ${productId} added to Cart!`);
-}
+// Default display: show all products on page load
+fetchProducts();
 
+// Function to handle adding to favorites
 function addToFavorites(productId) {
-    console.log(`Product ${productId} added to Favorites!`);
+  console.log(`Product ${productId} added to Favorites!`);
 }
 
-const urlParams = new URLSearchParams(window.location.search);
-const selectedCategory = urlParams.get('category');
-fetchProducts(selectedCategory || '');
+// Function to handle adding to cart
+function addToCart(productId) {
+  console.log(`Product ${productId} added to Cart!`);
+}

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Display</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fashion Recommendation App</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -12,11 +12,96 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="./css_files/nav.css">
+    <!-- <link rel="stylesheet" href="./css_files/media_mwkb.css" /> -->
     <link rel="stylesheet" href="./css_files/nav.css" />
-</head>
-<body>
+    <!-- <link rel="stylesheet" href="./css_files/carousel.css" />
+    <link rel="stylesheet" href="./css_files/offers.css" />
+    <link rel="stylesheet" href="./css_files/slide_product.css" />
+    <link rel="stylesheet" href="./css_files/footer.css" />
+    <link rel="stylesheet" href="./css_files/WMKB.css" /> -->
+    <link rel="stylesheet" href="./css_files/body.css" />
+    <style>
+      /* Product display styling */
+      .main-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+        gap: 20px;
+      }
+      .product-box {
+        background-color: #f5f5f5;
+        border: 2px solid #ddd;
+        width: 250px;
+        text-align: center;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+      .product-box:hover {
+        transform: scale(1.05);
+      }
+      .product-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+      .product-title {
+        font-weight: bold;
+        color: #333;
+        background-color: #f0e68c;
+        padding: 5px;
+        border-radius: 5px;
+      }
+      .product-description {
+        color: #555;
+        font-size: 14px;
+        background-color: #f0f8ff;
+        padding: 5px;
+        border-radius: 5px;
+      }
+      .product-sizes,
+      .product-colors {
+        margin: 5px 0;
+      }
+      .product-buttons {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+      }
+      .heart-button {
+        background-color: #ff69b4;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: opacity 0.3s, background-color 0.3s;
+      }
+      .heart-button:hover {
+        opacity: 0.8;
+        background-color: rebeccapurple;
+      }
+      .cart-button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: opacity 0.3s, background-color 0.3s;
+      }
+      .cart-button:hover {
+        opacity: 0.8;
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
     <nav
       id="nav"
       class="navbar navbar-expand-lg navbar-light w-100"
@@ -30,52 +115,77 @@
 
         <!-- Large Device Links (No Changes Here) -->
 
-          <ul class="navbar-nav d-none d-lg-flex">
-            <li class="nav-item"  id="nav_all">
-              <button id="btn-all" class="nav-link" onclick="window.location.href='products.html'">
-                All
-              </button>
-            </li>
-            
-            <li class="nav-item">
-              <a id="btn2" class="nav-link men-link" href="products.html?category=men">
-                Men
-              </a>
-            </li>
-            
-            <li class="nav-item">
-              <a id="btn1" class="nav-link women-link" href="products.html?category=women">
-                Women
-              </a>
-            </li>
-            
-            
-            <li class="nav-item">
-              <a class="nav-link kids-link" href="products.html?category=kids">Kids</a>
-            </li>
-            
-            <li class="nav-item">
-              <a class="nav-link baby-link" href="products.html?category=baby">Baby</a>
-            </li>
-          </ul>
-          
-        
+        <ul class="navbar-nav d-none d-lg-flex">
+          <li class="nav-item" id="nav_all">
+            <button
+              id="btn-all"
+              class="nav-link"
+              onclick="handleCategoryChange('all')"
+            >
+              All
+            </button>
+          </li>
+
+          <li class="nav-item">
+            <button
+              id="btn2"
+              class="nav-link men-link"
+              onclick="handleCategoryChange('men')"
+            >
+              Men
+            </button>
+          </li>
+
+          <li class="nav-item">
+            <button
+              id="btn1"
+              class="nav-link women-link"
+              onclick="handleCategoryChange('women')"
+            >
+              Women
+            </button>
+          </li>
+
+          <li class="nav-item">
+            <button
+              id="btn3"
+              class="nav-link kids-link"
+              onclick="handleCategoryChange('kids')"
+            >
+              Kids
+            </button>
+          </li>
+
+          <li class="nav-item">
+            <button
+              id="btn4"
+              class="nav-link baby-link"
+              onclick="handleCategoryChange('baby')"
+            >
+              Baby
+            </button>
+          </li>
+        </ul>
+
         <!-- Search Bar (Large Devices - No Changes) -->
 
-    <!-- Search Form -->
-    <form class="d-flex search-container" role="search" onsubmit="handleSearch(event)">
-      <input
-        id="search-input"
-        class="form-control me-2 custom-search-input"
-        type="search"
-        placeholder="Search here..."
-        aria-label="Search"
-      />
-      <button class="btn btn-outline-dark" type="submit">
-        <i class="fas fa-search"></i>
-      </button>
-    </form>
-    
+        <!-- Search Form -->
+        <form
+          class="d-flex search-container"
+          role="search"
+          onsubmit="handleSearch(event)"
+        >
+          <input
+            id="search-input"
+            class="form-control me-2 custom-search-input"
+            type="search"
+            placeholder="Search here..."
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-dark" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
 
         <!-- User Actions (Icons for All Devices) -->
         <ul class="navbar-nav user-icons d-none d-lg-flex">
@@ -86,7 +196,11 @@
           <ul class="navbar-nav user-icons d-none d-lg-flex">
             <!-- Favorites Icon (Large Screen) -->
             <li class="nav-item" id="fav_nav">
-              <a id="wishlist-link-large" class="nav-link position-relative" href="#wishlist.html">
+              <a
+                id="wishlist-link-large"
+                class="nav-link position-relative"
+                href="#wishlist.html"
+              >
                 <i class="fas fa-heart text-danger"></i>
                 <span id="fav-count" class="badge-count">0</span>
               </a>
@@ -94,7 +208,11 @@
 
             <!-- Shopping Bag Icon -->
             <li class="nav-item d-none d-lg-block">
-              <a id="cart-link-large" class="nav-link position-relative" href="#">
+              <a
+                id="cart-link-large"
+                class="nav-link position-relative"
+                href="#"
+              >
                 <i class="fas fa-shopping-bag text-dark"></i>
                 <span id="bag-count" class="badge-count">0</span>
               </a>
@@ -158,16 +276,114 @@
         </div>
       </div>
     </nav>
-    <div id="products-container" class="product-grid"></div>
-    <div id="pageIndicator" class="page-indicator">Page 1</div>
-    <button id="previous-btn" onclick="changePage(-1)">Previous</button>
-    <button id="next-btn" onclick="changePage(1)">Next</button>
-    <script src="mainproducts.js"></script>
-    <script src="js_files/nav.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src=".//js_files/SLIDE.JS"></script>
-    <script src="./js_files/nav.js"></script>
-    <script src="./js_files/main.js"></script>
-</body>
-</html>
 
+    <!-- Main Product Display -->
+    <div class="main-container" id="products-container"></div>
+    <script>
+      // Function to fetch products based on category from the URL
+      function fetchProducts() {
+        // Get category from the URL query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const category = urlParams.get("category") || "all"; // Default to 'all' if no category is passed
+
+        fetch("https://67a3589d31d0d3a6b78335fc.mockapi.io/clothing/CLOTH")
+          .then((response) => response.json())
+          .then((products) => {
+            let main_div = document.getElementById("products-container");
+            main_div.innerHTML = ""; // Clear previous products
+
+            const availableCategories = ["women", "men", "kids", "baby"];
+            let filteredProducts = [];
+
+            if (category !== "all" && availableCategories.includes(category)) {
+              filteredProducts = products[0].products[category] || [];
+            } else {
+              // If "all" is selected, combine products from all categories
+              availableCategories.forEach((cat) => {
+                if (products[0].products[cat]) {
+                  filteredProducts = [
+                    ...filteredProducts,
+                    ...products[0].products[cat],
+                  ];
+                }
+              });
+            }
+
+            // Display the filtered products
+            filteredProducts.forEach((product) => {
+              let box = document.createElement("div");
+              box.classList.add("product-box");
+
+              let title = document.createElement("h3");
+              let poster = document.createElement("img");
+              let price = document.createElement("h4");
+              let description = document.createElement("p");
+              let sizes = document.createElement("p");
+              let colors = document.createElement("p");
+              let buttonsDiv = document.createElement("div");
+              buttonsDiv.classList.add("product-buttons");
+
+              // Set product details
+              title.innerHTML = product.name;
+              title.classList.add("product-title");
+
+              poster.src = product.image;
+              poster.classList.add("product-image");
+
+              price.innerHTML = `₹${product.price}`;
+              price.classList.add("product-price");
+
+              description.innerHTML = product.description;
+              description.classList.add("product-description");
+
+              sizes.innerHTML = `Sizes: ${product.sizes.join(", ")}`;
+              sizes.classList.add("product-sizes");
+
+              colors.innerHTML = `Colors: ${product.colors.join(", ")}`;
+              colors.classList.add("product-colors");
+
+              // Create buttons
+              let heartButton = document.createElement("button");
+              heartButton.innerHTML = "❤️ Add to Favorites";
+              heartButton.classList.add("heart-button");
+              heartButton.onclick = () => addToFavorites(product.id);
+
+              let cartButton = document.createElement("button");
+              cartButton.innerHTML = "🛒 Add to Cart";
+              cartButton.classList.add("cart-button");
+              cartButton.onclick = () => addToCart(product.id);
+
+              buttonsDiv.append(heartButton, cartButton);
+
+              // Assemble product box
+              box.append(
+                poster,
+                title,
+                price,
+                description,
+                sizes,
+                colors,
+                buttonsDiv
+              );
+              main_div.append(box);
+            });
+          })
+          .catch((error) => {
+            console.error("Error fetching products:", error);
+          });
+      }
+
+      // Update the function to handle category changes on button click
+      function handleCategoryChange(category) {
+        // Update the URL to reflect the selected category
+        window.location.href = `products.html?category=${category}`;
+      }
+
+      // Call the function to fetch products initially
+      fetchProducts();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./js_files/nav.js"></script>
+  </body>
+</html>

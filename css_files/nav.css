@@ -10,6 +10,22 @@ body {
   display: none;
   width: 120px; /* Adjust width */
 }
+/* For the fixed navbar */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensure the navbar stays above content */
+  background-color: #8a2be2; /* Background color for the navbar */
+  padding: 10px 0; /* Adjust navbar height */
+}
+
+/* Add padding-top to the products container to prevent overlap */
+#products-container {
+  padding-top: 100px;  /* Adjust this value to the height of your fixed navbar */
+  margin-bottom: 200px;  /* Adjust the value to control the gap below the container */
+}
 
 /* Custom class to adjust the width of the search input */
 .custom-search-input {
