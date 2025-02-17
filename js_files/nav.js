@@ -1,29 +1,46 @@
-// Show search bar when clicking the search button (Small Devices)
-document.getElementById("searchBtn").addEventListener("click", function () {
-  var searchInput = document.getElementById("searchInput");
-  if (
-    searchInput.style.display === "none" ||
-    searchInput.style.display === ""
-  ) {
-    searchInput.style.display = "block";
-    searchInput.focus(); // Focus on the search input when shown
-  } else {
-    searchInput.style.display = "none";
+document.addEventListener("DOMContentLoaded", function () {
+  /*** SEARCH FUNCTIONALITY ***/
+  const searchBtn = document.getElementById("searchBtn");
+  const searchInput = document.getElementById("searchInput");
+
+  if (searchBtn && searchInput) {
+    searchBtn.addEventListener("click", function () {
+      if (searchInput.style.display === "none" || searchInput.style.display === "") {
+        searchInput.style.display = "block";
+        searchInput.focus(); // Auto-focus when opened
+      } else {
+        searchInput.style.display = "none";
+      }
+    });
   }
+
+  /*** FILTER MENU TOGGLE ***/
+  const filterToggle = document.getElementById("filter-toggle");
+  const filterMenu = document.getElementById("filter-menu");
+
+  if (filterToggle && filterMenu) {
+    filterToggle.addEventListener("click", function () {
+      filterMenu.classList.toggle("active");
+    });
+
+    // Close filter menu when clicking outside
+    document.addEventListener("click", function (event) {
+      if (!filterToggle.contains(event.target) && !filterMenu.contains(event.target)) {
+        filterMenu.classList.remove("active");
+      }
+    });
+  }
+
+  /*** BADGE COUNT UPDATES ***/
+  function updateCount(type, count) {
+    let countElement = document.getElementById(type + "-count");
+    if (countElement) {
+      countElement.textContent = count;
+      countElement.style.display = count > 0 ? "flex" : "none";
+    }
+  }
+
+  // Example: Initializing counts (can be updated dynamically)
+  updateCount("fav", 0); // Favorites count
+  updateCount("bag", 0); // Shopping bag count
 });
-
-function updateCount(type, count) {
-  let countElement = document.getElementById(type + "-count");
-  countElement.textContent = count;
-
-  // Show badge only if count > 0
-  if (count > 0) {
-    countElement.style.display = "flex";
-  } else {
-    countElement.style.display = "none";
-  }
-}
-
-// Example: Simulating adding items
-updateCount("fav", 0); // Set favorites count to 3
-updateCount("bag", 0); // Set cart count to 2

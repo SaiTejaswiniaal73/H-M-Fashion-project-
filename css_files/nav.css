@@ -106,6 +106,7 @@ html, body {
   border-radius: 50%;
   border: 2px solid white; /* Creates a white outline */
 }
+
 /* FILTER STYLING */
 /* Filter Container */
 .filter-container {
@@ -142,7 +143,7 @@ html, body {
   z-index: 1000;
 }
 
-/* Show Filter Menu */
+/* Show Filter Menu when active */
 .filter-menu.active {
   display: block;
   opacity: 1;
@@ -165,4 +166,72 @@ html, body {
 /* Hover Effect */
 .filter-menu li:hover {
   background: #f4f4f4;
+}
+
+/* .nav-link home-link */
+.navbar-nav .nav-item .nav-link.home-link:hover {
+  /* Blue for Men */
+ background-color: #18a2ec;
+ transform: scale(1.1);
+}
+
+/* Hover effect for Men link */
+.navbar-nav .nav-item .nav-link.men-link:hover {
+   /* Blue for Men */
+  background-color: #2115ca;
+  transform: scale(1.1);
+}
+
+/* Hover effect for Women link */
+.navbar-nav .nav-item .nav-link.women-link:hover {
+  background-color: pink; /* Pink for Women */
+  transform: scale(1.1);
+}
+
+/* Hover effect for Kids link */
+.navbar-nav .nav-item .nav-link.kids-link:hover {
+  background-color: orange; /* Orange for Kids */
+  transform: scale(1.1);
+}
+
+/* Hover effect for Baby link */
+.navbar-nav .nav-item .nav-link.baby-link:hover {
+  background-color: green; /* Green for Baby */
+  transform: scale(1.1);
+}
+/* Hover effect for Heart (Wishlist) icon */
+#wishlist-link-large:hover i {
+  background-color: whitesmoke; /* Pink color on hover */
+  transform: scale(1.1);
+}
+
+/* Hover effect for Cart icon */
+#cart-link-large:hover i {
+  background-color: whitesmoke; /* Blue color on hover */
+  transform: scale(1.1);
+}
+
+/* Badge count styling */
+#fav-count, #bag-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  background-color: white;
+  color: rebeccapurple;
+  font-size: 10px;
+  font-weight: bolder;
+  min-width: 18px;
+  min-height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/* Smooth transition for the icon color change */
+#wishlist-link-large i,
+#cart-link-large i {
+  transition: color 0.3s, transform 0.3s;
 }

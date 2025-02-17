@@ -740,3 +740,205 @@ productsData = {
     },
   ],
 };
+"kids": [
+    {
+      "id": 1,
+      "name": "Girls Party Wear Frock",
+      "category": "Kids' Clothing",
+      "price": 500,
+      "image": "https://cdn.shopify.com/s/files/1/0646/0211/2255/files/ab5d10b4-5bfa-4395-9b6a-051d755920f8O1CN01zm87Us2CrsWRttWbU__21_212216143268528-0-cib_233a841b-8fc5-4bc3-a87f-04b86d2f79d0.jpg?v=1725383490",
+      "description": "Bright and Royal frock for kids.",
+      "sizes": [],
+      "colors": []
+    },
+    {
+      "id": 2,
+      "name": "Boys Shirt and Bottom wear",
+      "category": "Kids' Clothing",
+      "price": 600,
+      "image": "https://includ.com/cdn/shop/files/1_1024x1024_d579eeb0-de4a-4c22-bde8-a1c4b2863936_1024x1024.jpg?v=1722014233",
+      "description": "Comfortable shirt and jogger for warm weather.",
+      "sizes": [],
+      "colors": []
+    },
+    {
+      "id": 3,
+      "name": "Girls Princess Party Wear Frock",
+      "category": "Kids' Clothing",
+      "price": 700,
+      "image": "https://includ.com/cdn/shop/files/bb172f4c-8fd2-49d7-90ee-810a86e082d5O1CN01s4Js3M2CrsXKxR5ZE__21_212216143268528-0-cib_e8d0a1be-4f4d-400d-b3d7-b258f4b3810b_1024x1024.jpg?v=1725383486",
+      "description": "Suitable for Occasional wear.",
+      "sizes": [],
+      "colors": []
+    },
+    {
+      "id": 4,
+      "name": "Trendy wear for kids",
+      "category": "Kids' Clothing",
+      "price": 800,
+      "image": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F8e%2F22%2F8e22dddfa6d3b7699cf63fa2cfd654b329b306dd.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/main]",
+      "description": "Soft hoodie for kids' comfort.",
+      "sizes": [],
+      "colors": []
+    },
+    {
+      "id": 5,
+      "name": "Kids' Stylist Party Wear",
+      "category": "Kids' Clothing",
+      "price": 1000,
+      "image": "https://includ.com/cdn/shop/files/approval_26_07_2024_2c38e5ea-32ea-40e3-822c-ed514da20a36O1CN01rs63n522QGYkOTIzN__21_212677567114-0-cib_1024x1024.jpg?v=1721982777",
+      "description": "Warm jacket for the colder months.",
+      "sizes": [],
+      "colors": []
+    },
+    {
+      "id": 6,
+      "name": "Simple Frock",
+      "category": "Kids' Clothing",
+      "price": 800,
+      "image": "https://includ.com/cdn/shop/files/approval_22_07_2024_ac7d5fc4-efb7-4a77-adad-fec514d084c0O1CN01p0cbzM2AY4ClwyhUJ__21_211005578214-0-cib_1024x1024.jpg?v=1721841137",
+      "description": "Cute dress for special occasions.",
+      "sizes": [],
+      "colors": []
+    },
+    {
+      "id": 7,
+      "name": "Kids' Sweater",
+      "category": "Kids' Clothing",
+      "price": 800,
+      "image": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F03%2F11%2F03112c7caa51aba6faf5c95c68d94d33a48a40e7.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bkids_boys_clothing_jumperssweatshirts_hoodies_zipup%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/fullscreen]",
+      "description": "Sweatshirt for vacation wear.",
+      "sizes": [],
+      "colors": []
+    },
+    {
+      "id": 8,
+      "name": "Kids' Regular wear",
+      "category": "Kids' Clothing",
+      "price": 950,
+      "image": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/b/8/b8befa6NN311-711-1.jpg?rnd=20200526195200&tr=w-1080",
+      "description": "Fun classy regular wear.",
+      "sizes": [],
+      "colors": []
+    },
+    {
+      "id": 9,
+      "name": "Kids' Formals",
+      "category": "Kids' Clothing",
+      "price": 900,
+      "image": "https://includ.com/cdn/shop/files/69f1cc2e-da6f-45b7-b719-6dab2f746476O1CN01dRsfvz1GKg9LEzeFa__21_213442110604-0-cib_20-_20Copy_1024x1024.jpg?v=1711560327",
+      "description": "Stylish formal shirt for kids.",
+      "sizes": [],
+      "colors": []
+    },
+    {
+      "id": 10,
+      "name": "Kids' Hoodie",
+      "category": "Kids' Clothing",
+      "price": 300,
+      "image": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F7b%2F3e%2F7b3efdfec2f7a1a6a23411eea32d1936046e12df.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/fullscreen]",
+      "description": "Comfortable hoodie for kids.",
+      "sizes": [],
+      "colors": []
+    },
+    {
+      "id": 11,
+      "name": "Kids' Hoodie",
+      "category": "Kids' Clothing",
+      "price": 700,
+      "image": "https://includ.com/cdn/shop/products/O1CN01W91K0M1ovUliWYgQV__2209824385287-0-cib_6c3b471d-5f0d-4016-98df-b58b7d669485_1024x1024.jpg?v=1712576921",
+      "description": "Stylish hoodie for vacation days.",
+      "sizes": [],
+      "colors": []
+    },
+    {
+      "id": 12,
+      "name": "Girls Classy frock",
+      "category": "Kids' Clothing",
+      "price": 650,
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSfMEKOH0xPC_nu8rVD3lDjy5PzTuPEKvr5wynZJahCzHtq2zUAh52Vqvx1p2Ko687D0PTnGb4D2KPQZQOs29R664593J40GBtuMHHpEM4E",
+      "description": "Classy White frock for night parties.",
+      "sizes": [],
+      "colors": []
+    },
+    {
+      "id": 13,
+      "name": "Boys Suit",
+      "category": "Kids' Clothing",
+      "price": 1500,
+      "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSo1L27krOkhanTCM2TxBcfAvz8wR9CtogiyoGwcTKtjy_uNLn27heiNSUy7AZdJwM3Pn6rxgqRhxtKmuHCk7Jv-9avRQxVhuM_K0iv3N6XvCAu",
+      "description": "The suit that gives you a formal look.",
+      "sizes": [],
+      "colors": []
+    },
+    {
+      "id": 14,
+      "name": "Girls Casual Dress",
+      "category": "Kids' Clothing",
+      "price": 400,
+      "image": "https://includ.com/cdn/shop/files/c5f6ab87-cf77-4965-8c66-32c2c8fe0f8aO1CN01vz44p1KwT2Zu_x52__21_211821345659-0-cib_1024x1024.jpg?v=1722194369",
+      "description": "Cute casual dress for all occasions.",
+      "sizes": [],
+      "colors": []
+    },
+    {
+      "id": 15,
+      "name": "Boys Kidswear",
+      "category": "Kids' Clothing",
+      "price": 1100,
+      "image": "https://includ.com/cdn/shop/files/approval_12_07_2024_51746f56-e3fc-4f9a-93ec-7c620c07591bO1CN01jd8odmqpmmvqEwSyk__21_213344558098-0-cib_1024x1024.jpg?v=1721876512",
+      "description": "Ideal for casual and fun wear.",
+      "sizes": [],
+      "colors": []
+    },
+    {
+      "id": 16,
+      "name": "Girls Kidswear",
+      "category": "Kids' Clothing",
+      "price": 850,
+      "image": "https://includ.com/cdn/shop/files/69f1cc2e-da6f-45b7-b719-6dab2f746476O1CN01dRsfvz1GKg9LEzeFa__21_213442110604-0-cib_1024x1024.jpg?v=1711560327",
+      "description": "Casual T-shirt and pants set.",
+      "sizes": [],
+      "colors": []
+    },
+    {
+      "id": 17,
+      "name": "Stylish Boots for Kids",
+      "category": "Kids' Clothing",
+      "price": 700,
+      "image": "https://includ.com/cdn/shop/files/1d9a9eec-0804-4762-88c8-4a0d68711d99O1CN01tZ4wz2nkD3yw0Xyk1__21_212334110932-0-cib_1024x1024.jpg?v=1723140119",
+      "description": "Keep your kids comfortable with stylish boots.",
+      "sizes": [],
+      "colors": []
+    },
+    {
+      "id": 18,
+      "name": "Girls' Sneakers",
+      "category": "Kids' Clothing",
+      "price": 550,
+      "image": "https://includ.com/cdn/shop/files/1102a80a-b364-4c4c-8d93-2f0b8ab0d8f0O1CN01nydgdSxl5Kq4cn8Y2N__21_211443439323-0-cib_1024x1024.jpg?v=1722215681",
+      "description": "Cute sneakers for outdoor activities.",
+      "sizes": [],
+      "colors": []
+    },
+    {
+      "id": 19,
+      "name": "Kids' Jogger Pants",
+      "category": "Kids' Clothing",
+      "price": 450,
+      "image": "https://includ.com/cdn/shop/files/c1e8fbcf-8fbb-4c40-8c06-421eae8a0ecbO1CN01a1mM2rQdjGcd9wTLF__21_212883425599-0-cib_1024x1024.jpg?v=1725061079",
+      "description": "Comfortable jogger pants for kids.",
+      "sizes": [],
+      "colors": []
+    },
+    {
+      "id": 20,
+      "name": "Stylish Jacket for Kids",
+      "category": "Kids' Clothing",
+      "price": 1200,
+      "image": "https://includ.com/cdn/shop/files/67cf902b-35d2-4f2d-b906-3dbb1a8e928fO1CN01khhmvjlF2crTZAfEO__21_212214569429-0-cib_1024x1024.jpg?v=1721064056",
+      "description": "Stylish and comfortable jacket for kids.",
+      "sizes": [],
+      "colors": []
+    }
+]

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,12 +14,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
     <!-- <link rel="stylesheet" href="./css_files/media_mwkb.css" /> -->
-      <link rel="stylesheet" href="./css_files/nav.css" />
-    <!-- <link rel="stylesheet" href="./css_files/carousel.css" />
+    <!-- <link rel="stylesheet" href="./css_files/nav.css" />
+    <link rel="stylesheet" href="./css_files/carousel.css" />
     <link rel="stylesheet" href="./css_files/offers.css" />
     <link rel="stylesheet" href="./css_files/slide_product.css" />
     <link rel="stylesheet" href="./css_files/footer.css" />
-    <link rel="stylesheet" href="./css_files/WMKB.css" /> --> 
+    <link rel="stylesheet" href="./css_files/WMKB.css" /> -->
     <link rel="stylesheet" href="./css_files/body.css" />
   </head>
   <body>
@@ -40,41 +39,40 @@
         <!-- Large Device Links (No Changes Here) -->
         <ul class="navbar-nav d-none d-lg-flex">
           <li class="nav-item me-3">
-            <a class="nav-link home-link" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link men-link" href="#mens-section">Men</a>
+            <a class="nav-link" href="#mens-section">Men</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link women-link" href="#womens-section">Women</a>
+            <a class="nav-link" href="#womens-section">Women</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link kids-link" href="#kids-section">Kids</a>
+            <a class="nav-link" href="#kids-section">Kids</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link baby-link" href="#baby-section">Baby</a>
+            <a class="nav-link" href="#baby-section">Baby</a>
           </li>
         </ul>
-        
+
         <!-- Search Bar (Large Devices - No Changes) -->
 
-    <!-- Search Form -->
-<form
-class="d-flex search-container"
-role="search"
-onsubmit="handleSearch(event)"
->
-<input
-  id="search-input"
-  class="form-control me-2"
-  type="search"
-  placeholder="Search here..."
-  aria-label="Search"
-/>
-<button class="btn btn-outline-dark" type="submit">
-  <i class="fas fa-search"></i>
-</button>
-</form>
+        <form
+          class="d-flex search-container"
+          role="search"
+          onsubmit="handleSearch(event)"
+        >
+          <input
+            id="search-input"
+            class="form-control me-2"
+            type="search"
+            placeholder="Search here..."
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-dark" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
 
         <!-- User Actions (Icons for All Devices) -->
         <ul class="navbar-nav user-icons d-none d-lg-flex">
@@ -85,7 +83,11 @@ onsubmit="handleSearch(event)"
           <ul class="navbar-nav user-icons d-none d-lg-flex">
             <!-- Favorites Icon (Large Screen) -->
             <li class="nav-item" id="fav_nav">
-              <a id="wishlist-link-large" class="nav-link position-relative" href="#wishlist.html">
+              <a
+                id="wishlist-link-large"
+                class="nav-link position-relative"
+                href="#wishlist.html"
+              >
                 <i class="fas fa-heart text-danger"></i>
                 <span id="fav-count" class="badge-count">0</span>
               </a>
@@ -93,7 +95,11 @@ onsubmit="handleSearch(event)"
 
             <!-- Shopping Bag Icon -->
             <li class="nav-item d-none d-lg-block">
-              <a id="cart-link-large" class="nav-link position-relative" href="#">
+              <a
+                id="cart-link-large"
+                class="nav-link position-relative"
+                href="#"
+              >
                 <i class="fas fa-shopping-bag text-dark"></i>
                 <span id="bag-count" class="badge-count">0</span>
               </a>
@@ -277,7 +283,7 @@ onsubmit="handleSearch(event)"
         <p>It's the biggest sale of the year!</p>
         <p>Upgrade your wardrobe today.</p>
         <p>Enjoy the best rates!</p>
-        <button id="btn1" onclick="window.location.href='women.html'">
+        <button id="btn1" onclick="window.location.href='products.html?category=women'">
           Womens
         </button>
       </article>
@@ -288,6 +294,12 @@ onsubmit="handleSearch(event)"
         <img class="img4" src="./images/w2.png" alt="womens traditional" />
       </article>
     </section>
+    <!-- Example button for Women section -->
+
+
+<!-- Similar buttons for other sections -->
+
+
 
     <!-- kids section-------------------------sectionn -5----------------  -->
     <section class="el5" id="kids-section">
@@ -310,11 +322,11 @@ onsubmit="handleSearch(event)"
           <p class="img-text">Adorable Outfits</p>
         </div>
       </article>
-      <a href="kids.html">
-        <button id="btn-12">
-          <span>Explore Kids Collection</span>
-        </button>
-      </a>
+      
+      <button id="btn-12" onclick="window.location.href='products.html?category=kids'">
+        <span>Explore Kids Collection</span>
+      </button>
+      
     </section>
 
     <!----------------------mens sction---------------------------SECTION-4---------------------------------------------------------------------------->
@@ -346,38 +358,53 @@ onsubmit="handleSearch(event)"
         <p>Discover top trends for every occasion.</p>
         <p>From smart casuals to formal sophistication.</p>
         <p>Upgrade your wardrobe today.</p>
-        <a href="men.html">
-          <button id="btn2">Mens</button>
-        </a>
+        
+          <!-- <button id="btn2">Mens</button> -->
+          <button id="btn2" onclick="window.location.href='products.html?category=men'">
+            Men
+          </button>
+        
       </article>
     </section>
-
-    <!-------------------------- Baby Section ---------------------- SECTION-6 ---------------------------------->
-    <section class="el6" id="baby-section">
-      <h2 class="sec6-heading">"Adorable Collections"</h2>
-      <article class="sec6-img">
-        <div class="img-container">
-          <img src="./images/cc3.png" />
-          <p class="img-text">Cozy Babywear</p>
-        </div>
-        <div class="img-container">
-          <img src="./images/cc3.png" />
-          <p class="img-text">Cute and Comfy</p>
-        </div>
-        <div class="img-container">
-          <img src="./images/cc3.png" />
-          <p class="img-text">Playtime Ready</p>
-        </div>
-        <div class="img-container">
-          <img src="./images/cc3.png" />
-          <p class="img-text">Adorable Outfits</p>
-        </div>
-      </article>
+ 
+   
     
-      <button id="btn-12" onclick="window.location.href='products.html?category=baby'">
-        <span>Explore Baby Collection</span>
-      </button>
-    </section>
+
+   <!-------------------------- Baby Section ---------------------- SECTION-6 ---------------------------------->
+<!-- Baby Section -------------------- SECTION-6 ---------------------------- -->
+<!-------------------------- Baby Section ---------------------- SECTION-6 ---------------------------------->
+<!-- Baby Section -------------------- SECTION-6 ---------------------------- -->
+<!-- Baby Section -------------------- SECTION-6 ---------------------------- -->
+<section class="el6" id="baby-section">
+  <h2 class="sec6-heading">"Adorable Collections"</h2>
+  <article class="sec6-img">
+    <div class="img-container">
+      <img src="./images/cc.png" />
+      <p class="img-text">Cozy Babywear</p>
+    </div>
+    <div class="img-container">
+      <img src="./images/cc2.png" />
+      <p class="img-text">Cute and Comfy</p>
+    </div>
+    <div class="img-container">
+      <img src="./images/cc3.png" />
+      <p class="img-text">Playtime Ready</p>
+    </div>
+    <div class="img-container">
+      <img src="./images/cc4.png" />
+      <p class="img-text">Adorable Outfits</p>
+    </div>
+  </article>
+
+  <button id="btn-12" onclick="window.location.href='products.html?category=baby'">
+    <span>Explore Baby Collection</span>
+  </button>
+</section>
+
+
+
+
+
     <!-- premium products for life showing text -->
     <p id="slide_heading">
       <i>Elite Savings on Your Unique Fashion </i> &#128150;
@@ -503,8 +530,12 @@ onsubmit="handleSearch(event)"
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src=".//js_files/SLIDE.JS"></script>
-    <script src="./js_files/nav.js"></script>
-    <script src="./js_files/main.js"></script>
+    <!-- <script src=".//js_files/SLIDE.JS"></script> -->
+    <!-- <script src="./js_files/nav.js"></script> -->
+    <script src="main.js"></script>
+   
+    <script>
+      
+    </script>
   </body>
 </html>

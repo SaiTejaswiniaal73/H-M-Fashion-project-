@@ -1,0 +1,493 @@
+[
+  {
+    "products": {
+      "women": [
+        {
+          "id": 1,
+          "name": "Women's partywear frock",
+          "category": "Women's Clothing",
+          "price": 1000,
+          "image": "https://littleboxindia.com/cdn/shop/files/f1d4802c9c39391020211dc1fb328304_720x.jpg?v=1719493846",
+          "description": "Comfortable and lightweight partywear frock with elegant look.",
+          "sizes": [
+            "S",
+            "M",
+            "L",
+            "XL"
+          ],
+          "colors": [
+            "Red",
+            "Pink",
+            "Black"
+          ]
+        }
+      ],
+      "men": [
+        {
+          "id": 2,
+          "name": "Men's casual shirt",
+          "category": "Men's Clothing",
+          "price": 1500,
+          "image": "https://example.com/men-shirt.jpg",
+          "description": "Stylish and comfortable casual shirt for everyday wear.",
+          "sizes": [
+            "M",
+            "L",
+            "XL"
+          ],
+          "colors": [
+            "Blue",
+            "White",
+            "Black"
+          ]
+        }
+      ],
+      "baby": [
+        {
+          "id": 3,
+          "name": "Baby girl's dress",
+          "category": "Baby Clothing",
+          "price": 500,
+          "image": "https://example.com/baby-dress.jpg",
+          "description": "Adorable dress for baby girls, perfect for any occasion.",
+          "sizes": [
+            "0-6 months",
+            "6-12 months",
+            "12-18 months"
+          ],
+          "colors": [
+            "Pink",
+            "White"
+          ]
+        }
+      ],
+      "kids": [
+        {
+          "id": 4,
+          "name": "Kid's sports shoes",
+          "category": "Kid's Footwear",
+          "price": 800,
+          "image": "https://example.com/kids-shoes.jpg",
+          "description": "Durable and stylish sports shoes for kids.",
+          "sizes": [
+            "25",
+            "26",
+            "27"
+          ],
+          "colors": [
+            "Red",
+            "Blue"
+          ]
+        }
+      ]
+    }
+  }
+]
+
+
+{
+  "men": [
+    {
+      "id": 1,
+      "name": "Men's Casual Shirt",
+      "category": "Men's Clothing",
+      "price": 1000,
+      "image": "https://littleboxindia.com/cdn/shop/files/89de8d61ab61d08cec85b84b30c710c3_300x.jpg?v=1722071415",
+      "description": "Comfortable and lightweight casual shirt.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blue", "Green", "White"]
+    },
+    {
+      "id": 2,
+      "name": "Men's Formal Shirt",
+      "category": "Men's Clothing",
+      "price": 1500,
+      "image": "https://littleboxindia.com/cdn/shop/files/50_1_720x.jpg?v=1720426678",
+      "description": "Stylish formal shirt for office wear.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["White", "Black", "Gray"]
+    },
+    {
+      "id": 3,
+      "name": "Men's Denim Jeans",
+      "category": "Men's Clothing",
+      "price": 1200,
+      "image": "https://littleboxindia.com/cdn/shop/files/a0bd01739a223266174428961cf0c4ed_720x.jpg?v=1714668076",
+      "description": "Classic denim jeans for a casual look.",
+      "sizes": ["28", "30", "32", "34", "36"],
+      "colors": ["Blue", "Black"]
+    },
+    {
+      "id": 4,
+      "name": "Men's T-Shirt",
+      "category": "Men's Clothing",
+      "price": 800,
+      "image": "https://littleboxindia.com/cdn/shop/files/3ca07232d0429857d68e9ede0ed7f318_720x.jpg?v=1714666648",
+      "description": "Soft cotton T-shirt for everyday wear.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["White", "Black", "Gray"]
+    },
+    {
+      "id": 5,
+      "name": "Men's Polo Shirt",
+      "category": "Men's Clothing",
+      "price": 1100,
+      "image": "https://littleboxindia.com/cdn/shop/files/155c17728ea6a53445bd2dbb93a4e014_720x.jpg?v=1712563860",
+      "description": "Classic polo shirt for a relaxed look.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Red", "Blue", "Black"]
+    },
+    {
+      "id": 6,
+      "name": "Men's Hoodie",
+      "category": "Men's Clothing",
+      "price": 1500,
+      "image": "https://littleboxindia.com/cdn/shop/products/dfff760f88edc14391e7192c0a89b2d8_720x.jpg?v=1709898616",
+      "description": "Cozy hoodie for a casual outfit.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Gray", "Black", "Navy"]
+    },
+    {
+      "id": 7,
+      "name": "Men's Leather Jacket",
+      "category": "Men's Clothing",
+      "price": 2000,
+      "image": "https://littleboxindia.com/cdn/shop/files/42_1_720x.jpg?v=1713620717",
+      "description": "Stylish leather jacket for a bold look.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Black", "Brown"]
+    },
+    {
+      "id": 8,
+      "name": "Men's Blazer",
+      "category": "Men's Clothing",
+      "price": 1800,
+      "image": "https://littleboxindia.com/cdn/shop/files/ca05ec7f0b32b979bf470e19ee894a22_720x.jpg?v=1716221770",
+      "description": "A formal blazer for professional wear.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Black", "Navy", "Gray"]
+    },
+    {
+      "id": 9,
+      "name": "Men's Sweatpants",
+      "category": "Men's Clothing",
+      "price": 1000,
+      "image": "https://littleboxindia.com/cdn/shop/files/a2647742f1e2ac9b531bfe4361473f89_720x.jpg?v=1715084256",
+      "description": "Relaxed fit sweatpants for lounging.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Gray", "Black", "Blue"]
+    },
+    {
+      "id": 10,
+      "name": "Men's Shorts",
+      "category": "Men's Clothing",
+      "price": 700,
+      "image": "https://littleboxindia.com/cdn/shop/files/43_1_720x.jpg?v=1713763109",
+      "description": "Comfortable shorts for summer.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Khaki", "Blue", "Black"]
+    },
+    {
+      "id": 11,
+      "name": "Men's Parka Jacket",
+      "category": "Men's Clothing",
+      "price": 1800,
+      "image": "https://littleboxindia.com/cdn/shop/products/22ba91abf1390001f32ee47ed68fb84e_720x.jpg?v=1696857279",
+      "description": "Warm parka jacket for winter weather.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Olive", "Black", "Navy"]
+    },
+    {
+      "id": 12,
+      "name": "Men's Chinos",
+      "category": "Men's Clothing",
+      "price": 200,
+      "image": "https://littleboxindia.com/cdn/shop/files/28d_d3808282-d2fc-45e4-88eb-23cb4910b970_720x.jpg?v=1691412332",
+      "description": "Comfortable chinos for a smart-casual look.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Beige", "Khaki", "Black"]
+    },
+    {
+      "id": 13,
+      "name": "Men's Cardigan",
+      "category": "Men's Clothing",
+      "price": 1300,
+      "image": "https://littleboxindia.com/cdn/shop/products/0bff4d5a2ed712e90d778d315a9c0df7_720x.jpg?v=1709900085",
+      "description": "Soft cardigan for layering.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Gray", "Black", "Beige"]
+    },
+    {
+      "id": 14,
+      "name": "Men's Button-Up Shirt",
+      "category": "Men's Clothing",
+      "price": 1400,
+      "image": "https://littleboxindia.com/cdn/shop/products/bbc7b858e5172c12d4367d8480f11269_720x.jpg?v=1691403792",
+      "description": "Classic button-up shirt for versatile wear.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["White", "Blue", "Black"]
+    },
+    {
+      "id": 15,
+      "name": "Men's Tank Top",
+      "category": "Men's Clothing",
+      "price": 600,
+      "image": "https://littleboxindia.com/cdn/shop/files/177_1_720x.jpg?v=1713619819",
+      "description": "Lightweight tank top for summer days.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["White", "Black", "Red"]
+    },
+    {
+      "id": 16,
+      "name": "Men's V-Neck T-Shirt",
+      "category": "Men's Clothing",
+      "price": 700,
+      "image": "https://littleboxindia.com/cdn/shop/files/3f9c84b6a2842b595f2e8edb0ac0143e_720x.jpg?v=1711480476",
+      "description": "Casual v-neck T-shirt for everyday wear.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Gray", "White", "Black"]
+    },
+    {
+      "id": 17,
+      "name": "Men's Sweater",
+      "category": "Men's Clothing",
+      "price": 1600,
+      "image": "https://littleboxindia.com/cdn/shop/files/37_3_720x.jpg?v=1715074713",
+      "description": "Comfortable sweater for cool weather.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Blue", "Gray", "Red"]
+    },
+    {
+      "id": 18,
+      "name": "Men's Bomber Jacket",
+      "category": "Men's Clothing",
+      "price": 2200,
+      "image": "https://littleboxindia.com/cdn/shop/files/59_1_720x.jpg?v=1716224307",
+      "description": "Stylish bomber jacket for a trendy look.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Black", "Olive", "Navy"]
+    },
+    {
+      "id": 19,
+      "name": "Men's Sweatshirt",
+      "category": "Men's Clothing",
+      "price": 900,
+      "image": "https://littleboxindia.com/cdn/shop/products/1cc59d74dff65bfb65863e3f0ad4e0be_720x.jpg?v=1707347017",
+      "description": "Comfy sweatshirt for casual days.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Black", "Gray", "Red"]
+    },
+    {
+      "id": 20,
+      "name": "Men's Trench Coat",
+      "category": "Men's Clothing",
+      "price": 2500,
+      "image": "https://littleboxindia.com/cdn/shop/products/78d7e4a351c97e3a70c4a4c01721b255_720x.jpg?v=1693658624",
+      "description": "Elegant trench coat for formal wear.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["Beige", "Black", "Gray"]
+    }
+  ]
+}
+"newborn": [
+  {
+    "id": 1,
+    "name": "Newborn Onesie",
+    "category": "Newborn",
+    "price": 1000,
+    "image": "https://tse4.mm.bing.net/th?id=OIP.T7WEnHku6jWbjALCnRhdHQHaHa&pid=Api",
+    "description": "A soft, comfortable onesie designed for newborns, ensuring ease of movement and comfort.",
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": 2,
+    "name": "Newborn Blanket",
+    "category": "Newborn",
+    "price": 1200,
+    "image": "https://cdn.fcglcdn.com/brainbees/images/products/583x720/18704135a.webp",
+    "description": "A cozy blanket perfect for swaddling and keeping your newborn warm.",
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": 3,
+    "name": "Newborn Cap",
+    "category": "Newborn",
+    "price": 800,
+    "image": "https://assets.ajio.com/medias/sys_master/root/20240819/ZmMU/66c342796f60443f3113aa02/-473Wx593H-466549600-blue-MODEL.jpg",
+    "description": "A gentle cap to keep your newborn's head warm and protected.",
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": 4,
+    "name": "Newborn Bodysuit",
+    "category": "Newborn",
+    "price": 1100,
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcR9LhQE6cBu0-5M0uoEKSJy6GQkr5xPl8r4kYGzp8fqCNEJtkgemF6OjTFNCzMfUGXK5lI9mNOjp6i6TcS_WjiOMoEal8bBsQuZA1SfHOAR6_3a9dxkisHZwg",
+    "description": "A snug bodysuit ideal for layering and providing comfort throughout the day.",
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": 5,
+    "name": "Newborn Booties",
+    "category": "Newborn",
+    "price": 900,
+    "image": "https://tse4.mm.bing.net/th?id=OIP.Ii8xAH63cAQ1PSDS653V7AHaHF&pid=Api",
+    "description": "Soft booties to keep your newborn's feet warm and comfortable.",
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": 6,
+    "name": "Newborn Mittens",
+    "category": "Newborn",
+    "price": 500,
+    "image": "https://tse2.mm.bing.net/th?id=OIP.zxg67cR2ONP02rLk1UshxAHaHa&pid=Api",
+    "description": "Protective mittens to prevent your newborn from scratching themselves.",
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": 7,
+    "name": "Newborn Pajamas",
+    "category": "Newborn",
+    "price": 1300,
+    "image": "https://tse4.mm.bing.net/th?id=OIP.pQM5ymhARe2xuT5OJTcScwHaJ4&pid=Api",
+    "description": "Comfortable pajamas designed for a peaceful night's sleep.",
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": 8,
+    "name": "Newborn Socks",
+    "category": "Newborn",
+    "price": 400,
+    "image": "https://tse1.mm.bing.net/th?id=OIP.uoZqz6sRFrb8l-Dz64tYAAHaHa&pid=Api",
+    "description": "Cute and cozy socks to keep your newborn's feet warm.",
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": 9,
+    "name": "Newborn Swaddle",
+    "category": "Newborn",
+    "price": 1500,
+    "image": "https://tse1.mm.bing.net/th?id=OIP.TiyTAnaTHL4oOd1YsR8g7AHaHa&pid=Api",
+    "description": "A soft swaddle to help your newborn feel secure and comfortable.",
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": 10,
+    "name": "Newborn Hat",
+    "category": "Newborn",
+    "price": 700,
+    "image": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/e/3/e348103922405_1.jpg?rnd=20200526195200&tr=w-1080",
+    "description": "A warm hat to protect your newborn's head from the cold.",
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": 11,
+    "name": "Newborn Romper",
+    "category": "Newborn",
+    "price": 1000,
+    "image": "https://tendsy.in/wp-content/uploads/2024/10/PHOTO-2024-01-06-13-09-34.webp",
+    "description": "A stylish romper perfect for casual outings.",
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": 12,
+    "name": "Newborn Sleep Sack",
+    "category": "Newborn",
+    "price": 1200,
+    "image": "https://tse1.mm.bing.net/th?id=OIP.5lOEPHjSKM_rZmY-eaW0RwHaI4&pid=Api",
+    "description": "A wearable blanket to keep your newborn safe and warm during sleep.",
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": 13,
+    "name": "Newborn Sleeper",
+    "category": "Newborn",
+    "price": 1300,
+    "image": "https://duckduckbaby.in/cdn/shop/files/DDB7166_1.jpg?v=1718563505&width=600",
+    "description": "A one-piece sleeper for easy dressing and undressing.",
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": 14,
+    "name": "Newborn Bodysuit Set",
+    "category": "Newborn",
+    "price": 1400,
+    "image": "https://tse4.mm.bing.net/th?id=OIP.q-mqMq_t3Y4ldXGeGln5_gAAAA&pid=Api",
+    "description": "A set of bodysuits offering variety and comfort for your newborn.",
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": 15,
+    "name": "Newborn Footie Pajamas",
+    "category": "Newborn",
+    "price": 1500,
+    "image": "https://tse1.mm.bing.net/th?id=OIP.-Ymu2OxS6wgwK_bZUATQ6AHaJ4&pid=Api",
+    "description": "Footed pajamas to keep your newborn's feet warm and cozy.",
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": 16,
+    "name": "Newborn Jacket",
+    "category": "Newborn",
+    "price": 1600,
+    "image": "https://tse4.mm.bing.net/th?id=OIP.DtCDZHqAvjUix5wCvpFiqAHaHa&pid=Api",
+    "description": "A lightweight jacket suitable for cooler days.",
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": 17,
+    "name": "Newborn Socks Set",
+    "category": "Newborn",
+    "price": 800,
+    "image": "https://tse1.mm.bing.net/th?id=OIP.i2g3s5mCaLuj1tW6AY2DHQHaHa&pid=Api",
+    "description": "A collection of socks in various colors and designs.",
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": 18,
+    "name": "Newborn Sleeveless Bodysuit",
+    "category": "Newborn",
+    "price": 900,
+    "image": "https://maaandbaby.com/cdn/shop/products/1_b309967c-eec1-48ef-94bb-5acccc338586.jpg?v=1680002001",
+    "description": "A sleeveless bodysuit ideal for warmer climates.",
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": 19,
+    "name": "Newborn Coverall",
+    "category": "Newborn",
+    "price": 1000,
+    "image": "https://maaandbaby.com/cdn/shop/files/0_5acac255-cb5d-4787-8391-94647b7e7132.jpg?v=1695783372",
+    "description": "A versatile coverall that provides comfort and flexibility for your newborn.",
+    "sizes": [],
+    "colors": []
+  },
+  {
+    "id": 20,
+    "name": "Newborn Diaper Cover",
+    "category": "Newborn",
+    "price": 600,
+    "image": "https://tse4.mm.bing.net/th?id=OIP.3gHL2E-kNdeIY-8g9dVmFQHaGb&pid=Api",
+    "description": "A comfortable diaper cover to help keep your newborn's diaper in place.",
+    "sizes": [],
+    "colors": []
+  }
+]

@@ -1,7 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Fetch products when the page loads
   fetchProducts();
-  
+
+  // Attach event listener for the search form
+  document.getElementById("search-form").addEventListener("submit", handleSearch);
+
   // Get the current text of <h1 class="text-center">
   const h1Text = document.querySelector("h1.text-center").textContent;
   console.log("Current H1 Text:", h1Text); // Logs: "Fashion Recommendation App"
@@ -33,6 +36,14 @@ async function fetchProducts(query = '') {
   } catch (error) {
     console.error("Error fetching products:", error);
   }
+}
+
+// Handle the search functionality
+function handleSearch(event) {
+  event.preventDefault(); // Prevent form submission
+  const query = document.getElementById("search-input").value.trim().toLowerCase(); // Get user input
+
+  fetchProducts(query); // Fetch products with the search query
 }
 
 // Function to display products with pagination
@@ -94,46 +105,6 @@ function addToCart(id) {
   alert("Added to Cart!");
 }
 
-// Handle the search functionality
-function handleSearch(event) {
-  event.preventDefault(); // Prevent form submission
-  const query = document.getElementById("search-input").value.trim().toLowerCase(); // Get user input
-
-  fetchProducts(query); // Fetch products with the search query
-}
-
-// let favCountLarge = 0; // For large screen
-// let favCountSmall = 0; // For small screen
-// let cartCountLarge = 0; // For large screen
-// let cartCountSmall = 0; // For small screen
-
-// // Function to add to favorites
-// function addToFavorites() {
-//   favCountLarge++; // Increase the favorite count for large screen
-//   favCountSmall++; // Increase the favorite count for small screen
-//   updateFavCount(); // Update the display for both screens
-//   console.log("Favorites Count: " + favCountLarge);
-// }
-
-// // Function to add to cart
-// function addToCart() {
-//   cartCountLarge++; // Increase the cart count for large screen
-//   cartCountSmall++; // Increase the cart count for small screen
-//   updateCartCount(); // Update the display for both screens
-//   console.log("Cart Count: " + cartCountLarge);
-// }
-
-// // Update the favorite count display
-// function updateFavCount() {
-//   document.getElementById("fav-count-large").textContent = favCountLarge;
-//   document.getElementById("fav-count-small").textContent = favCountSmall;
-// }
-
-// // Update the cart count display
-// function updateCartCount() {
-//   document.getElementById("cart-count-large").textContent = cartCountLarge;
-//   document.getElementById("cart-count-small").textContent = cartCountSmall;
-// }
 let favCountLarge = 0; // For large screen
 let favCountSmall = 0; // For small screen
 let cartCountLarge = 0; // For large screen

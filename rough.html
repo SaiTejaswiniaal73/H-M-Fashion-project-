@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fashion Recommendation App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <style>
+    /*------------------------------ Styling for Navigation Bar ----------------------------*/
+
+body {
+  padding-top: 20px; /* Adjust this based on navbar height */
+}
+
+#nav {
+  background: linear-gradient(135deg, #4B0082, #FF69B4, #FFFFFF) !important;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  max-width: 100%;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+html, body {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+@media (min-width: 992px) {
+  .navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .navbar-nav {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar-nav, .search-container {
+    display: none !important;
+  }
+
+  .small-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav id="nav" class="navbar navbar-expand-lg navbar-light w-100" style="background: linear-gradient(135deg, #8a2be2, #da70d6) !important">
+    <div class="container">
+      <a class="navbar-brand d-none d-lg-block" href="#">
+        <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
+      </a>
+      <ul class="navbar-nav d-none d-lg-flex">
+        <li class="nav-item me-3">
+          <a class="nav-link home-link" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link men-link" href="#mens-section">Men</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link women-link" href="#womens-section">Women</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link kids-link" href="#kids-section">Kids</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link baby-link" href="#baby-section">Baby</a>
+        </li>
+      </ul>
+
+      <!-- Search Form -->
+      <form class="d-flex search-container" role="search" onsubmit="handleSearch(event)">
+        <input id="search-input" class="form-control me-2" type="search" placeholder="Search here..." aria-label="Search" />
+        <button class="btn btn-outline-dark" type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+
+      <!-- User Actions -->
+      <ul class="navbar-nav user-icons d-none d-lg-flex">
+        <li class="nav-item">
+          <a class="nav-link" href="#home"><i class="fas fa-user"></i></a>
+        </li>
+        <li class="nav-item" id="fav_nav">
+          <a id="wishlist-link-large" class="nav-link position-relative" href="#wishlist.html">
+            <i class="fas fa-heart text-danger"></i>
+            <span id="fav-count" class="badge-count">0</span>
+          </a>
+        </li>
+        <li class="nav-item d-none d-lg-block">
+          <a id="cart-link-large" class="nav-link position-relative" href="#">
+            <i class="fas fa-shopping-bag text-dark"></i>
+            <span id="bag-count" class="badge-count">0</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="d-flex d-lg-none small-nav">
+        <a class="navbar-brand" href="#">
+          <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
+        </a>
+        <div class="search-box">
+          <button class="btn btn-outline-dark" id="searchBtn">
+            <i class="fas fa-search"></i>
+          </button>
+          <input class="form-control search-input" type="search" placeholder="Search" id="searchInput" />
+        </div>
+        <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
+        <a id="wishlist-link" class="nav-link position-relative" href="#">
+          <i class="fas fa-heart text-danger"></i>
+          <span id="fav-count" class="badge-count">0</span>
+        </a>
+        <a id="cart-link" class="nav-link position-relative d-lg-none" href="#">
+          <i class="fas fa-shopping-bag text-dark"></i>
+          <span id="bag-count" class="badge-count">0</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Product Section -->
+  <div id="product-section" class="container mt-5">
+    <div class="row" id="product-list">
+      <!-- Dynamic product cards will go here -->
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  // Function to fetch products from the API
+  async function fetchProducts() {
+    try {
+      const response = await fetch('https://67a3589d31d0d3a6b78335fc.mockapi.io/clothing/CLOTH');
+      const data = await response.json();
+      displayProducts(data);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  }
+
+  // Function to display products dynamically
+  function displayProducts(products) {
+    const productList = document.getElementById('product-list');
+    productList.innerHTML = ''; // Clear previous products
+
+    products.forEach(product => {
+      const productCard = `
+        <div class="col-md-3 mb-4">
+          <div class="card">
+            <img src="${product.imageUrl}" class="card-img-top" alt="${product.name}">
+            <div class="card-body">
+              <h5 class="card-title">${product.name}</h5>
+              <p class="card-text">$${product.price}</p>
+              <button class="btn btn-outline-dark">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      `;
+      productList.innerHTML += productCard;
+    });
+  }
+
+  // Search functionality
+  function handleSearch(event) {
+    event.preventDefault();
+    const searchValue = document.getElementById("search-input").value.toLowerCase();
+    fetchProducts().then(products => {
+      const filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchValue));
+      displayProducts(filteredProducts);
+    });
+  }
+
+  // Initialize page
+  fetchProducts();
+
+  /*** Navbar and Filter Functionality ***/
+
+  // Search toggle button for mobile
+  const searchBtn = document.getElementById("searchBtn");
+  const searchInput = document.getElementById("searchInput");
+
+  if (searchBtn && searchInput) {
+    searchBtn.addEventListener("click", function () {
+      if (searchInput.style.display === "none" || searchInput.style.display === "") {
+        searchInput.style.display = "block";
+        searchInput.focus(); // Auto-focus when opened
+      } else {
+        searchInput.style.display = "none";
+      }
+    });
+  }
+
+  // Filter Menu Toggle
+  const filterToggle = document.getElementById("filter-toggle");
+  const filterMenu = document.getElementById("filter-menu");
+
+  if (filterToggle && filterMenu) {
+    filterToggle.addEventListener("click", function () {
+      filterMenu.classList.toggle("active");
+    });
+
+    // Close filter menu when clicking outside
+    document.addEventListener("click", function (event) {
+      if (!filterToggle.contains(event.target) && !filterMenu.contains(event.target)) {
+        filterMenu.classList.remove("active");
+      }
+    });
+  }
+
+  // Badge Count Updates (Favorites, Cart)
+  function updateCount(type, count) {
+    let countElement = document.getElementById(type + "-count");
+    if (countElement) {
+      countElement.textContent = count;
+      countElement.style.display = count > 0 ? "flex" : "none";
+    }
+  }
+
+  // Example: Initializing counts (can be updated dynamically)
+  updateCount("fav", 0); // Favorites count
+  updateCount("bag", 0); // Shopping bag count
+});
+
+  </script>
+</body>
+</html>
