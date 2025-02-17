@@ -38,43 +38,53 @@
         </a>
 
         <!-- Large Device Links (No Changes Here) -->
-        <ul class="navbar-nav d-none d-lg-flex">
-          <li class="nav-item me-3">
-            <a class="nav-link home-link" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link men-link" href="#mens-section">Men</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link women-link" href="#womens-section">Women</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link kids-link" href="#kids-section">Kids</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link baby-link" href="#baby-section">Baby</a>
-          </li>
-        </ul>
+
+          <ul class="navbar-nav d-none d-lg-flex">
+            <li class="nav-item"  id="nav_all">
+              <button id="btn-all" class="nav-link" onclick="window.location.href='products.html'">
+                All
+              </button>
+            </li>
+            
+            <li class="nav-item">
+              <a id="btn2" class="nav-link men-link" href="products.html?category=men">
+                Men
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a id="btn1" class="nav-link women-link" href="products.html?category=women">
+                Women
+              </a>
+            </li>
+            
+            
+            <li class="nav-item">
+              <a class="nav-link kids-link" href="products.html?category=kids">Kids</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link baby-link" href="products.html?category=baby">Baby</a>
+            </li>
+          </ul>
+          
         
         <!-- Search Bar (Large Devices - No Changes) -->
 
     <!-- Search Form -->
-<form
-class="d-flex search-container"
-role="search"
-onsubmit="handleSearch(event)"
->
-<input
-  id="search-input"
-  class="form-control me-2"
-  type="search"
-  placeholder="Search here..."
-  aria-label="Search"
-/>
-<button class="btn btn-outline-dark" type="submit">
-  <i class="fas fa-search"></i>
-</button>
-</form>
+    <form class="d-flex search-container" role="search" onsubmit="handleSearch(event)">
+      <input
+        id="search-input"
+        class="form-control me-2 custom-search-input"
+        type="search"
+        placeholder="Search here..."
+        aria-label="Search"
+      />
+      <button class="btn btn-outline-dark" type="submit">
+        <i class="fas fa-search"></i>
+      </button>
+    </form>
+    
 
         <!-- User Actions (Icons for All Devices) -->
         <ul class="navbar-nav user-icons d-none d-lg-flex">
@@ -277,7 +287,7 @@ onsubmit="handleSearch(event)"
         <p>It's the biggest sale of the year!</p>
         <p>Upgrade your wardrobe today.</p>
         <p>Enjoy the best rates!</p>
-        <button id="btn1" onclick="window.location.href='women.html'">
+        <button id="btn1" onclick="window.location.href='products.html?category=women'">
           Womens
         </button>
       </article>
@@ -310,11 +320,9 @@ onsubmit="handleSearch(event)"
           <p class="img-text">Adorable Outfits</p>
         </div>
       </article>
-      <a href="kids.html">
-        <button id="btn-12">
-          <span>Explore Kids Collection</span>
-        </button>
-      </a>
+      <button id="btn-12" onclick="window.location.href='products.html?category=kids'">
+        <span>Explore Kids Collection</span>
+      </button>
     </section>
 
     <!----------------------mens sction---------------------------SECTION-4---------------------------------------------------------------------------->
@@ -346,9 +354,10 @@ onsubmit="handleSearch(event)"
         <p>Discover top trends for every occasion.</p>
         <p>From smart casuals to formal sophistication.</p>
         <p>Upgrade your wardrobe today.</p>
-        <a href="men.html">
-          <button id="btn2">Mens</button>
-        </a>
+        <button id="btn2" onclick="window.location.href='products.html?category=men'">
+          Men
+        </button>
+       
       </article>
     </section>
 

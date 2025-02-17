@@ -1,3 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Display</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="products-container" class="product-grid"></div>
+    <div id="pageIndicator" class="page-indicator">Page 1</div>
+    <button id="previous-btn" onclick="changePage(-1)">Previous</button>
+    <button id="next-btn" onclick="changePage(1)">Next</button>
+    <script src="script.js"></script>
+</body>
+</html>
+
+/* styles.css */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+}
+.product-card {
+    width: calc(100% / 4 - 10px);
+    height: 280px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.product-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+.product-name, .product-price, .product-sizes, .product-colors {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+.product-name { background-color: #f8f9fa; }
+.product-price { background-color: #e9ecef; }
+.product-sizes { background-color: #dee2e6; }
+.product-colors { background-color: #ced4da; }
+.button-box {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+/* script.js */
 const apiUrl = 'https://67a3589d31d0d3a6b78335fc.mockapi.io/clothing/CLOTH';
 let currentCategory = '';
 let allProducts = [];
