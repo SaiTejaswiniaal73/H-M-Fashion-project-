@@ -201,115 +201,15 @@
       "description": "A formal shirt for professional work wear.",
       "sizes": ["S", "M", "L"],
       "colors": ["White", "Black", "Navy"]
-    },
-    {
-      "id": 21,
-      "name": "Product 21",
-      "category": "Men's Clothing",
-      "price": 900,
-      "image": "https://th.bing.com/th/id/OIP.ZES7WZi8LlO9FTNWkAaZPQAAAA?rs=1&pid=ImgDetMain",
-      "description": "A stylish product.",
-      "sizes": ["M", "L", "XL"],
-      "colors": ["Blue", "Red", "Yellow"]
-    },
-    {
-      "id": 22,
-      "name": "Product 22",
-      "category": "Men's Clothing",
-      "price": 1200,
-      "image": "https://th.bing.com/th/id/OIP.ZES7WZi8LlO9FTNWkAaZPQAAAA?rs=1&pid=ImgDetMain",
-      "description": "Comfortable men's shirt.",
-      "sizes": ["M", "L", "XL"],
-      "colors": ["Green", "Black", "White"]
-    },
-    {
-      "id": 23,
-      "name": "Product 23",
-      "category": "Men's Clothing",
-      "price": 800,
-      "image": "https://th.bing.com/th/id/OIP.ZES7WZi8LlO9FTNWkAaZPQAAAA?rs=1&pid=ImgDetMain",
-      "description": "Casual men's pants.",
-      "sizes": ["M", "L", "XL"],
-      "colors": ["Grey", "Brown", "Black"]
-    },
-    {
-      "id": 24,
-      "name": "Product 24",
-      "category": "Men's Clothing",
-      "price": 1500,
-      "image": "https://th.bing.com/th/id/OIP.ZES7WZi8LlO9FTNWkAaZPQAAAA?rs=1&pid=ImgDetMain",
-      "description": "Stylish men's jacket.",
-      "sizes": ["M", "L", "XL"],
-      "colors": ["Blue", "Black", "Red"]
-    },
-    {
-      "id": 25,
-      "name": "Product 25",
-      "category": "Men's Clothing",
-      "price": 1100,
-      "image": "https://th.bing.com/th/id/OIP.ZES7WZi8LlO9FTNWkAaZPQAAAA?rs=1&pid=ImgDetMain",
-      "description": "Elegant men's shirt.",
-      "sizes": ["S", "M", "L"],
-      "colors": ["White", "Black", "Navy"]
-    },
-    {
-      "id": 26,
-      "name": "Product 26",
-      "category": "Men's Clothing",
-      "price": 1350,
-      "image": "https://th.bing.com/th/id/OIP.ZES7WZi8LlO9FTNWkAaZPQAAAA?rs=1&pid=ImgDetMain",
-      "description": "Trendy men's hoodie.",
-      "sizes": ["M", "L", "XL"],
-      "colors": ["Grey", "Blue", "Black"]
-    },
-    {
-      "id": 27,
-      "name": "Product 27",
-      "category": "Men's Clothing",
-      "price": 950,
-      "image": "https://th.bing.com/th/id/OIP.ZES7WZi8LlO9FTNWkAaZPQAAAA?rs=1&pid=ImgDetMain",
-      "description": "Men's casual t-shirt.",
-      "sizes": ["S", "M", "L"],
-      "colors": ["Red", "Yellow", "Green"]
-    },
-    {
-      "id": 28,
-      "name": "Product 28",
-      "category": "Men's Clothing",
-      "price": 1400,
-      "image": "https://th.bing.com/th/id/OIP.ZES7WZi8LlO9FTNWkAaZPQAAAA?rs=1&pid=ImgDetMain",
-      "description": "Men's denim jacket.",
-      "sizes": ["M", "L", "XL"],
-      "colors": ["Blue", "Black", "Grey"]
-    },
-    {
-      "id": 29,
-      "name": "Product 29",
-      "category": "Men's Clothing",
-      "price": 1250,
-      "image": "https://th.bing.com/th/id/OIP.ZES7WZi8LlO9FTNWkAaZPQAAAA?rs=1&pid=ImgDetMain",
-      "description": "Trendy men's shorts.",
-      "sizes": ["S", "M", "L"],
-      "colors": ["Brown", "Green", "Black"]
-    },
-    {
-      "id": 30,
-      "name": "Product 30",
-      "category": "Men's Clothing",
-      "price": 1050,
-      "image": "https://th.bing.com/th/id/OIP.ZES7WZi8LlO9FTNWkAaZPQAAAA?rs=1&pid=ImgDetMain",
-      "description": "Men's athletic wear.",
-      "sizes": ["M", "L", "XL"],
-      "colors": ["Yellow", "Black", "Red"]
     }
       ],
       "men": [
         {
           "id": 1,
-          "name": "Men's casual shirt",
+          "name": "Men's traditional dress",
           "category": "Men's Clothing",
           "price": 1500,
-          "image": "https://example.com/men-shirt.jpg",
+          "image": "https://media.istockphoto.com/id/1272611048/photo/young-south-indian-man.jpg?s=612x612&w=0&k=20&c=veOTFiSl1m_qpw1CGIIoTyBoOjFgybRmumF9vIJkNxc=",
           "description": "Stylish and comfortable casual shirt for everyday wear.",
           "sizes": [
             "M",
@@ -321,6 +221,7 @@
             "White",
             "Black"
           ]
+          
           
         },
             {
@@ -516,11 +417,11 @@
       ],
       "baby": [
         {
-          "id": 3,
+          "id": 1,
           "name": "Baby girl's dress",
           "category": "Baby Clothing",
           "price": 500,
-          "image": "https://example.com/baby-dress.jpg",
+          "image": "https://media.istockphoto.com/id/1338898450/photo/standing-portrait-of-little-radha-girl-outdoors-in-public-park.jpg?s=612x612&w=0&k=20&c=XqBsJuKMnKua_zDXcoLbIi3YDdCs4IkhkQ44AwraMtE=",
           "description": "Adorable dress for baby girls, perfect for any occasion.",
           "sizes": [
             "0-6 months",
@@ -726,11 +627,11 @@
       ],
       "kids": [
         {
-          "id": 4,
-          "name": "Kid's sports shoes",
-          "category": "Kid's Footwear",
+          "id": 1,
+          "name": "Kid's traditional",
+          "category": "Kid's Clothing",
           "price": 800,
-          "image": "https://example.com/kids-shoes.jpg",
+          "image": "https://media.istockphoto.com/id/1255975249/photo/indian-girl-child-wearing-ethnic-costume-on-krishna-jayanti-festival-sitting-like-radhe.jpg?s=612x612&w=0&k=20&c=g0OytlJtDPyB-4XkzFoek51KdYK7vGa7IglhOf2lwxk=",
           "description": "Durable and stylish sports shoes for kids.",
           "sizes": [
             "25",

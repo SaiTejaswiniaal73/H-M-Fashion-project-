@@ -90,36 +90,7 @@
 
         <!-- Search Bar (Large Devices - No Changes) -->
 
-        <!-- Search Form -->
-        <!-- <form
-          class="d-flex search-container"
-          role="search"
-          onsubmit="handleSearch(event)"
-        >
-          <input
-            id="search-input"
-            class="form-control me-2 custom-search-input"
-            type="search"
-            placeholder="Search here..."
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-dark" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </form> -->
 
-        <!-- <form class="d-flex search-container" role="search" onsubmit="handleSearch(event)">
-          <input
-            id="search-input"
-            class="form-control me-2 custom-search-input"
-            type="search"
-            placeholder="Search here..."
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-dark" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </form> -->
         <form class="d-flex search-container" role="search" onsubmit="handleSearch(event)">
           <input id="search-input" class="form-control me-2 custom-search-input" type="search" placeholder="Search here..." aria-label="Search" />
           <button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
@@ -138,8 +109,9 @@
         <!-- User Actions (Icons for All Devices) -->
         <ul class="navbar-nav user-icons d-none d-lg-flex">
           <li class="nav-item">
-            <a class="nav-link" href="#home"><i class="fas fa-user"></i></a>
-          </li>
+            <a class="nav-link" href="./login/loginPage.html"><i class="fas fa-user"></i></a>
+        </li>
+        
 
           <ul class="navbar-nav user-icons d-none d-lg-flex">
             <!-- Favorites Icon (Large Screen) -->
@@ -171,9 +143,10 @@
         <!-- Small Device Layout (Only Logo, Search, Sign-in, Fav, Bag) -->
 
         <div class="d-flex d-lg-none small-nav">
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="./login/loginPage.html">
             <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
           </a>
+
 
           <div class="search-box">
             <button class="btn btn-outline-dark" id="searchBtn">
@@ -580,119 +553,31 @@
     </footer>
 
 
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+  const userId = localStorage.getItem("userId");
+
+  // If user is not logged in, redirect to login page
+  if (!userId) {
+      alert("Please log in to access your cart and favorites.");
+      window.location.href = "./login/loginPage.html";  // Redirect to login page
+  } else {
+      // If user is logged in, you can now display their cart and favs or let them add items.
+      console.log("User is logged in:", userId);
+  }
+});
+
+    </script>
+
+<!-- //login thing -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src=".//js_files/SLIDE.JS"></script>
+    <!-- <script src=".//js_files/SLIDE.JS"></script> -->
     <script src="./js_files/nav.js"></script>
     <script src="./js_files/main.js"></script>
-    <script src="./js_files/search.js"></script>
     <script src="./js_files/search_main.js"></script>
-    <!-- main.html -->
-
-
-<!-- <script>
-// Function to handle search in main.html
-function handleSearch(event) {
-  if (event) event.preventDefault(); // Prevent form submission if triggered from a form
-
-  // Get search query from both search bars
-  let searchQuery = document.getElementById("search-input")?.value.toLowerCase().trim() || 
-                    document.getElementById("searchInput")?.value.toLowerCase().trim();
-
-  if (!searchQuery) {
-      alert("Please enter a search term.");
-      return;
-  }
-
-  // Fetch products from API
-  fetch("https://67a3589d31d0d3a6b78335fc.mockapi.io/clothing/CLOTH")
-      .then(response => response.json())
-      .then(products => {
-          let filteredProducts = [];
-
-          const availableCategories = ["women", "men", "kids", "baby"];
-          availableCategories.forEach(category => {
-              if (products[0].products[category]) {
-                  filteredProducts = [
-                      ...filteredProducts,
-                      ...products[0].products[category].filter(product =>
-                          product.name.toLowerCase().includes(searchQuery)
-                      ),
-                  ];
-              }
-          });
-
-          // Store filtered products in localStorage
-          localStorage.setItem('searchResults', JSON.stringify(filteredProducts));
-
-          // Redirect to product.html to display results
-          window.location.href = "products.html";
-      })
-      .catch(error => console.error("Error fetching products:", error));
-}
-
-// Attach event listener to the desktop search form
-document.querySelector(".search-container").addEventListener("submit", handleSearch);
-
-// Optional: Allow Enter key to trigger search in mobile input field
-document.getElementById("searchInput").addEventListener("keypress", function (event) {
-  if (event.key === "Enter") {
-      handleSearch(event);
-  }
-});
-</script> -->
-
-<script>
-function handleSearch(event) {
-  if (event) event.preventDefault(); // Prevent form submission if triggered from a form
-
-  // Get search query from both search bars
-  let searchQuery = document.getElementById("search-input")?.value.toLowerCase().trim() || 
-                    document.getElementById("searchInput")?.value.toLowerCase().trim();
-
-  if (!searchQuery) {
-      alert("Please enter a search term.");
-      return;
-  }
-
-  // Fetch products from API
-  fetch("https://67a3589d31d0d3a6b78335fc.mockapi.io/clothing/CLOTH")
-      .then(response => response.json())
-      .then(products => {
-          let filteredProducts = [];
-
-          const availableCategories = ["women", "men", "kids", "baby"];
-          availableCategories.forEach(category => {
-              if (products[0].products[category]) {
-                  filteredProducts = [
-                      ...filteredProducts,
-                      ...products[0].products[category].filter(product =>
-                          product.name.toLowerCase().includes(searchQuery)
-                      ),
-                  ];
-              }
-          });
-
-          // Store the filtered products and search query in localStorage
-          localStorage.setItem('searchQuery', searchQuery); // Store search term
-          localStorage.setItem('searchResults', JSON.stringify(filteredProducts)); // Store filtered products
-
-          // Redirect to product.html
-          window.location.href = "products.html";
-      })
-      .catch(error => console.error("Error fetching products:", error));
-}
-
-// Attach event listener to the desktop search form
-document.querySelector(".search-container").addEventListener("submit", handleSearch);
-
-// Optional: Allow Enter key to trigger search in mobile input field
-document.getElementById("searchInput").addEventListener("keypress", function (event) {
-  if (event.key === "Enter") {
-      handleSearch(event);
-  }
-});
-</script>
-  </body>
+   
+</body>
   </html>
 
 

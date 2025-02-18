@@ -5,7 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (searchBtn && searchInput) {
     searchBtn.addEventListener("click", function () {
-      if (searchInput.style.display === "none" || searchInput.style.display === "") {
+      if (
+        searchInput.style.display === "none" ||
+        searchInput.style.display === ""
+      ) {
         searchInput.style.display = "block";
         searchInput.focus(); // Auto-focus when opened
       } else {
@@ -25,22 +28,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Close filter menu when clicking outside
     document.addEventListener("click", function (event) {
-      if (!filterToggle.contains(event.target) && !filterMenu.contains(event.target)) {
+      if (
+        !filterToggle.contains(event.target) &&
+        !filterMenu.contains(event.target)
+      ) {
         filterMenu.classList.remove("active");
       }
     });
   }
 
-  /*** BADGE COUNT UPDATES ***/
-  function updateCount(type, count) {
-    let countElement = document.getElementById(type + "-count");
-    if (countElement) {
-      countElement.textContent = count;
-      countElement.style.display = count > 0 ? "flex" : "none";
-    }
-  }
-
-  // Example: Initializing counts (can be updated dynamically)
-  updateCount("fav", 0); // Favorites count
-  updateCount("bag", 0); // Shopping bag count
 });
+
+
+
+//   /*** BADGE COUNT UPDATES ***/
+//   function updateCount(type, count) {
+//     let countElement = document.getElementById(type + "-count");
+//     if (countElement) {
+//       countElement.textContent = count;
+//       countElement.style.display = count > 0 ? "flex" : "none";
+//     }
+//   }
+
+//   // Example: Initializing counts (can be updated dynamically)
+//   updateCount("fav", 0); // Favorites count
+//   updateCount("bag", 0); // Shopping bag count
+// });
+

@@ -1,3 +1,5 @@
+// auth.js
+
 document.addEventListener("DOMContentLoaded", () => {
   const signupForm = document.getElementById("signup");
   const signinForm = document.getElementById("signin");
@@ -7,13 +9,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const signupButton = document.getElementById("signup-btn");
   const signinButton = document.getElementById("signin-btn");
 
-  // Toggle to Sign In Form
+  // Switch to Sign In Form
   switchToSignIn.addEventListener("click", () => {
       signinForm.style.display = "block";
       signupForm.style.display = "none";
   });
 
-  // Toggle to Sign Up Form
+  // Switch to Sign Up Form
   switchToSignUp.addEventListener("click", () => {
       signupForm.style.display = "block";
       signinForm.style.display = "none";
@@ -34,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
           localStorage.setItem("userEmail", email);
           localStorage.setItem("userPassword", password);
           alert("Sign-up successful! Redirecting...");
+          localStorage.setItem("userId", email); // Save userId after sign-up
           window.location.href = "../main.html";  // Redirect after sign-up
       } else {
           alert("Please enter valid credentials.");
@@ -50,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (email === storedEmail && password === storedPassword) {
           alert("Login successful! Redirecting...");
+          localStorage.setItem("userId", email); // Save userId after login
           window.location.href = "../main.html";  // Redirect after sign-in
       } else {
           alert("Invalid credentials. Please try again.");

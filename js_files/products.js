@@ -1,118 +1,99 @@
-let cartCount = 0;
-let favCount = 0;
-let cartCountElement, favCountElement;
-document.addEventListener("DOMContentLoaded", function () {
-  const cartCountElement = document.getElementById("bag-count");
-  const favCountElement = document.getElementById("fav-count");
-
-  // Check if elements exist
-  if (!cartCountElement || !favCountElement) {
-    console.error("Error: Navbar count elements not found!");
-  }
-
-  // Retrieve stored counts from localStorage (if available)
-  let cartCount = localStorage.getItem("cartCount")
-    ? parseInt(localStorage.getItem("cartCount"))
-    : 0;
-  let favCount = localStorage.getItem("favCount")
-    ? parseInt(localStorage.getItem("favCount"))
-    : 0;
-
-  // Display the counts when the page loads
-  cartCountElement.innerText = cartCount;
-  favCountElement.innerText = favCount;
-
-  // Function to add a product to cart
-  function addToCart() {
-    console.log("Adding to cart...");
-    cartCount++; // Increment the cart count
-    cartCountElement.innerText = cartCount; // Update the cart count in the navbar
-    localStorage.setItem("cartCount", cartCount); // Save updated cart count in localStorage
-  }
-
-  // Function to add a product to favorites
-  function addToFavorites() {
-    console.log("Adding to favorites...");
-    favCount++; // Increment the favorites count
-    favCountElement.innerText = favCount; // Update the favorites count in the navbar
-    localStorage.setItem("favCount", favCount); // Save updated favorite count in localStorage
-  }
-
-  // Example to simulate adding products (you will call these on button click)
-  document
-    .getElementById("add-to-cart-button")
-    .addEventListener("click", addToCart);
-  document
-    .getElementById("add-to-favorites-button")
-    .addEventListener("click", addToFavorites);
-});
-
-
-
-//imp
 
 
 
 
-// Function to fetch and display products
-function fetchProducts() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const category = urlParams.get("category") || "all";
+// //cart count and fav
 
-  fetch("https://67a3589d31d0d3a6b78335fc.mockapi.io/clothing/CLOTH")
-    .then((response) => response.json())
-    .then((products) => {
-      const availableCategories = ["women", "men", "kids", "baby"];
-      let filteredProducts = [];
+// // Function to add product to favorites
 
-      if (category !== "all" && availableCategories.includes(category)) {
-        filteredProducts = products[0].products[category] || [];
-      } else {
-        availableCategories.forEach((cat) => {
-          if (products[0].products[cat]) {
-            filteredProducts = [
-              ...filteredProducts,
-              ...products[0].products[cat],
-            ];
-          }
-        });
-      }
+// // Function to add product to favorites
+// function addToFavorites(productId) {
+//   let favCount = parseInt(localStorage.getItem("favCount") || "0");
+//   favCount += 1;
+//   localStorage.setItem("favCount", favCount); // Store in localStorage
+//   updateNavBar(); // Update the navbar count dynamically
+// }
 
-      displayProducts(filteredProducts);
-    })
-    .catch((error) => console.error("Error fetching products:", error));
-}
+// // Function to add product to cart
+// function addToCart(productId) {
+//   let cartCount = parseInt(localStorage.getItem("cartCount") || "0");
+//   cartCount += 1;
+//   localStorage.setItem("cartCount", cartCount); // Store in localStorage
+//   updateNavBar(); // Update the navbar count dynamically
+// }
 
-// Function to display products
-function displayProducts(filteredProducts) {
-  const mainDiv = document.getElementById("products-container");
-  mainDiv.innerHTML = "";
+// // Function to update the navbar counts
+// function updateNavBar() {
+//   const favCount = parseInt(localStorage.getItem("favCount") || "0");
+//   const cartCount = parseInt(localStorage.getItem("cartCount") || "0");
 
-  filteredProducts.forEach((product) => {
-    let productBox = document.createElement("div");
-    productBox.classList.add("product-box");
+//   document.getElementById("fav-count").innerText = favCount;
+//   document.getElementById("bag-count").innerText = cartCount;
+// }
 
-    productBox.innerHTML = `
-            <img src="${product.image}" alt="${
-      product.name
-    }" class="product-image"/>
-            <h3 class="product-title">${product.name}</h3>
-            <h4 class="product-price">₹${product.price}</h4>
-            <p class="product-description">${product.description}</p>
-            <p class="product-sizes">Sizes: ${product.sizes.join(", ")}</p>
-            <p class="product-colors">Colors: ${product.colors.join(", ")}</p>
-            <div class="product-buttons">
-              <button class="heart-button" onclick="addToFavorites(${
-                product.id
-              })">❤️ Add to Favorites</button>
-              <button class="cart-button" onclick="addToCart()">🛒 Add to Cart</button>
-            </div>
-        `;
-        
 
-    mainDiv.appendChild(productBox);
-  });
-}
+// document.addEventListener("DOMContentLoaded", function () {
+//   updateNavBar(); // Update the counts when the page is loaded
+// });
+
+
+
 
 // Call fetchProducts initially
 fetchProducts();
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Get search query from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const searchQuery = urlParams.get("search");
+
+  if (searchQuery) {
+      fetch("https://67a3589d31d0d3a6b78335fc.mockapi.io/clothing/CLOTH")
+          .then(response => response.json())
+          .then(products => {
+              let filteredProducts = [];
+
+              const availableCategories = ["women", "men", "kids", "baby"];
+              // Check each category for the product name match
+              availableCategories.forEach(category => {
+                  if (products[0].products[category]) {
+                      // Filter the products matching the search query
+                      const product = products[0].products[category].filter(p =>
+                          p.name.toLowerCase().includes(searchQuery.toLowerCase())
+                      );
+                      filteredProducts = [...filteredProducts, ...product];
+                  }
+              });
+
+              // Display matching products
+              if (filteredProducts.length > 0) {
+                  displayProducts(filteredProducts);
+              } else {
+                  document.getElementById("no-results").style.display = "block"; // Show "No results" message if no products are found
+              }
+          })
+          .catch(error => console.error("Error fetching products:", error));
+  }
+});
+
+// Function to display the products
+function displayProducts(products) {
+  const mainDiv = document.getElementById("products-container");
+  mainDiv.innerHTML = ''; // Clear previous products
+
+  products.forEach(product => {
+      let productBox = document.createElement("div");
+      productBox.classList.add("product-box");
+
+      productBox.innerHTML = `
+          <img src="${product.image}" alt="${product.name}" class="product-image"/>
+          <h3 class="product-title">${product.name}</h3>
+          <h4 class="product-price">₹${product.price}</h4>
+          <p class="product-description">${product.description}</p>
+          <p class="product-sizes">Sizes: ${product.sizes.join(", ")}</p>
+          <p class="product-colors">Colors: ${product.colors.join(", ")}</p>
+      `;
+
+      mainDiv.appendChild(productBox);
+  });
+}
