@@ -1,5 +1,5 @@
 
-// slide JSON
+// slide JSONs
 
 let sliding_products = document.getElementById("sliding_products");
 
@@ -55,146 +55,91 @@ fetch("https://67a3589d31d0d3a6b78335fc.mockapi.io/clothing/clothing")
     sliding_products.innerHTML = "API data isn't fetched.";
   });
 
-//slide products
+function handleSearch(event) {
+    event.preventDefault();
+    const searchTerm = document.getElementById('search-input').value.toLowerCase();
 
-// MockAPI fetching...
-// let sliding_products = document.getElementById("sliding_products");
+    fetch("https://67a3589d31d0d3a6b78335fc.mockapi.io/clothing/CLOTH")
+        .then(response => response.json())
+        .then(products => {
+            let main_div = document.getElementById("products-container");
+            main_div.innerHTML = ""; // Clear previous products
 
-// // Array of colors for product backgrounds
-// const colors = [
-//   "#FFB6C1",
-//   "#E6E6FA",
-//   "#D8BFD8",
-//   "#F0E6FA",
-//   "#FFD1DC",
-//   "#C3B1E1",
-// ];
+            const availableCategories = ["women", "men", "kids", "baby"];
+            let filteredProducts = [];
 
-// fetch(
-//   "https://67a5d0e9c0ac39787a1f8c4d.mockapi.io/sliding_products/products_data"
-// )
-//   .then((response) => response.json())
-//   .then((data) => {
-//     data.forEach((product, index) => {
-//       let cards = document.createElement("div");
-//       cards.style.height = "350px";
-//       cards.style.width = "230px";
-//       cards.style.flex = "0 0 auto";
-//       cards.style.boxShadow = "0px 0px 10px 5px grey";
-//       cards.style.borderRadius = "20px";
-//       cards.style.backgroundColor = colors[index % colors.length]; // Assign different colors
+            // Loop through categories and filter by product name based on the search term
+            availableCategories.forEach((cat) => {
+                if (products[0].products[cat]) {
+                    filteredProducts = [
+                        ...filteredProducts,
+                        ...products[0].products[cat].filter(product =>
+                            product.name.toLowerCase().includes(searchTerm)
+                        ),
+                    ];
+                }
+            });
 
-//       let p_name = document.createElement("p");
-//       p_name.innerHTML = product.product_name;
-//       p_name.style.fontWeight = "bold";
-//       p_name.style.fontSize = "16px";
-//       p_name.style.padding = "5px 0px 0px 10px";
+            // Display the filtered products
+            filteredProducts.forEach((product) => {
+                let box = document.createElement("div");
+                box.classList.add("product-box");
 
-//       let p_image = document.createElement("img");
-//       p_image.style.height = "170px";
-//       p_image.style.width = "110px";
-//       p_image.style.marginLeft = "70px";
-//       p_image.src = product.image_url;
+                let title = document.createElement("h3");
+                let poster = document.createElement("img");
+                let price = document.createElement("h4");
+                let description = document.createElement("p");
+                let sizes = document.createElement("p");
+                let colors = document.createElement("p");
+                let buttonsDiv = document.createElement("div");
+                buttonsDiv.classList.add("product-buttons");
 
-//       let p_brand = document.createElement("p");
-//       p_brand.innerHTML = `Brand: ${product.brand}`;
-//       p_brand.style.padding = "5px 0px 0px 10px";
+                // Set product details
+                title.innerHTML = product.name;
+                title.classList.add("product-title");
 
-//       let p_price = document.createElement("p");
-//       p_price.innerHTML = `₹${product.price}`;
-//       p_price.style.textAlign = "center";
-//       p_price.style.fontSize = "20px";
-//       p_price.style.fontWeight = "bold";
+                poster.src = product.image;
+                poster.classList.add("product-image");
 
-//       let p_size = document.createElement("p");
-//       p_size.innerHTML = `<i>Size</i>: ${product.size}`;
-//       p_size.style.textAlign = "center";
-//       p_size.style.fontSize = "13px";
+                price.innerHTML = `₹${product.price}`;
+                price.classList.add("product-price");
 
-//       sliding_products.append(cards);
-//       cards.append(p_name, p_image, p_brand, p_price, p_size);
-//     });
-//   })
-//   .catch(() => {
-//     sliding_products.innerHTML = "API data isn't fetched.";
-//   });
+                description.innerHTML = product.description;
+                description.classList.add("product-description");
 
-// function handleSearch(event) {
-//   event.preventDefault(); // Prevent form submission
+                sizes.innerHTML = `Sizes: ${product.sizes.join(", ")}`;
+                sizes.classList.add("product-sizes");
 
-//   let searchQuery = document
-//     .getElementById("search-input")
-//     .value.toLowerCase()
-//     .trim();
+                colors.innerHTML = `Colors: ${product.colors.join(", ")}`;
+                colors.classList.add("product-colors");
 
-//   if (searchQuery === "") {
-//     alert("Please enter a search term!");
-//     return;
-//   }
+                // Create buttons
+                let heartButton = document.createElement("button");
+                heartButton.innerHTML = "❤️ Add to Favorites";
+                heartButton.classList.add("heart-button");
+                heartButton.onclick = () => addToFavorites(product.id);
 
-//   // Define keywords and their respective sections/pages
-//   let searchMap = {
-//     men: "men.html",
-//     women: "women.html",
-//     kids: "kids.html",
-//     baby: "baby.html",
-//     shirt: "men.html",
-//     // "t-shirt": "men.html",
-//     dress: "women.html",
-//     jeans: "men.html",
-//     skirt: "women.html",
-//     shoes: "women.html",
-//     jacket: "men.html",
-//   };
+                let cartButton = document.createElement("button");
+                cartButton.innerHTML = "🛒 Add to Cart";
+                cartButton.classList.add("cart-button");
+                cartButton.onclick = () => addToCart(product.id);
 
-//   // Redirect to a specific page if the keyword matches
-//   for (let key in searchMap) {
-//     if (searchQuery.includes(key)) {
-//       window.location.href = searchMap[key];
-//       return;
-//     }
-//   }
+                buttonsDiv.append(heartButton, cartButton);
 
-//   // If no match, show alert or redirect to default search results page
-//   alert("No results found! Try a different keyword.");
-// }
-
-// function handleSearch(event) {
-//   event.preventDefault(); // Prevent form submission
-
-//   let searchQuery = document.getElementById("search-input").value.toLowerCase().trim();
-
-//   if (searchQuery === "") {
-//     alert("Please enter a search term!"); // Show error message if search is empty
-//     return;
-//   }
-
-//   // Define keywords and their respective sections/pages
-//   let searchMap = {
-//     "men": "men.html",
-//     "women": "women.html",
-//     "kids": "kids.html",
-//     "baby": "baby.html",
-//     "shirt": "men.html",
-//     "t-shirt": "men.html",
-//     "dress": "women.html",
-//     "frock": "women.html",  // Added frock
-//     "skirt": "women.html",  // Added skirt
-//     "chidi": "women.html",  // Added chidi (assumed typo for "chidi")
-//     "top": "women.html",    // Added top
-//     "jeans": "men.html",
-//     "shoes": "women.html",
-//     "jacket": "men.html"
-//   };
-
-//   // Redirect to a specific page if the keyword matches
-//   for (let key in searchMap) {
-//     if (searchQuery.includes(key)) {
-//       window.location.href = searchMap[key];
-//       return;
-//     }
-//   }
-
-//   // If no match, show alert or redirect to default search results page
-//   alert("No results found! Try a different keyword.");
-// }
+                // Assemble product box
+                box.append(
+                    poster,
+                    title,
+                    price,
+                    description,
+                    sizes,
+                    colors,
+                    buttonsDiv
+                );
+                main_div.append(box);
+            });
+        })
+        .catch((error) => {
+            console.error("Error fetching products:", error);
+        });
+}
