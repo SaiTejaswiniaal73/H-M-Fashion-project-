@@ -98,6 +98,9 @@
     </style>
   </head>
   <body>
+    <button class="add-to-cart" data-product-id="123">Add to Cart</button>
+<button class="add-to-fav" data-product-id="123">Add to Favorites</button>
+
     <nav id="nav" class="navbar navbar-expand-lg navbar-light w-100" style="background: linear-gradient(135deg, #8a2be2, #da70d6) !important">
       <div class="container">
           <!-- H&M Logo (Only for Large Devices) -->
@@ -141,7 +144,7 @@
   
               <!-- Favorites Icon (Large Screen) -->
               <li class="nav-item" id="fav_nav">
-                  <a id="wishlist-link-large" class="nav-link position-relative" href="#wishlist.html">
+                  <a id="wishlist-link-large" class="nav-link position-relative" href="wishlist.html">
                       <i class="fas fa-heart text-danger"></i>
                       <span id="fav-count-large" class="badge-count">0</span>
                   </a>
@@ -149,7 +152,7 @@
   
               <!-- Shopping Bag Icon (Large Screen) -->
               <li class="nav-item d-none d-lg-block">
-                  <a id="cart-link-large" class="nav-link position-relative" href="#">
+                  <a id="cart-link-large" class="nav-link position-relative" href="cart.html">
                       <i class="fas fa-shopping-bag text-dark"></i>
                       <span id="bag-count-large" class="badge-count">0</span>
                   </a>
@@ -173,13 +176,13 @@
               <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
   
               <!-- Favorites Icon for Small Screens -->
-              <a id="wishlist-link-small" class="nav-link position-relative" href="#">
+              <a id="wishlist-link-small" class="nav-link position-relative" href="wishlist.html">
                   <i class="fas fa-heart text-danger"></i>
                   <span id="fav-count-small" class="badge-count">0</span>
               </a>
   
               <!-- Shopping Bag Icon for Small Screens -->
-              <a id="cart-link-small" class="nav-link position-relative d-lg-none" href="#">
+              <a id="cart-link-small" class="nav-link position-relative d-lg-none" href="cart.html">
                   <i class="fas fa-shopping-bag text-dark"></i>
                   <span id="bag-count-small" class="badge-count">0</span>
               </a>
@@ -323,6 +326,6 @@
     <script src="./js_files/nav.js"></script>
     <!-- <script src="./js_files/search_main.js"></script> -->
     <script src="./js_files/products.js"></script>
-    <script src="./js_files/cart.js"></script>
+    <script src="./js_files/cart_fav.js"></script>
   </body>
 </html>
