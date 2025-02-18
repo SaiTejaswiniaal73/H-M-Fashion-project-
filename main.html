@@ -25,178 +25,110 @@
   <body>
     <!-- ------------------Navigation Bar--------------------------section 1----------------- -->
 
-    <nav
-      id="nav"
-      class="navbar navbar-expand-lg navbar-light w-100"
-      style="background: linear-gradient(135deg, #8a2be2, #da70d6) !important"
-    >
+    <!--  -->
+
+    <nav id="nav" class="navbar navbar-expand-lg navbar-light w-100" style="background: linear-gradient(135deg, #8a2be2, #da70d6) !important">
       <div class="container">
-        <!-- H&M Logo (Only for Large Devices) -->
-        <!-- <a class="navbar-brand d-none d-lg-block" href="">
-          <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
-        </a> -->
-        
-        <a class="navbar-brand d-none d-lg-block" href="main.html">
-          <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
-        </a>
-       
-        
-
-        <!-- Large Device Links (No Changes Here) -->
-
-        <ul class="navbar-nav d-none d-lg-flex">
-          <li class="nav-item" id="nav_all">
-            <button
-              id="btn-all"
-              class="nav-link"
-              onclick="window.location.href='products.html'"
-            >
-              All
-            </button>
-          </li>
-
-          <li class="nav-item">
-            <a
-              id="btn2"
-              class="nav-link men-link"
-              href="products.html?category=men"
-            >
-              Men
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a
-              id="btn1"
-              class="nav-link women-link"
-              href="products.html?category=women"
-            >
-              Women
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link kids-link" href="products.html?category=kids"
-              >Kids</a
-            >
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link baby-link" href="products.html?category=baby"
-              >Baby</a
-            >
-          </li>
-        </ul>
-
-        <!-- Search Bar (Large Devices - No Changes) -->
-
-
-        <form class="d-flex search-container" role="search" onsubmit="handleSearch(event)">
-          <input id="search-input" class="form-control me-2 custom-search-input" type="search" placeholder="Search here..." aria-label="Search" />
-          <button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
-      </form>
-        
-        
-        
-        
-       
-
-<!-- Optional: Display a message if no products are found -->
-<p id="noResults" style="display: none;">No products found.</p>
-
-        
-
-        <!-- User Actions (Icons for All Devices) -->
-        <ul class="navbar-nav user-icons d-none d-lg-flex">
-          <li class="nav-item">
-            <a class="nav-link" href="./login/loginPage.html"><i class="fas fa-user"></i></a>
-        </li>
-        
-
-          <ul class="navbar-nav user-icons d-none d-lg-flex">
-            <!-- Favorites Icon (Large Screen) -->
-            <li class="nav-item" id="fav_nav">
-              <a
-                id="wishlist-link-large"
-                class="nav-link position-relative"
-                href="#wishlist.html"
-              >
-                <i class="fas fa-heart text-danger"></i>
-                <span id="fav-count" class="badge-count">0</span>
-              </a>
-            </li>
-
-            <!-- Shopping Bag Icon -->
-            <li class="nav-item d-none d-lg-block">
-              <a
-                id="cart-link-large"
-                class="nav-link position-relative"
-                href="#"
-              >
-                <i class="fas fa-shopping-bag text-dark"></i>
-                <span id="bag-count" class="badge-count">0</span>
-              </a>
-            </li>
+          <!-- H&M Logo (Only for Large Devices) -->
+          <a class="navbar-brand d-none d-lg-block" href="main.html">
+              <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
+          </a>
+  
+          <!-- Large Device Links -->
+          <ul class="navbar-nav d-none d-lg-flex">
+              <li class="nav-item" id="nav_all">
+                  <button id="btn-all" class="nav-link" onclick="window.location.href='products.html'">All</button>
+              </li>
+              <li class="nav-item">
+                  <a id="btn2" class="nav-link men-link" href="products.html?category=men">Men</a>
+              </li>
+              <li class="nav-item">
+                  <a id="btn1" class="nav-link women-link" href="products.html?category=women">Women</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link kids-link" href="products.html?category=kids">Kids</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link baby-link" href="products.html?category=baby">Baby</a>
+              </li>
           </ul>
-        </ul>
-
-        <!-- Small Device Layout (Only Logo, Search, Sign-in, Fav, Bag) -->
-
-        <div class="d-flex d-lg-none small-nav">
-          <a class="navbar-brand" href="./login/loginPage.html">
-            <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
-          </a>
-
-
-          <div class="search-box">
-            <button class="btn btn-outline-dark" id="searchBtn">
-              <i class="fas fa-search"></i>
-            </button>
-            <input
-              class="form-control search-input"
-              type="search"
-              placeholder="Search"
-              id="searchInput"
-            />
+  
+          <!-- Search Bar (Large Devices) -->
+          <form class="d-flex search-container" role="search" onsubmit="handleSearch(event)">
+              <input id="search-input" class="form-control me-2 custom-search-input" type="search" placeholder="Search here..." aria-label="Search" />
+              <button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
+          </form>
+  
+          <!-- Optional: Display a message if no products are found -->
+          <p id="noResults" style="display: none;">No products found.</p>
+  
+          <!-- User Actions (Icons for All Devices) -->
+          <ul class="navbar-nav user-icons d-none d-lg-flex">
+              <li class="nav-item">
+                  <a class="nav-link" href="./login/loginPage.html"><i class="fas fa-user"></i></a>
+              </li>
+  
+              <!-- Favorites Icon (Large Screen) -->
+              <li class="nav-item" id="fav_nav">
+                  <a id="wishlist-link-large" class="nav-link position-relative" href="#wishlist.html">
+                      <i class="fas fa-heart text-danger"></i>
+                      <span id="fav-count-large" class="badge-count">0</span>
+                  </a>
+              </li>
+  
+              <!-- Shopping Bag Icon (Large Screen) -->
+              <li class="nav-item d-none d-lg-block">
+                  <a id="cart-link-large" class="nav-link position-relative" href="#">
+                      <i class="fas fa-shopping-bag text-dark"></i>
+                      <span id="bag-count-large" class="badge-count">0</span>
+                  </a>
+              </li>
+          </ul>
+  
+          <!-- Small Device Layout (Logo, Search, Sign-in, Fav, Bag) -->
+          <div class="d-flex d-lg-none small-nav">
+              <a class="navbar-brand" href="./login/loginPage.html">
+                  <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
+              </a>
+  
+              <!-- Search Box for Small Devices -->
+              <div class="search-box">
+                  <button class="btn btn-outline-dark" id="searchBtn">
+                      <i class="fas fa-search"></i>
+                  </button>
+                  <input class="form-control search-input" type="search" placeholder="Search" id="searchInput" />
+              </div>
+  
+              <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
+  
+              <!-- Favorites Icon for Small Screens -->
+              <a id="wishlist-link-small" class="nav-link position-relative" href="#">
+                  <i class="fas fa-heart text-danger"></i>
+                  <span id="fav-count-small" class="badge-count">0</span>
+              </a>
+  
+              <!-- Shopping Bag Icon for Small Screens -->
+              <a id="cart-link-small" class="nav-link position-relative d-lg-none" href="#">
+                  <i class="fas fa-shopping-bag text-dark"></i>
+                  <span id="bag-count-small" class="badge-count">0</span>
+              </a>
+  
+              <!-- Filter Icon for Small Screens -->
+              <div class="filter-container d-lg-none">
+                  <button class="filter-btn" id="filter-toggle">
+                      <i class="fas fa-filter"></i>
+                  </button>
+                  <ul class="filter-menu" id="filter-menu">
+                      <li><a class="nav-link" href="#mens-section">Men</a></li>
+                      <li><a class="nav-link" href="#womens-section">Women</a></li>
+                      <li><a class="nav-link" href="#kids-section">Kids</a></li>
+                      <li><a class="nav-link" href="#baby-section">Baby</a></li>
+                  </ul>
+              </div>
           </div>
-          <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
-
-          <!-- Favorites Icon -->
-
-          <a id="wishlist-link" class="nav-link position-relative" href="#">
-            <i class="fas fa-heart text-danger"></i>
-            <span id="fav-count" class="badge-count">0</span>
-          </a>
-
-          <!-- Shopping Bag Icon -->
-          <!-- Shopping Bag Icon for Small Screens -->
-          <a
-            id="cart-link"
-            class="nav-link position-relative d-lg-none"
-            href="#"
-          >
-            <i class="fas fa-shopping-bag text-dark"></i>
-            <span id="bag-count" class="badge-count">0</span>
-          </a>
-          <!-- Filter Icon (Only for Small Devices) -->
-          <!-- Filter Icon for Small Screens -->
-          <div class="filter-container d-lg-none">
-            <button class="filter-btn" id="filter-toggle">
-              <i class="fas fa-filter"></i>
-              <!-- FontAwesome Filter Icon -->
-            </button>
-
-            <!-- Filter Menu -->
-            <ul class="filter-menu" id="filter-menu">
-              <li><a class="nav-link" href="#mens-section">Men</a></li>
-              <li><a class="nav-link" href="#womens-section">Women</a></li>
-              <li><a class="nav-link" href="#kids-section">Kids</a></li>
-              <li><a class="nav-link" href="#baby-section">Baby</a></li>
-            </ul>
-          </div>
-        </div>
       </div>
-    </nav>
+  </nav>
+  
     <!-- -----------------------Navigation Bar--------------------------section 1 end----------------- -->
 
     <!-----------------carosals total 3-----------------------------------SECTION-2----------------------------------------------------------->

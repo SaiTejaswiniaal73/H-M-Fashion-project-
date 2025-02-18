@@ -1,3 +1,5 @@
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const userId = localStorage.getItem("userId");
 
@@ -101,8 +103,23 @@ function updateNavBar() {
     const favCount = parseInt(localStorage.getItem("favCount") || "0");
     const cartCount = parseInt(localStorage.getItem("cartCount") || "0");
 
-    document.getElementById("fav-count").innerText = favCount;
-    document.getElementById("bag-count").innerText = cartCount;
+    // For large screens
+    const favCountLarge = document.getElementById("fav-count-large");
+    const bagCountLarge = document.getElementById("bag-count-large");
+
+    if (favCountLarge && bagCountLarge) {
+        favCountLarge.innerText = favCount;
+        bagCountLarge.innerText = cartCount;
+    }
+
+    // For small screens
+    const favCountSmall = document.getElementById("fav-count-small");
+    const bagCountSmall = document.getElementById("bag-count-small");
+
+    if (favCountSmall && bagCountSmall) {
+        favCountSmall.innerText = favCount;
+        bagCountSmall.innerText = cartCount;
+    }
 }
 
 // Function to display products dynamically
@@ -122,3 +139,6 @@ function displayProducts(data) {
         productContainer.appendChild(productElement);
     });
 }
+
+// Initial call to update the navbar counts
+updateNavBar();
