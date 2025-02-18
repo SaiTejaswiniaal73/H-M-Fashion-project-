@@ -1,5 +1,3 @@
-// cart.js
-
 document.addEventListener("DOMContentLoaded", function () {
     const userId = localStorage.getItem("userId");
 
@@ -37,6 +35,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Function to show notification
+function showNotification(message) {
+    const notificationContainer = document.getElementById("notification-container");
+
+    const toast = document.createElement("div");
+    toast.classList.add("toast");
+    toast.innerText = message;
+
+    notificationContainer.appendChild(toast);
+
+    // Show the toast and remove it after the animation
+    setTimeout(() => {
+        toast.style.display = "block";
+    }, 100); // Delay to allow animation to start
+
+    setTimeout(() => {
+        toast.style.display = "none"; // Hide the toast after the animation
+        notificationContainer.removeChild(toast); // Remove it from the DOM
+    }, 3000); // Time to display the toast (3 seconds)
+}
+
 // Function to add product to cart
 function addToCart(productId) {
     const userId = localStorage.getItem("userId");
@@ -52,6 +71,9 @@ function addToCart(productId) {
     localStorage.setItem("cartCount", cartCount);  // Save updated count in localStorage
 
     updateNavBar();  // Update the navbar count dynamically
+
+    // Show the notification
+    showNotification("Item added to your cart!");
 }
 
 // Function to add product to favorites
@@ -69,6 +91,9 @@ function addToFavorites(productId) {
     localStorage.setItem("favCount", favCount);  // Save updated count in localStorage
 
     updateNavBar();  // Update the navbar count dynamically
+
+    // Show the notification
+    showNotification("Item added to your favorites!");
 }
 
 // Function to update navbar with cart and favorites count
