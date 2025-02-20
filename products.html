@@ -12,94 +12,15 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-    <!-- <link rel="stylesheet" href="./css_files/media_mwkb.css" /> -->
     <link rel="stylesheet" href="./css_files/nav.css" />
-    <!-- <link rel="stylesheet" href="./css_files/nav_imp.css" -->
-    <link rel="stylesheet" href="./css_files/body.css" />
-    <style>
-      /* Product display styling */
-      .main-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 20px;
-        gap: 20px;
-      }
-      .product-box {
-        background-color: #f5f5f5;
-        border: 2px solid #ddd;
-        width: 250px;
-        text-align: center;
-        padding: 10px;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s;
-      }
-      .product-box:hover {
-        transform: scale(1.05);
-      }
-      .product-image {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
-      .product-title {
-        font-weight: bold;
-        color: #333;
-        background-color: #f0e68c;
-        padding: 5px;
-        border-radius: 5px;
-      }
-      .product-description {
-        color: #555;
-        font-size: 14px;
-        background-color: #f0f8ff;
-        padding: 5px;
-        border-radius: 5px;
-      }
-      .product-sizes,
-      .product-colors {
-        margin: 5px 0;
-      }
-      .product-buttons {
-        margin-top: 10px;
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-      }
-      .heart-button {
-        background-color: #ff69b4;
-        color: white;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: opacity 0.3s, background-color 0.3s;
-      }
-      .heart-button:hover {
-        opacity: 0.8;
-        background-color: rebeccapurple;
-      }
-      .cart-button {
-        background-color: rgb(170, 170, 4);
-        color: white;
-        padding: 10px 15px;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: opacity 0.3s, background-color 0.3s;
-      }
-      .cart-button:hover {
-        opacity: 0.8;
-        background-color: #45a049;
-      }
-    </style>
+    <link rel="stylesheet" href="./css_files/main_products.css" />
+    
   </head>
   <body>
     <button class="add-to-cart" data-product-id="123">Add to Cart</button>
 <button class="add-to-fav" data-product-id="123">Add to Favorites</button>
+
+
 
     <nav id="nav" class="navbar navbar-expand-lg navbar-light w-100" style="background: linear-gradient(135deg, #8a2be2, #da70d6) !important">
       <div class="container">
@@ -213,11 +134,11 @@
       <p>Product not found.</p>
   </div>
   <!-- Notification Container -->
-<div id="notification-container"></div>
+<div id="notification-container"></div> 
 
   
 
-    <script>
+  <script>
         // Function to fetch products based on category from the URL
         function fetchProducts() {
           // Get category from the URL query parameters
@@ -319,13 +240,16 @@
 
         // Call the function to fetch products initially
         fetchProducts();
-</script>
+</script> 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     </script>
+  
+
     <script src="./js_files/search.js"></script>
     <script src="./js_files/nav.js"></script>
-    <!-- <script src="./js_files/search_main.js"></script> -->
+    <script src="./js_files/search_main.js"></script>
     <script src="./js_files/products.js"></script>
-    <script src="./js_files/cart_fav.js"></script>
+    <!-- <script defer src="./js_files/main_products.js" type="module"></script> -->
+    <!-- <script src="./js_files/cart_fav.js"></script> -->
   </body>
 </html>
