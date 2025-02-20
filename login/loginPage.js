@@ -1,62 +1,45 @@
-// auth.js
-
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const signupForm = document.getElementById("signup");
   const signinForm = document.getElementById("signin");
   const switchToSignIn = document.getElementById("switchToSignIn");
   const switchToSignUp = document.getElementById("switchToSignUp");
   const guestButton = document.getElementById("guest-btn");
-  const signupButton = document.getElementById("signup-btn");
-  const signinButton = document.getElementById("signin-btn");
 
-  // Switch to Sign In Form
-  switchToSignIn.addEventListener("click", () => {
-      signinForm.style.display = "block";
-      signupForm.style.display = "none";
-  });
+  // Function to toggle between sign-in and sign-up
+  function toggleForms(showForm, hideForm) {
+    hideForm.style.opacity = "0";
+    setTimeout(() => {
+      hideForm.style.display = "none";
+      showForm.style.display = "block";
+      setTimeout(() => (showForm.style.opacity = "1"), 100);
+    }, 300);
+  }
 
-  // Switch to Sign Up Form
-  switchToSignUp.addEventListener("click", () => {
-      signupForm.style.display = "block";
-      signinForm.style.display = "none";
-  });
+  // Event Listeners for Switching Forms
+  switchToSignIn.addEventListener("click", () => toggleForms(signinForm, signupForm));
+  switchToSignUp.addEventListener("click", () => toggleForms(signupForm, signinForm));
 
-  // Guest Login - Redirect to main.html
+  // Guest Login
   guestButton.addEventListener("click", () => {
-      localStorage.setItem("guest", "true");
-      window.location.href = "../main.html";
+    localStorage.setItem("guest", "true");
+    // window.location.href = "/main.html"; // Absolute path from the server root
+    window.location.href = "../main.html"; // Go up one level to access main.html
+
+// 
+
   });
 
-  // Sign Up
-  signupButton.addEventListener("click", () => {
-      const email = document.getElementById("signup-email").value;
-      const password = document.getElementById("signup-password").value;
-
-      if (email && password) {
-          localStorage.setItem("userEmail", email);
-          localStorage.setItem("userPassword", password);
-          alert("Sign-up successful! Redirecting...");
-          localStorage.setItem("userId", email); // Save userId after sign-up
-          window.location.href = "../main.html";  // Redirect after sign-up
-      } else {
-          alert("Please enter valid credentials.");
-      }
+  // Input Effects
+  document.querySelectorAll("input").forEach((input) => {
+    input.addEventListener("focus", () => (input.style.border = "2px solid #ff4081"));
+    input.addEventListener("blur", () => (input.style.border = "1px solid #ccc"));
+    input.addEventListener("keyup", () => (input.style.backgroundColor = "#f9f9f9"));
+    input.addEventListener("keydown", () => (input.style.backgroundColor = "#fff"));
   });
 
-  // Sign In
-  signinButton.addEventListener("click", () => {
-      const email = document.getElementById("signin-email").value;
-      const password = document.getElementById("signin-password").value;
-
-      const storedEmail = localStorage.getItem("userEmail");
-      const storedPassword = localStorage.getItem("userPassword");
-
-      if (email === storedEmail && password === storedPassword) {
-          alert("Login successful! Redirecting...");
-          localStorage.setItem("userId", email); // Save userId after login
-          window.location.href = "../main.html";  // Redirect after sign-in
-      } else {
-          alert("Invalid credentials. Please try again.");
-      }
+  // Button Hover Effects
+  document.querySelectorAll(".btn").forEach((button) => {
+    button.addEventListener("mouseover", () => (button.style.backgroundColor = "#e91e63"));
+    button.addEventListener("mouseout", () => (button.style.backgroundColor = "#ff4081"));
   });
 });

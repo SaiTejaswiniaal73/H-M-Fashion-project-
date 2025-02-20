@@ -1,11 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Favorites</title>
-    <script src="wishlist.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  />
+  <!-- <link rel="stylesheet" href="./css_files/media_mwkb.css" /> -->
+  <link rel="stylesheet" href="./css_files/nav.css" />
+  <!-- <link rel="stylesheet" href="./css_files/nav_imp.css" -->
+  <link rel="stylesheet" href="./css_files/body.css" />
+  <style>
+    /* Product display styling */
+    .main-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 20px;
+    }
+    .product-box {
+      background-color: #f5f5f5;
+      border: 2px solid #ddd;
+      width: 250px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    .product-box:hover {
+      transform: scale(1.05);
+    }
+    .product-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .product-title {
+      font-weight: bold;
+      color: #333;
+      background-color: #f0e68c;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    .product-description {
+      color: #555;
+      font-size: 14px;
+      background-color: #f0f8ff;
+      padding: 5px;
+      border-radius: 5px;
+    }
+    .product-sizes,
+    .product-colors {
+      margin: 5px 0;
+    }
+    .product-buttons {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .heart-button {
+      background-color: #ff69b4;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: opacity 0.3s, background-color 0.3s;
+    }
+    .heart-button:hover {
+      opacity: 0.8;
+      background-color: rebeccapurple;
+    }
+    .cart-button {
+      background-color: rgb(170, 170, 4);
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: opacity 0.3s, background-color 0.3s;
+    }
+    .cart-button:hover {
+      opacity: 0.8;
+      background-color: #45a049;
+    }
+    /* Grid Layout */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Product Cards */
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Images */
+.product-img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Remove Button */
+.remove-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+  </style>
 </head>
 <body>
-    <h1>Your Favorites</h1>
-    <div id="wishlist-container"></div>
+    <header>
+        <h1>Your Wishlist</h1>
+        <a href="products.html">Back to Products</a>
+    </header>
+    <main id="wishlist-container" class="grid-container"></main>
+    <script src="./js_files/cartupdate.js"></script> <!-- Handles Wishlist Updates -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+    <script src="./js_files/search.js"></script>
+    <script src="./js_files/nav.js"></script>
+    <!-- <script src="./js_files/search_main.js"></script> -->
+    <script src="./js_files/products.js"></script>
+    <script src="./js_files/cart_fav.js"></script>
 </body>
 </html>
