@@ -1,13 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="./css_files/main_products.css">
 </head>
 <body>
-  <h1>wishlist welcome
-    
-  </h1>
+    <header>
+        <h1>Wishlist ❤️</h1>
+        <a href="index.html">Home</a>
+        <span>Cart: <span id="cart-count">0</span></span>
+        <span>Wishlist: <span id="wishlist-count">0</span></span>
+    </header>
+
+    <div id="wishlist-container">
+        <p>Loading wishlist...</p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    displayWishlist();
+    updateCounts();
+});
+
+// Display wishlist products
+function displayWishlist() {
+    const wishlistContainer = document.getElementById("wishlist-container");
+    wishlistContainer.innerHTML = "";
+
+    let wishlist = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (wishlist.length === 0) {
+        wishlistContainer.innerHTML = "<p>No products in wishlist.</p>";
+        return;
+    }
+
+    wishlist.forEach(product => {
+        const productBox = document.createElement("div");
+        productBox.classList.add("product-box");
+
+        productBox.innerHTML = `
+            <img src="${product.image}" alt="${product.name}" class="product-image"/>
+            <h3 class="product-title">${product.name}</h3>
+            <h4 class="product-price">₹${product.price}</h4>
+            <p class="product-description">${product.description}</p>
+            <button class="remove-btn" onclick="removeFromWishlist(${product.id})">❌ Remove</button>
+        `;
+
+        wishlistContainer.appendChild(productBox);
+    });
+}
+
+// Remove product from wishlist
+function removeFromWishlist(productId) {
+    let wishlist = JSON.parse(localStorage.getItem("favorites")) || [];
+    wishlist = wishlist.filter(product => product.id !== productId);
+    localStorage.setItem("favorites", JSON.stringify(wishlist));
+    displayWishlist();
+    updateCounts();
+}
+
+// Update cart & wishlist counts
+function updateCounts() {
+    document.getElementById("cart-count").innerText = JSON.parse(localStorage.getItem("cart"))?.length || 0;
+    document.getElementById("wishlist-count").innerText = JSON.parse(localStorage.getItem("favorites"))?.length || 0;
+}
+
+    </script>
+<!-- 
+    <script src="wishlist.js"></script>
+    <script src="cart.js"></script> -->
 </body>
 </html>

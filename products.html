@@ -14,243 +14,195 @@
     />
     <link rel="stylesheet" href="./css_files/nav.css" />
     <link rel="stylesheet" href="./css_files/main_products.css" />
-    
   </head>
   <body>
     <button class="add-to-cart" data-product-id="123">Add to Cart</button>
-<button class="add-to-fav" data-product-id="123">Add to Favorites</button>
+    <button class="add-to-fav" data-product-id="123">Add to Favorites</button>
 
-
-
-    <nav id="nav" class="navbar navbar-expand-lg navbar-light w-100" style="background: linear-gradient(135deg, #8a2be2, #da70d6) !important">
+    <nav
+      id="nav"
+      class="navbar navbar-expand-lg navbar-light w-100"
+      style="background: linear-gradient(135deg, #8a2be2, #da70d6) !important"
+    >
       <div class="container">
-          <!-- H&M Logo (Only for Large Devices) -->
-          <a class="navbar-brand d-none d-lg-block" href="main.html">
-              <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
+        <!-- H&M Logo (Only for Large Devices) -->
+        <a class="navbar-brand d-none d-lg-block" href="main.html">
+          <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
+        </a>
+
+        <!-- Large Device Links -->
+        <ul class="navbar-nav d-none d-lg-flex">
+          <li class="nav-item" id="nav_all">
+            <button
+              id="btn-all"
+              class="nav-link"
+              onclick="window.location.href='products.html'"
+            >
+              All
+            </button>
+          </li>
+          <li class="nav-item">
+            <a
+              id="btn2"
+              class="nav-link men-link"
+              href="products.html?category=men"
+              >Men</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              id="btn1"
+              class="nav-link women-link"
+              href="products.html?category=women"
+              >Women</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link kids-link" href="products.html?category=kids"
+              >Kids</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link baby-link" href="products.html?category=baby"
+              >Baby</a
+            >
+          </li>
+        </ul>
+
+        <!-- Search Bar (Large Devices) -->
+        <form
+          class="d-flex search-container"
+          role="search"
+          onsubmit="handleSearch(event)"
+        >
+          <input
+            id="search-input"
+            class="form-control me-2 custom-search-input"
+            type="search"
+            placeholder="Search here..."
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-dark" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+
+        <!-- Optional: Display a message if no products are found -->
+        <p id="noResults" style="display: none">No products found.</p>
+
+        <!-- User Actions (Icons for All Devices) -->
+        <ul class="navbar-nav user-icons d-none d-lg-flex">
+          <li class="nav-item">
+            <a class="nav-link" href="./login/loginPage.html"
+              ><i class="fas fa-user"></i
+            ></a>
+          </li>
+
+          <!-- Favorites Icon (Large Screen) -->
+          <li class="nav-item" id="fav_nav">
+            <a
+              id="wishlist-link-large"
+              class="nav-link position-relative"
+              href="wishlist.html"
+            >
+              <i class="fas fa-heart text-danger"></i>
+              <span id="fav-count-large" class="badge-count">0</span>
+            </a>
+          </li>
+
+          <!-- Shopping Bag Icon (Large Screen) -->
+          <li class="nav-item d-none d-lg-block">
+            <a
+              id="cart-link-large"
+              class="nav-link position-relative"
+              href="cart.html"
+            >
+              <i class="fas fa-shopping-bag text-dark"></i>
+              <span id="bag-count-large" class="badge-count">0</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Small Device Layout (Logo, Search, Sign-in, Fav, Bag) -->
+        <div class="d-flex d-lg-none small-nav">
+          <a class="navbar-brand" href="./login/loginPage.html">
+            <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
           </a>
-  
-          <!-- Large Device Links -->
-          <ul class="navbar-nav d-none d-lg-flex">
-              <li class="nav-item" id="nav_all">
-                  <button id="btn-all" class="nav-link" onclick="window.location.href='products.html'">All</button>
-              </li>
-              <li class="nav-item">
-                  <a id="btn2" class="nav-link men-link" href="products.html?category=men">Men</a>
-              </li>
-              <li class="nav-item">
-                  <a id="btn1" class="nav-link women-link" href="products.html?category=women">Women</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link kids-link" href="products.html?category=kids">Kids</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link baby-link" href="products.html?category=baby">Baby</a>
-              </li>
-          </ul>
-  
-          <!-- Search Bar (Large Devices) -->
-          <form class="d-flex search-container" role="search" onsubmit="handleSearch(event)">
-              <input id="search-input" class="form-control me-2 custom-search-input" type="search" placeholder="Search here..." aria-label="Search" />
-              <button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
-          </form>
-  
-          <!-- Optional: Display a message if no products are found -->
-          <p id="noResults" style="display: none;">No products found.</p>
-  
-          <!-- User Actions (Icons for All Devices) -->
-          <ul class="navbar-nav user-icons d-none d-lg-flex">
-              <li class="nav-item">
-                  <a class="nav-link" href="./login/loginPage.html"><i class="fas fa-user"></i></a>
-              </li>
-  
-              <!-- Favorites Icon (Large Screen) -->
-              <li class="nav-item" id="fav_nav">
-                  <a id="wishlist-link-large" class="nav-link position-relative" href="wishlist.html">
-                      <i class="fas fa-heart text-danger"></i>
-                      <span id="fav-count-large" class="badge-count">0</span>
-                  </a>
-              </li>
-  
-              <!-- Shopping Bag Icon (Large Screen) -->
-              <li class="nav-item d-none d-lg-block">
-                  <a id="cart-link-large" class="nav-link position-relative" href="cart.html">
-                      <i class="fas fa-shopping-bag text-dark"></i>
-                      <span id="bag-count-large" class="badge-count">0</span>
-                  </a>
-              </li>
-          </ul>
-  
-          <!-- Small Device Layout (Logo, Search, Sign-in, Fav, Bag) -->
-          <div class="d-flex d-lg-none small-nav">
-              <a class="navbar-brand" href="./login/loginPage.html">
-                  <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
-              </a>
-  
-              <!-- Search Box for Small Devices -->
-              <div class="search-box">
-                  <button class="btn btn-outline-dark" id="searchBtn">
-                      <i class="fas fa-search"></i>
-                  </button>
-                  <input class="form-control search-input" type="search" placeholder="Search" id="searchInput" />
-              </div>
-  
-              <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
-  
-              <!-- Favorites Icon for Small Screens -->
-              <a id="wishlist-link-small" class="nav-link position-relative" href="wishlist.html">
-                  <i class="fas fa-heart text-danger"></i>
-                  <span id="fav-count-small" class="badge-count">0</span>
-              </a>
-  
-              <!-- Shopping Bag Icon for Small Screens -->
-              <a id="cart-link-small" class="nav-link position-relative d-lg-none" href="cart.html">
-                  <i class="fas fa-shopping-bag text-dark"></i>
-                  <span id="bag-count-small" class="badge-count">0</span>
-              </a>
-  
-              <!-- Filter Icon for Small Screens -->
-              <div class="filter-container d-lg-none">
-                  <button class="filter-btn" id="filter-toggle">
-                      <i class="fas fa-filter"></i>
-                  </button>
-                  <ul class="filter-menu" id="filter-menu">
-                      <li><a class="nav-link" href="#mens-section">Men</a></li>
-                      <li><a class="nav-link" href="#womens-section">Women</a></li>
-                      <li><a class="nav-link" href="#kids-section">Kids</a></li>
-                      <li><a class="nav-link" href="#baby-section">Baby</a></li>
-                  </ul>
-              </div>
+
+          <!-- Search Box for Small Devices -->
+          <div class="search-box">
+            <button class="btn btn-outline-dark" id="searchBtn">
+              <i class="fas fa-search"></i>
+            </button>
+            <input
+              class="form-control search-input"
+              type="search"
+              placeholder="Search"
+              id="searchInput"
+            />
           </div>
+
+          <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
+
+          <!-- Favorites Icon for Small Screens -->
+          <a
+            id="wishlist-link-small"
+            class="nav-link position-relative"
+            href="wishlist.html"
+          >
+            <i class="fas fa-heart text-danger"></i>
+            <span id="fav-count-small" class="badge-count">0</span>
+          </a>
+
+          <!-- Shopping Bag Icon for Small Screens -->
+          <a
+            id="cart-link-small"
+            class="nav-link position-relative d-lg-none"
+            href="cart.html"
+          >
+            <i class="fas fa-shopping-bag text-dark"></i>
+            <span id="bag-count-small" class="badge-count">0</span>
+          </a>
+
+          <!-- Filter Icon for Small Screens -->
+          <div class="filter-container d-lg-none">
+            <button class="filter-btn" id="filter-toggle">
+              <i class="fas fa-filter"></i>
+            </button>
+            <ul class="filter-menu" id="filter-menu">
+              <li><a class="nav-link" href="products.html">all</a></li>
+              <li><a class="nav-link" href="products.html?category=men">Men</a></li>
+              <li><a class="nav-link" href="products.html?category=women">Women</a></li>
+             
+              <li><a class="nav-link" href="products.html?category=kids">Kids</a></li>
+              <li><a class="nav-link"href="products.html?category=baby">Baby</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-  </nav>
+    </nav>
 
     <!-- Main Product Display -->
     <div class="main-container" id="products-container"></div>
     <!-- <div id="product-container">
       Product details will be inserted here
-  <!-- </div> --> -->
-  
-  <div id="no-product" style="display:none;">
+  <!-- </div> -->
+    -->
+    <div id="product-container"></div>
+
+    <div id="no-product" style="display: none">
       <p>Product not found.</p>
-  </div>
-  <!-- Notification Container -->
-<div id="notification-container"></div> 
+    </div>
+    <!-- Notification Container -->
+    <!-- <div id="notification-container"></div> -->
+    
+<!-- Notification Container -->
+<div id="notification-container" style="position: fixed; top: 10px; right: 10px; z-index: 1000;"></div>
 
-  
-
-  <script>
-        // Function to fetch products based on category from the URL
-        function fetchProducts() {
-          // Get category from the URL query parameters
-          const urlParams = new URLSearchParams(window.location.search);
-          const category = urlParams.get("category") || "all"; // Default to 'all' if no category is passed
-
-          fetch("https://67a3589d31d0d3a6b78335fc.mockapi.io/clothing/CLOTH")
-            .then((response) => response.json())
-            .then((products) => {
-              let main_div = document.getElementById("products-container");
-              main_div.innerHTML = ""; // Clear previous products
-
-              const availableCategories = ["women", "men", "kids", "baby"];
-              let filteredProducts = [];
-
-              if (category !== "all" && availableCategories.includes(category)) {
-                filteredProducts = products[0].products[category] || [];
-              } else {
-                // If "all" is selected, combine products from all categories
-                availableCategories.forEach((cat) => {
-                  if (products[0].products[cat]) {
-                    filteredProducts = [
-                      ...filteredProducts,
-                      ...products[0].products[cat],
-                    ];
-                  }
-                });
-              }
-
-              // Display the filtered products
-              filteredProducts.forEach((product) => {
-                let box = document.createElement("div");
-                box.classList.add("product-box");
-
-                let title = document.createElement("h3");
-                let poster = document.createElement("img");
-                let price = document.createElement("h4");
-                let description = document.createElement("p");
-                let sizes = document.createElement("p");
-                let colors = document.createElement("p");
-                let buttonsDiv = document.createElement("div");
-                buttonsDiv.classList.add("product-buttons");
-
-                // Set product details
-                title.innerHTML = product.name;
-                title.classList.add("product-title");
-
-                poster.src = product.image;
-                poster.classList.add("product-image");
-
-                price.innerHTML = `₹${product.price}`;
-                price.classList.add("product-price");
-
-                description.innerHTML = product.description;
-                description.classList.add("product-description");
-
-                sizes.innerHTML = `Sizes: ${product.sizes.join(", ")}`;
-                sizes.classList.add("product-sizes");
-
-                colors.innerHTML = `Colors: ${product.colors.join(", ")}`;
-                colors.classList.add("product-colors");
-
-                // Create buttons
-                let heartButton = document.createElement("button");
-                heartButton.innerHTML = "❤️ Add to Favorites";
-                heartButton.classList.add("heart-button");
-                heartButton.onclick = () => addToFavorites(product.id);
-
-                let cartButton = document.createElement("button");
-                cartButton.innerHTML = "🛒 Add to Cart";
-                cartButton.classList.add("cart-button");
-                cartButton.onclick = () => addToCart(product.id);
-
-                buttonsDiv.append(heartButton, cartButton);
-
-                // Assemble product box
-                box.append(
-                  poster,
-                  title,
-                  price,
-                  description,
-                  sizes,
-                  colors,
-                  buttonsDiv
-                );
-                main_div.append(box);
-              });
-            })
-            .catch((error) => {
-              console.error("Error fetching products:", error);
-            });
-        }
-
-        // Update the function to handle category changes on button click
-        function handleCategoryChange(category) {
-          // Update the URL to reflect the selected category
-          window.location.href = `products.html?category=${category}`;
-        }
-
-        // Call the function to fetch products initially
-        fetchProducts();
-</script> 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-    </script>
-  
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js_files/search.js"></script>
     <script src="./js_files/nav.js"></script>
     <script src="./js_files/search_main.js"></script>
     <script src="./js_files/products.js"></script>
-    <!-- <script defer src="./js_files/main_products.js" type="module"></script> -->
-    <!-- <script src="./js_files/cart_fav.js"></script>
-    <script src="./js_files/cart_fav.js"></script> -->
   </body>
 </html>
