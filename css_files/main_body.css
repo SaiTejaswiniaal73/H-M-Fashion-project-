@@ -1,87 +1,51 @@
-/* -----------------------------------------------main body----section------------------------------------- */
-body{
-    background-color: azure;
-}
-/* Hide scrollbar for entire page */
+/* ============================
+   BASE STYLES & UTILITIES
+=============================== */
 body {
-    overflow: auto; /* Allows scrolling */
-  }
-  
-  /* Hide scrollbar for Chrome, Safari, Edge */
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  
-  /* Hide scrollbar for Firefox */
-  * {
-    scrollbar-width: none;
-  }
-  
-  /* Hide scrollbar for specific container */
-  .scroll-container {
-    overflow: auto; /* Allows scrolling */
-    scrollbar-width: none; /* Firefox */
-  }
-  
-  .scroll-container::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
-  }
-
-body {
-  padding-top: 20px; /* Adjust this based on navbar height */
+  background-color: azure;
+  padding-top: 20px; /* Adjust based on navbar height */
+  overflow: auto;
 }
 
-/* Hide search input by default on small devices */
+/* Hide scrollbars globally (Chrome, Safari, Edge, Firefox) */
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  scrollbar-width: none;
+}
+
+/* Utility for containers with hidden scrollbar */
+.scroll-container {
+  overflow: auto;
+  scrollbar-width: none;
+}
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide mobile search input by default */
 .search-input {
   display: none;
-  width: 120px; /* Adjust width */
+  width: 120px;
 }
 
-
-/* ----------------------------------------------carsolals-----section-2------------------------------------ */
+/* ============================
+         CAROUSEL SECTION
+=============================== */
 .carousel-caption {
   position: absolute;
-  bottom: 70%; /* Position caption near the bottom */
-  left: 5%;    /* Position caption near the left side */
-  text-align: left; /* Aligns text to the left */
-  /* background-color: #ffdf00; */
+  bottom: 10%; /* Adjust positioning as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 80%;
 }
 
 .carousel-caption h3,
 .carousel-caption h4 {
   color: #ffffff;
-  font-weight: bold;
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black for readability */
-  padding: 15px 30px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
-  display: inline-block;
-}
-
-.carousel-caption h3 {
-  font-size: 2rem;
-}
-
-.carousel-caption h4 {
-  font-size: 1.2rem;
-  font-weight: normal;
-  color: #ffdf00; 
-}
-
-.carousel-caption {
-  position: absolute;
-  bottom: 10%; /* Moves the text a little up from the bottom */
-  left: 50%;
-  transform: translateX(-50%); /* Centers horizontally */
-  text-align: center;
-  width: 80%; /* Keeps text inside the image */
-}
-
-.carousel-caption h3,
-.carousel-caption h4 {
-  color: #ffffff; /* White text for contrast */
-  font-weight: bold;
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black for readability */
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent for readability */
   padding: 10px 20px;
   border-radius: 5px;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
@@ -96,76 +60,44 @@ body {
 .carousel-caption h4 {
   font-size: 1.2rem;
   font-weight: normal;
-  color: #ffdf00; /* Goldish color for extra highlight */
-}
-.carosal{
-background-color:rgb(246, 183, 183);
+  color: #ffdf00;
 }
 
-/* ----------------------------offer box-----------------------section-3------------------------------------ *//* ---------------------------------------------------section-5------------------------------------ */
+.carosal {
+  background-color: rgb(246, 183, 183);
+}
 
-
-
+/* ============================
+         OFFER & OB SECTION
+=============================== */
 .offer-box {
-  background-color: #ffdf00; /* Light yellow background */
+  background-color: #ffdf00;
   text-align: center;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  width: 80%; /* Now it takes 80% of the page width */
-  max-width: 100%; /* Ensure it doesn't exceed screen width */
-  margin: 30px auto; /* Center align */
+  width: 80%;
+  max-width: 100%;
+  margin: 30px auto;
 }
 
 .ob {
-  background-color: rgba(0, 0, 0, 0.253);
-  width: 100%; /* Adjust as needed */
-  height: 400px; /* Adjust as needed */
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white; /* Adjust text color for readability */
+  color: white;
   font-weight: bold;
-  border-radius: 10px; /* Optional for rounded corners */
+  border-radius: 10px;
   padding: 20px;
 }
 
-.offer-box h2 {
-  font-size: 1.8rem;
-  color: #d32f2f; /* Red color */
-  margin-bottom: 10px;
-}
-
-.offer-discount {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #000;
-}
-
-.offer-links {
-  margin-top: 15px;
-}
-
-.offer-btn {
-  display: inline-block;
-  background-color: #d32f2f; /* Red */
-  color: white;
-  padding: 10px 15px;
-  margin: 5px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.offer-btn:hover {
-  background-color: #b71c1c; /* Darker Red */
-}
-
-/* -----------------------woemn,men,kids,baby----------------------------section-4------------------------------------ */
-/* --------------------------------------------------- Section 3 Styling ------------------------------------------------------------------*/
-
-/* Common Container Styling for all sections */
+/* ============================
+       SECTIONS: EL3, EL4, EL5, EL6
+=============================== */
 .el3, .el4, .el5, .el6 {
   display: flex;
   flex-direction: row;
@@ -180,23 +112,23 @@ background-color:rgb(246, 183, 183);
   gap: 2em;
 }
 
-/* Background gradients for different sections */
+/* Background gradients */
 .el3 { background: linear-gradient(to right, #f7c2c7, #dc4ab1, #ec047135); }
 .el4 { background: linear-gradient(to bottom, #2ae2ef, #ad11e165); }
 .el5 { background: linear-gradient(to right, #ffcc70, #ff6699); }
 .el6 { background: linear-gradient(to right, #ff99cc, #ff6699); }
 
-/* Common Content Box Styling */
+/* Content Box Styling */
 .sec3-content, .sec4-content, .sec5-content, .sec6-content {
   width: 50%;
   padding: 1em;
-  color: #333;
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #333;
 }
 
-/* Headings Styling */
+/* Headings & Paragraphs */
 .sec3-content h1, .sec4-content h1, .sec5-heading, .sec6-heading {
   font-weight: 600;
   font-size: 2em;
@@ -204,7 +136,6 @@ background-color:rgb(246, 183, 183);
   margin-bottom: 10px;
 }
 
-/* Paragraph Styling */
 .sec3-content p, .sec4-content p, .sec5-content p, .sec6-content p {
   font-size: 1em;
   color: grey;
@@ -212,7 +143,7 @@ background-color:rgb(246, 183, 183);
   margin: 5px 0;
 }
 
-/* Common Button Styling */
+/* Buttons */
 .sec3-content button, .sec4-content button, .sec5-content button, .sec6-content button {
   margin-top: 2em;
   padding: 12px 24px;
@@ -224,13 +155,11 @@ background-color:rgb(246, 183, 183);
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
-/* Button Hover Effect */
 .sec3-content button:hover, .sec4-content button:hover, .sec5-content button:hover, .sec6-content button:hover {
   background-color: #c9302c;
 }
 
-/* Common Image Grid Styling */
+/* Image Grid for Sections */
 .sec3-img, .sec4-img, .sec5-img, .sec6-img {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -241,8 +170,6 @@ background-color:rgb(246, 183, 183);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-/* Image Styling */
 .sec3-img img, .sec4-img img, .sec5-img img, .sec6-img img {
   width: 100%;
   height: auto;
@@ -251,28 +178,13 @@ background-color:rgb(246, 183, 183);
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
-
-/* Image Hover Effect */
 .sec3-img img:hover, .sec4-img img:hover, .sec5-img img:hover, .sec6-img img:hover {
   transform: scale(1.05);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .el3, .el4, .el5, .el6 {
-    flex-direction: column;
-    padding: 2em;
-  }
-
-  .sec3-content, .sec3-img, .sec4-content, .sec4-img, .sec5-content, .sec5-img, .sec6-content, .sec6-img {
-    width: 100%;
-    max-width: 90%;
-  }
-}
-/* ----------------------------sliding-----------------------section-5------------------------------------ */
-
-
-* Premium products line  and slide heading */
+/* ============================
+     SLIDING PRODUCTS & SLIDE HEADING
+=============================== */
 #slide_heading {
   margin-top: 40px;
   text-align: center;
@@ -281,33 +193,12 @@ background-color:rgb(246, 183, 183);
   font-family: 'Garamond', serif;
   animation: wave 5s infinite;
   color: black;
-  /* background-color: brown; */
+  background-color: rgb(244, 12, 197);
+}
 
-}
-#slide_heading{
-  background-color:rgb(244, 12, 197);
-}
-#slide_heading {
-  margin-top: 40px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 30px;
-  font-family: 'Garamond', serif;
-  animation: wave 5s infinite;
-  color: black;
-
-}
-/* animation for slide heading */
 @keyframes wave {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-20px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
 }
 
 #sliding_products {
@@ -317,49 +208,14 @@ background-color:rgb(246, 183, 183);
   padding: 20px;
 }
 
+/* Card Styles for Sliding Products */
 .card {
   width: 230px;
   height: 350px;
-  border-radius: 15px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.product-image {
-  width: 110px;
-  height: 170px;
-  object-fit: contain;
-  margin: 10px auto;
-}
-
-.product-name {
-  font-size: 16px;
-  font-weight: bold;
-  margin-top: 5px;
-}
-
-.product-brand,
-.price,
-.size {
-  font-size: 14px;
-}
-
-.error-message {
-  color: red;
-  font-weight: bold;
-  text-align: center;
-}
-.card {
-  height: 350px;
-  width: 230px;
   flex: 0 0 auto;
-  box-shadow: 0px 0px 10px 5px grey;
   border-radius: 20px;
   background-color: var(--card-color);
+  box-shadow: 0px 0px 10px 5px grey;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -369,21 +225,21 @@ background-color:rgb(246, 183, 183);
   overflow: hidden;
 }
 
+.card img {
+  height: 170px;
+  width: 110px;
+  object-fit: cover;
+  display: block;
+  margin: auto;
+}
+
 .product-name {
   font-weight: bold;
   font-size: 16px;
   padding: 5px;
-  white-space: nowrap; /* Prevent vertical stretching */
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.card img {
-  height: 170px;
-  width: 110px;
-  display: block;
-  margin: auto;
-  object-fit: cover;
 }
 
 .price {
@@ -394,30 +250,20 @@ background-color:rgb(246, 183, 183);
 .size {
   font-size: 13px;
 }
-/* ::-webkit-scrollbar {
-  overflow: hidden;
-} */
 
-
-/* ------------------------------offfer---------------------section-6------------------------------------ */
-
-.sound-style-box {
-  background-color:rgba(133, 3, 3, 0.199); /* Black background */
-  color: #fff; /* White text */
-  text-align: center;
-  padding: 30px;
-  width: 80%; /* 80% of page width */
-  margin: 30px auto; /* Center align */
-  border-radius: 10px;
-}.Sound {
-  background-color:rgba(255, 255, 0, 0.55); /* Elegant red shade */
-  padding: 40px 20px; /* Adds spacing inside the section */
-  border-radius: 15px; /* Soft rounded edges */
+/* ============================
+           SOUND SECTION
+=============================== */
+.Sound {
+  background-color: rgba(255, 255, 0, 0.55);
+  padding: 40px 20px;
+  border-radius: 15px;
 }
 
 .sound-style-box {
+  background-color: rgba(133, 3, 3, 0.2);
   text-align: center;
-  color: white; /* Ensures text remains readable */
+  color: white;
   padding: 20px;
 }
 
@@ -436,11 +282,11 @@ background-color:rgb(246, 183, 183);
   padding: 10px 20px;
 }
 
-
-/* -------------------------------denim--------------------section-7------------------------------------ */
-
+/* ============================
+         DENIM SECTION
+=============================== */
 .denim_box {
-  background: linear-gradient(to right, #E6E6FA, #D8BFD8); /* Soft lavender gradient */
+  background: linear-gradient(to right, #E6E6FA, #D8BFD8);
   padding: 30px;
   border-radius: 20px;
   display: flex;
@@ -448,6 +294,7 @@ background-color:rgb(246, 183, 183);
   align-items: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 .denim-section {
   background: url('../images/denimchild.jpg') no-repeat center center/cover;
   width: 80%;
@@ -469,11 +316,13 @@ background-color:rgb(246, 183, 183);
   background: rgba(0, 0, 0, 0.5);
   padding: 10px 20px;
   border-radius: 5px;
-  justify-content: center;
   margin-left: 200px;
   color: skyblue;
 }
-/* ---------------------------------------------------section-8------------------------------------ *//* ---------------------------------------------------section-5------------------------------------ */
+
+/* ============================
+           FOOTER
+=============================== */
 .footer {
   background-color: #000;
   color: #fff;
@@ -534,24 +383,32 @@ background-color:rgb(246, 183, 183);
   color: #bbb;
 }
 
-/* Responsive */
+/* ============================
+          RESPONSIVE ADJUSTMENTS
+=============================== */
 @media (max-width: 768px) {
+  .el3, .el4, .el5, .el6 {
+    flex-direction: column;
+    padding: 2em;
+  }
+  .sec3-content, .sec3-img,
+  .sec4-content, .sec4-img,
+  .sec5-content, .sec5-img,
+  .sec6-content, .sec6-img {
+    width: 100%;
+    max-width: 90%;
+  }
+  
   .footer .row {
-      text-align: center;
+    text-align: center;
   }
+  
   .footer .newsletter input {
-      width: 100%;
-      margin-bottom: 10px;
+    width: 100%;
+    margin-bottom: 10px;
   }
+  
   .footer .newsletter button {
-      width: 100%;
+    width: 100%;
   }
 }
-/* ---------------------------------------------------section-9------------------------------------ */
-
-/* ---------------------------------------------------section-10------------------------------------ */
-
-/* ---------------------------------------------------section-6------------------------------------ */
-
-/* ---------------------------------------------------section-7------------------------------------ */
-

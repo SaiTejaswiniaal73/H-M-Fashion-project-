@@ -1,0 +1,190 @@
+[
+    {
+      "productsByCategory": {
+        "women": [
+          {
+            "id": 1,
+            "name": "Women's partywear frock",
+            "category": "Women's Clothing",
+            "price": 1000,
+            "image": "https://littleboxindia.com/cdn/shop/files/f1d4802c9c39391020211dc1fb328304_720x.jpg?v=1719493846",
+            "description": "Comfortable and lightweight partywear frock with elegant look.",
+            "sizes": ["S", "M", "L", "XL"],
+            "colors": ["Red", "Pink", "Black"]
+          },
+          {
+            "id": 2,
+            "name": "Women's Formal Dress",
+            "category": "Women's Clothing",
+            "price": 1500,
+            "image": "https://littleboxindia.com/cdn/shop/files/2f402807687385395585d26c71b7c240_720x.jpg?v=1719499869",
+            "description": "Stylish formal dress for special occasions.",
+            "sizes": ["S", "M", "L"],
+            "colors": ["Black", "Navy Blue", "White"]
+          }
+        
+        ],
+        "men": [
+          {
+            "id": 3,
+          "name": "Men's traditional dress",
+          "category": "Men's Clothing",
+          "price": 1500,
+          "image": "https://media.istockphoto.com/id/1272611048/photo/young-south-indian-man.jpg?s=612x612&w=0&k=20&c=veOTFiSl1m_qpw1CGIIoTyBoOjFgybRmumF9vIJkNxc=",
+          "description": "Stylish and comfortable casual shirt for everyday wear.",
+          "sizes": [
+            "M",
+            "L",
+            "XL"
+          ],
+          "colors": [
+            "Blue",
+            "White",
+            "Black"
+          ]
+          }
+          ,
+            {
+      "id": 4,
+      "name": "Men's Formal Shirt",
+      "category": "Men's Clothing",
+      "price": 1500,
+      "image": "https://littleboxindia.com/cdn/shop/files/50_1_720x.jpg?v=1720426678",
+      "description": "Stylish formal shirt for office wear.",
+      "sizes": ["S", "M", "L", "XL"],
+      "colors": ["White", "Black", "Gray"]
+    }
+
+   
+        
+        ],
+        "baby": [
+
+        
+          {   
+                     "id": 5,
+            "name": "Baby girl's dress",
+            "category": "Baby Clothing",
+            "price": 500,
+            "image": "https://media.istockphoto.com/id/1338898450/photo/standing-portrait-of-little-radha-girl-outdoors-in-public-park.jpg?s=612x612&w=0&k=20&c=XqBsJuKMnKua_zDXcoLbIi3YDdCs4IkhkQ44AwraMtE=",
+            "description": "Adorable dress for baby girls, perfect for any occasion.",
+            "sizes": [
+              "0-6 months",
+              "6-12 months",
+              "12-18 months"
+            ],
+            "colors": [
+              "Pink",
+              "White"
+            ]
+          },
+          {
+            "id": 6,
+            "name": "Newborn Blanket",
+            "category": "Newborn",
+            "price": 1200,
+            "image": "https://cdn.fcglcdn.com/brainbees/images/products/583x720/18704135a.webp",
+            "description": "A cozy blanket perfect for swaddling and keeping your newborn warm.",
+            "sizes": [],
+            "colors": []
+          },
+          {
+            "id": 7,
+            "name": "Newborn Cap",
+            "category": "Newborn",
+            "price": 800,
+            "image": "https://assets.ajio.com/medias/sys_master/root/20240819/ZmMU/66c342796f60443f3113aa02/-473Wx593H-466549600-blue-MODEL.jpg",
+            "description": "A gentle cap to keep your newborn's head warm and protected.",
+            "sizes": [],
+            "colors": []
+          }
+
+        ],
+        "kids": [
+            {
+                "id": 8,
+                "name": "Kid's traditional",
+                "category": "Kid's Clothing",
+                "price": 800,
+                "image": "https://media.istockphoto.com/id/1255975249/photo/indian-girl-child-wearing-ethnic-costume-on-krishna-jayanti-festival-sitting-like-radhe.jpg?s=612x612&w=0&k=20&c=g0OytlJtDPyB-4XkzFoek51KdYK7vGa7IglhOf2lwxk=",
+                "description": "Durable and stylish sports shoes for kids.",
+                "sizes": [
+                  "25",
+                  "26",
+                  "27"
+                ],
+                "colors": [
+                  "Red",
+                  "Blue"
+                ]
+              },
+              {
+                "id": 9,
+                "name": "Boys Shirt and Bottom wear",
+                "category": "Kids' Clothing",
+                "price": 600,
+                "image": "https://includ.com/cdn/shop/files/1_1024x1024_d579eeb0-de4a-4c22-bde8-a1c4b2863936_1024x1024.jpg?v=1722014233",
+                "description": "Comfortable shirt and jogger for warm weather.",
+                "sizes": [],
+                "colors": []
+              }
+            
+        ]
+      },
+      "allProducts": [
+        {
+          "id": 1,
+          "name": "Women's partywear frock",
+          "category": "Women's Clothing",
+          "price": 1000,
+          "image": "https://littleboxindia.com/cdn/shop/files/f1d4802c9c39391020211dc1fb328304_720x.jpg?v=1719493846",
+          "description": "Comfortable and lightweight partywear frock with elegant look.",
+          "sizes": ["S", "M", "L", "XL"],
+          "colors": ["Red", "Pink", "Black"]
+        },
+        {
+            "id": 2,
+            "name": "Women's Formal Dress",
+            "category": "Women's Clothing",
+            "price": 1500,
+            "image": "https://littleboxindia.com/cdn/shop/files/2f402807687385395585d26c71b7c240_720x.jpg?v=1719499869",
+            "description": "Stylish formal dress for special occasions.",
+            "sizes": ["S", "M", "L"],
+            "colors": ["Black", "Navy Blue", "White"]
+          },
+          {
+            "id": 3,
+            "name": "Women's trendy long frock",
+            "category": "Women's Clothing",
+            "price": 1200,
+            "image": "https://littleboxindia.com/cdn/shop/files/782_2_720x.jpg?v=1728902821",
+            "description": "Classic frock for a casual look.",
+            "sizes": ["S", "M", "L", "XL"],
+            "colors": ["Green", "Yellow", "Black"]
+          },
+          {
+            "id": 4,
+            "name": "Women's trendy top",
+            "category": "Women's Clothing",
+            "price": 800,
+            "image": "https://littleboxindia.com/cdn/shop/products/f78b9dd002a3146c9517b84419735158_720x.jpg?v=1697205363",
+            "description": "Combo of Women's baggy jeans with side pockets",
+            "sizes": ["M", "L", "XL"],
+            "colors": ["Blue", "Pink", "White"]
+          },
+          {
+            "id": 5,
+            "name": "Women's Skirt",
+            "category": "Women's Clothing",
+            "price": 1100,
+            "image": "https://littleboxindia.com/cdn/shop/files/367c477d4d62e1cb56412edeb6fe887b_720x.jpg?v=1718453316",
+            "description": "Classic top for a relaxed yet stylish look.",
+            "sizes": ["S", "M", "L"],
+            "colors": ["Black", "White", "Grey"]
+          }
+          
+        
+      ]
+    }
+  ]
+  

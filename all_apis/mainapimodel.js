@@ -84,3 +84,58 @@
     }
   ]
   
+
+
+  // another api Moddel
+
+  {
+    "productsByCategory": {
+      "women": [
+        {
+          "id": 1,
+          "name": "Women's partywear frock",
+          "category": "Women's Clothing",
+          "price": 1000,
+          "image": "https://littleboxindia.com/cdn/shop/files/f1d4802c9c39391020211dc1fb328304_720x.jpg?v=1719493846",
+          "description": "Comfortable and lightweight partywear frock with elegant look.",
+          "sizes": ["S", "M", "L", "XL"],
+          "colors": ["Red", "Pink", "Black"]
+        }
+      ],
+      "men": [
+        {
+          "id": 2,
+          "name": "Men's casual shirt",
+          "category": "Men's Clothing",
+          "price": 1500,
+          "image": "https://example.com/men-shirt.jpg",
+          "description": "Stylish and comfortable casual shirt for everyday wear.",
+          "sizes": ["M", "L", "XL"],
+          "colors": ["Blue", "White", "Black"]
+        }
+      ]
+    },
+    "allProducts": [
+      {
+        "id": 1,
+        "name": "Women's partywear frock",
+        "category": "Women's Clothing",
+        "price": 1000,
+        "image": "https://littleboxindia.com/cdn/shop/files/f1d4802c9c39391020211dc1fb328304_720x.jpg?v=1719493846",
+        "description": "Comfortable and lightweight partywear frock with elegant look.",
+        "sizes": ["S", "M", "L", "XL"],
+        "colors": ["Red", "Pink", "Black"]
+      },
+      {
+        "id": 2,
+        "name": "Men's casual shirt",
+        "category": "Men's Clothing",
+        "price": 1500,
+        "image": "https://example.com/men-shirt.jpg",
+        "description": "Stylish and comfortable casual shirt for everyday wear.",
+        "sizes": ["M", "L", "XL"],
+        "colors": ["Blue", "White", "Black"]
+      }
+    ]
+  }
+  

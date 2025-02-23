@@ -24,35 +24,34 @@
 });
 
 // Display cart products
-function displayCart() {
-    const cartContainer = document.getElementById("cart-container");
-    cartContainer.innerHTML = "";
+function displayWishlist() {
+    let wishlist = JSON.parse(localStorage.getItem("favorites")) || [];
+    let wishlistContainer = document.getElementById("wishlist-items");
 
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    if (cart.length === 0) {
-        cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+    if (!wishlistContainer) {
+        console.error("⚠ Element with id 'wishlist-items' not found!");
         return;
     }
 
-    cart.forEach(product => {
-        const productBox = document.createElement("div");
-        productBox.classList.add("product-box");
+    wishlistContainer.innerHTML = "";
+    if (wishlist.length === 0) {
+        wishlistContainer.innerHTML = "<p>❤️ Your wishlist is empty!</p>";
+        return;
+    }
 
-        productBox.innerHTML = `
-            <img src="${product.image}" alt="${product.name}" class="product-image"/>
-            <h3 class="product-title">${product.name}</h3>
-            <h4 class="product-price">₹${product.price}</h4>
-            <p class="product-description">${product.description}</p>
-            <p>Quantity: <span id="qty-${product.id}">${product.quantity}</span></p>
-            <button onclick="updateQuantity(${product.id}, 1)">➕</button>
-            <button onclick="updateQuantity(${product.id}, -1)">➖</button>
-            <button class="remove-btn" onclick="removeFromCart(${product.id})">❌ Remove</button>
+    wishlist.forEach(product => {
+        let item = document.createElement("div");
+        item.innerHTML = `
+            <img src="${product.image}" width="100" />
+            <p>${product.name} - ₹${product.price}</p>
+            <button onclick="removeFromWishlist(${product.id})">Remove</button>
         `;
-
-        cartContainer.appendChild(productBox);
+        wishlistContainer.appendChild(item);
     });
 }
+
+
+// localStorage.clear();
 
 // Add or remove product quantity
 function updateQuantity(productId, change) {
@@ -85,6 +84,39 @@ function updateCounts() {
     document.getElementById("cart-count").innerText = JSON.parse(localStorage.getItem("cart"))?.length || 0;
     document.getElementById("wishlist-count").innerText = JSON.parse(localStorage.getItem("favorites"))?.length || 0;
 }
+
+
+function addToCart(productId) {
+    let allProducts = JSON.parse(localStorage.getItem("allProducts")) || [];
+
+    if (allProducts.length === 0) {
+        alert("⚠ Products not loaded yet. Try again after reloading.");
+        return;
+    }
+
+    // Find the product by ID from the flattened array
+    let product = allProducts.find(p => p.id == productId);
+
+    if (!product) {
+        alert("⚠ Product not found! Please refresh.");
+        return;
+    }
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let existingProduct = cart.find(p => p.id == productId);
+
+    if (existingProduct) {
+        existingProduct.quantity += 1;
+    } else {
+        product.quantity = 1;
+        cart.push(product);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert(`🛒 ${product.name} added to cart!`);
+    updateCounts();
+}
+
 
     </script>
 

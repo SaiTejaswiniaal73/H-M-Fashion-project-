@@ -1,7 +1,6 @@
+// Sliding Products Section
 
-// slide JSONs
-
-let sliding_products = document.getElementById("sliding_products");
+const sliding_products = document.getElementById("sliding_products");
 
 // Array of colors for product backgrounds
 const colors = [
@@ -16,7 +15,7 @@ const colors = [
 fetch("https://67a3589d31d0d3a6b78335fc.mockapi.io/clothing/clothing")
   .then((response) => response.json())
   .then((data) => {
-    console.log(data); // Check API response in console
+    console.log("Sliding products data:", data);
 
     data.forEach((product, index) => {
       let card = document.createElement("div");
@@ -25,121 +24,133 @@ fetch("https://67a3589d31d0d3a6b78335fc.mockapi.io/clothing/clothing")
 
       let p_name = document.createElement("p");
       p_name.className = "product-name";
-      p_name.innerHTML = product.name || "No Name"; // Ensure fallback value
+      p_name.textContent = product.name || "No Name";
 
       let p_image = document.createElement("img");
-      p_image.src = product.image || "fallback-image.jpg"; // Ensure fallback
+      p_image.src = product.image || "fallback-image.jpg";
       p_image.alt = product.name || "Product Image";
 
       let p_category = document.createElement("p");
-      p_category.innerHTML = `<b>Category:</b> ${product.category || "N/A"}`; // Replace brand with category
+      p_category.innerHTML = `<b>Category:</b> ${product.category || "N/A"}`;
 
       let p_price = document.createElement("p");
       p_price.className = "price";
-      p_price.innerHTML = `₹${
-        product.price !== undefined ? product.price : "N/A"
-      }`; // Fix price
+      p_price.textContent =
+        product.price !== undefined ? `₹${product.price}` : "₹N/A";
 
       let p_size = document.createElement("p");
       p_size.className = "size";
       p_size.innerHTML = `<b>Size:</b> ${
-        product.sizes ? product.sizes.join(", ") : "N/A"
-      }`; // Fix size
+        product.sizes && product.sizes.length > 0
+          ? product.sizes.join(", ")
+          : "N/A"
+      }`;
 
       card.append(p_name, p_image, p_category, p_price, p_size);
       sliding_products.append(card);
     });
   })
   .catch((error) => {
-    console.error("Error fetching API data:", error);
-    sliding_products.innerHTML = "API data isn't fetched.";
+    console.error("Error fetching sliding products API data:", error);
+    sliding_products.textContent = "API data isn't fetched.";
   });
 
+// Search Handler Function
+
 function handleSearch(event) {
-    event.preventDefault();
-    const searchTerm = document.getElementById('search-input').value.toLowerCase();
+  event.preventDefault();
+  const searchInput = document.getElementById("search-input");
+  const searchTerm = searchInput.value.toLowerCase().trim();
 
-    fetch("https://67a3589d31d0d3a6b78335fc.mockapi.io/clothing/CLOTH")
-        .then(response => response.json())
-        .then(products => {
-            let main_div = document.getElementById("products-container");
-            main_div.innerHTML = ""; // Clear previous products
+  if (!searchTerm) {
+    alert("Please enter a search term.");
+    return;
+  }
 
-            const availableCategories = ["women", "men", "kids", "baby"];
-            let filteredProducts = [];
+  fetch("https://67a3589d31d0d3a6b78335fc.mockapi.io/clothing/CLOTH")
+    .then((response) => response.json())
+    .then((products) => {
+      const main_div = document.getElementById("products-container");
+      main_div.innerHTML = ""; // Clear previous products
 
-            // Loop through categories and filter by product name based on the search term
-            availableCategories.forEach((cat) => {
-                if (products[0].products[cat]) {
-                    filteredProducts = [
-                        ...filteredProducts,
-                        ...products[0].products[cat].filter(product =>
-                            product.name.toLowerCase().includes(searchTerm)
-                        ),
-                    ];
-                }
-            });
+      const availableCategories = ["women", "men", "kids", "baby"];
+      let filteredProducts = [];
 
-            // Display the filtered products
-            filteredProducts.forEach((product) => {
-                let box = document.createElement("div");
-                box.classList.add("product-box");
+      // Loop through categories and filter by product name based on the search term
+      availableCategories.forEach((cat) => {
+        if (products[0] && products[0].products && products[0].products[cat]) {
+          filteredProducts = [
+            ...filteredProducts,
+            ...products[0].products[cat].filter((product) =>
+              product.name.toLowerCase().includes(searchTerm)
+            ),
+          ];
+        }
+      });
 
-                let title = document.createElement("h3");
-                let poster = document.createElement("img");
-                let price = document.createElement("h4");
-                let description = document.createElement("p");
-                let sizes = document.createElement("p");
-                let colors = document.createElement("p");
-                let buttonsDiv = document.createElement("div");
-                buttonsDiv.classList.add("product-buttons");
+      if (filteredProducts.length === 0) {
+        main_div.textContent = "No products found.";
+        return;
+      }
 
-                // Set product details
-                title.innerHTML = product.name;
-                title.classList.add("product-title");
+      // Display the filtered products
+      filteredProducts.forEach((product) => {
+        let box = document.createElement("div");
+        box.classList.add("product-box");
 
-                poster.src = product.image;
-                poster.classList.add("product-image");
+        let title = document.createElement("h3");
+        title.classList.add("product-title");
+        title.textContent = product.name;
 
-                price.innerHTML = `₹${product.price}`;
-                price.classList.add("product-price");
+        let poster = document.createElement("img");
+        poster.classList.add("product-image");
+        poster.src = product.image || "fallback-image.jpg";
+        poster.alt = product.name;
 
-                description.innerHTML = product.description;
-                description.classList.add("product-description");
+        let price = document.createElement("h4");
+        price.classList.add("product-price");
+        price.textContent = `₹${product.price}`;
 
-                sizes.innerHTML = `Sizes: ${product.sizes.join(", ")}`;
-                sizes.classList.add("product-sizes");
+        let description = document.createElement("p");
+        description.classList.add("product-description");
+        description.textContent = product.description || "";
 
-                colors.innerHTML = `Colors: ${product.colors.join(", ")}`;
-                colors.classList.add("product-colors");
+        let sizes = document.createElement("p");
+        sizes.classList.add("product-sizes");
+        sizes.textContent =
+          product.sizes && product.sizes.length > 0
+            ? `Sizes: ${product.sizes.join(", ")}`
+            : "Sizes: N/A";
 
-                // Create buttons
-                let heartButton = document.createElement("button");
-                heartButton.innerHTML = "❤️ Add to Favorites";
-                heartButton.classList.add("heart-button");
-                heartButton.onclick = () => addToFavorites(product.id);
+        let colors = document.createElement("p");
+        colors.classList.add("product-colors");
+        colors.textContent =
+          product.colors && product.colors.length > 0
+            ? `Colors: ${product.colors.join(", ")}`
+            : "Colors: N/A";
 
-                let cartButton = document.createElement("button");
-                cartButton.innerHTML = "🛒 Add to Cart";
-                cartButton.classList.add("cart-button");
-                cartButton.onclick = () => addToCart(product.id);
+        // Create buttons for favorites and cart
+        let buttonsDiv = document.createElement("div");
+        buttonsDiv.classList.add("product-buttons");
 
-                buttonsDiv.append(heartButton, cartButton);
+        let heartButton = document.createElement("button");
+        heartButton.classList.add("heart-button");
+        heartButton.textContent = "❤️ Add to Favorites";
+        heartButton.onclick = () => addToFavorites(product.id);
 
-                // Assemble product box
-                box.append(
-                    poster,
-                    title,
-                    price,
-                    description,
-                    sizes,
-                    colors,
-                    buttonsDiv
-                );
-                main_div.append(box);
-            });
-        })
-        .catch((error) => {
-            console.error("Error fetching products:", error);
-        });
+        let cartButton = document.createElement("button");
+        cartButton.classList.add("cart-button");
+        cartButton.textContent = "🛒 Add to Cart";
+        cartButton.onclick = () => addToCart(product.id);
+
+        buttonsDiv.append(heartButton, cartButton);
+
+        // Assemble the product box
+        box.append(poster, title, price, description, sizes, colors, buttonsDiv);
+        main_div.append(box);
+      });
+    })
+    .catch((error) => {
+      console.error("Error fetching search products:", error);
+    });
 }

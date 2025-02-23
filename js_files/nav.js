@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  /*** SEARCH FUNCTIONALITY ***/
+  /*** Mobile Search Toggle ***/
   const searchBtn = document.getElementById("searchBtn");
   const searchInput = document.getElementById("searchInput");
 
@@ -10,14 +10,14 @@ document.addEventListener("DOMContentLoaded", function () {
         searchInput.style.display === ""
       ) {
         searchInput.style.display = "block";
-        searchInput.focus(); // Auto-focus when opened
+        searchInput.focus();
       } else {
         searchInput.style.display = "none";
       }
     });
   }
 
-  /*** FILTER MENU TOGGLE ***/
+  /*** Filter Menu Toggle ***/
   const filterToggle = document.getElementById("filter-toggle");
   const filterMenu = document.getElementById("filter-menu");
 
@@ -36,22 +36,4 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-
 });
-
-
-
-//   /*** BADGE COUNT UPDATES ***/
-//   function updateCount(type, count) {
-//     let countElement = document.getElementById(type + "-count");
-//     if (countElement) {
-//       countElement.textContent = count;
-//       countElement.style.display = count > 0 ? "flex" : "none";
-//     }
-//   }
-
-//   // Example: Initializing counts (can be updated dynamically)
-//   updateCount("fav", 0); // Favorites count
-//   updateCount("bag", 0); // Shopping bag count
-// });
-

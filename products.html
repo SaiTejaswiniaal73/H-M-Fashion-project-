@@ -14,18 +14,42 @@
     />
     <link rel="stylesheet" href="./css_files/nav.css" />
     <link rel="stylesheet" href="./css_files/main_products.css" />
+    <style>
+      /* Custom Styles */
+      .badge-count {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: 0.75rem;
+      }
+      .product-box {
+        border: 1px solid #ccc;
+        padding: 15px;
+        margin: 10px;
+        border-radius: 5px;
+      }
+      .product-image {
+        width: 100%;
+        height: auto;
+      }
+      .product-buttons {
+        margin-top: 10px;
+      }
+    </style>
   </head>
   <body>
-    <button class="add-to-cart" data-product-id="123">Add to Cart</button>
-    <button class="add-to-fav" data-product-id="123">Add to Favorites</button>
-
+    <!-- Navigation -->
     <nav
       id="nav"
       class="navbar navbar-expand-lg navbar-light w-100"
-      style="background: linear-gradient(135deg, #8a2be2, #da70d6) !important"
+      style="background: linear-gradient(135deg, #8a2be2, #da70d6);"
     >
       <div class="container">
-        <!-- H&M Logo (Only for Large Devices) -->
+        <!-- H&M Logo (Large Devices) -->
         <a class="navbar-brand d-none d-lg-block" href="main.html">
           <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
         </a>
@@ -87,35 +111,30 @@
           </button>
         </form>
 
-        <!-- Optional: Display a message if no products are found -->
+        <!-- Message for no results (if needed) -->
         <p id="noResults" style="display: none">No products found.</p>
 
-        <!-- User Actions (Icons for All Devices) -->
+        <!-- User Actions (Large Devices) -->
         <ul class="navbar-nav user-icons d-none d-lg-flex">
           <li class="nav-item">
             <a class="nav-link" href="./login/loginPage.html"
               ><i class="fas fa-user"></i
             ></a>
           </li>
-
           <!-- Favorites Icon (Large Screen) -->
           <li class="nav-item" id="fav_nav">
-            <a
-              id="wishlist-link-large"
-              class="nav-link position-relative"
-              href="wishlist.html"
-            >
+            <a id="wishlist-link-large" class="nav-link position-relative" href="wishlist.html" target="_blank">
               <i class="fas fa-heart text-danger"></i>
               <span id="fav-count-large" class="badge-count">0</span>
             </a>
           </li>
-
           <!-- Shopping Bag Icon (Large Screen) -->
           <li class="nav-item d-none d-lg-block">
             <a
               id="cart-link-large"
               class="nav-link position-relative"
               href="cart.html"
+              target="_blank"
             >
               <i class="fas fa-shopping-bag text-dark"></i>
               <span id="bag-count-large" class="badge-count">0</span>
@@ -123,7 +142,7 @@
           </li>
         </ul>
 
-        <!-- Small Device Layout (Logo, Search, Sign-in, Fav, Bag) -->
+        <!-- Small Device Layout -->
         <div class="d-flex d-lg-none small-nav">
           <a class="navbar-brand" href="./login/loginPage.html">
             <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
@@ -139,17 +158,22 @@
               type="search"
               placeholder="Search"
               id="searchInput"
+              style="display:none;"
             />
           </div>
 
           <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
 
           <!-- Favorites Icon for Small Screens -->
-          <a
+          <!-- <a
             id="wishlist-link-small"
             class="nav-link position-relative"
             href="wishlist.html"
           >
+            <i class="fas fa-heart text-danger"></i>
+            <span id="fav-count-small" class="badge-count">0</span>
+          </a> -->
+          <a id="wishlist-link-small" class="nav-link position-relative" href="wishlist.html">
             <i class="fas fa-heart text-danger"></i>
             <span id="fav-count-small" class="badge-count">0</span>
           </a>
@@ -157,7 +181,7 @@
           <!-- Shopping Bag Icon for Small Screens -->
           <a
             id="cart-link-small"
-            class="nav-link position-relative d-lg-none"
+            class="nav-link position-relative"
             href="cart.html"
           >
             <i class="fas fa-shopping-bag text-dark"></i>
@@ -165,44 +189,50 @@
           </a>
 
           <!-- Filter Icon for Small Screens -->
-          <div class="filter-container d-lg-none">
+          <div class="filter-container">
             <button class="filter-btn" id="filter-toggle">
               <i class="fas fa-filter"></i>
             </button>
             <ul class="filter-menu" id="filter-menu">
-              <li><a class="nav-link" href="products.html">all</a></li>
-              <li><a class="nav-link" href="products.html?category=men">Men</a></li>
-              <li><a class="nav-link" href="products.html?category=women">Women</a></li>
-             
-              <li><a class="nav-link" href="products.html?category=kids">Kids</a></li>
-              <li><a class="nav-link"href="products.html?category=baby">Baby</a></li>
+              <li><a class="nav-link" href="products.html">All</a></li>
+              <li>
+                <a class="nav-link" href="products.html?category=men">Men</a>
+              </li>
+              <li>
+                <a class="nav-link" href="products.html?category=women">Women</a>
+              </li>
+              <li>
+                <a class="nav-link" href="products.html?category=kids">Kids</a>
+              </li>
+              <li>
+                <a class="nav-link" href="products.html?category=baby">Baby</a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
     </nav>
+    <button class="heart-button" onclick="addToFavorites(<?= product.id ?>, product)">❤️ Add to Favorites</button>
 
-    <!-- Main Product Display -->
-    <div class="main-container" id="products-container"></div>
-    <!-- <div id="product-container">
-      Product details will be inserted here
-  <!-- </div> -->
-    -->
-    <div id="product-container"></div>
 
-    <div id="no-product" style="display: none">
-      <p>Product not found.</p>
+    <!-- Main Content Container -->
+    <div class="container my-4">
+      <!-- Product Listing Container -->
+      <div id="products-container">
+        <p>Loading products...</p>
+      </div>
     </div>
-    <!-- Notification Container -->
-    <!-- <div id="notification-container"></div> -->
-    
-<!-- Notification Container -->
-<div id="notification-container" style="position: fixed; top: 10px; right: 10px; z-index: 1000;"></div>
 
+    <!-- Notification Container -->
+    <div
+      id="notification-container"
+      style="position: fixed; top: 10px; right: 10px; z-index: 1000;"
+    ></div>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./js_files/search.js"></script>
     <script src="./js_files/nav.js"></script>
-    <script src="./js_files/search_main.js"></script>
     <script src="./js_files/products.js"></script>
+    <script src="./js_files/search.js"></script>
   </body>
 </html>

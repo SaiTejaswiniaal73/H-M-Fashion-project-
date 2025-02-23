@@ -5,128 +5,166 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="./login/images/HM-logo.jpg" />
     <title>H&M Fashion Store</title>
+    <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     />
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
     />
-
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="./css_files/nav.css" />
     <link rel="stylesheet" href="./css_files/main_body.css" />
   </head>
   <body>
-    <!-- ------------------Navigation Bar--------------------------section 1----------------- -->
-
-    <!--  -->
-
-    <nav id="nav" class="navbar navbar-expand-lg navbar-light w-100" style="background: linear-gradient(135deg, #8a2be2, #da70d6) !important">
+    <!-- Navigation Bar -->
+    <nav
+      id="nav"
+      class="navbar navbar-expand-lg navbar-light w-100"
+      style="background: linear-gradient(135deg, #8a2be2, #da70d6) !important"
+    >
       <div class="container">
-          <!-- H&M Logo (Only for Large Devices) -->
-          <a class="navbar-brand d-none d-lg-block" href="main.html">
-              <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
-          </a>
-  
-          <!-- Large Device Links -->
-          <ul class="navbar-nav d-none d-lg-flex">
-              <li class="nav-item" id="nav_all">
-                  <button id="btn-all" class="nav-link" onclick="window.location.href='products.html'">All</button>
-              </li>
-              <li class="nav-item">
-                  <a id="btn2" class="nav-link men-link" href="products.html?category=men">Men</a>
-              </li>
-              <li class="nav-item">
-                  <a id="btn1" class="nav-link women-link" href="products.html?category=women">Women</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link kids-link" href="products.html?category=kids">Kids</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link baby-link" href="products.html?category=baby">Baby</a>
-              </li>
-          </ul>
-  
-          <!-- Search Bar (Large Devices) -->
-          <form class="d-flex search-container" role="search" onsubmit="handleSearch(event)">
-              <input id="search-input" class="form-control me-2 custom-search-input" type="search" placeholder="Search here..." aria-label="Search" />
-              <button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
-          </form>
-  
-          <!-- Optional: Display a message if no products are found -->
-          <p id="noResults" style="display: none;">No products found.</p>
-  
-          <!-- User Actions (Icons for All Devices) -->
-          <ul class="navbar-nav user-icons d-none d-lg-flex">
-              <li class="nav-item">
-                  <a class="nav-link" href="./login/loginPage.html"><i class="fas fa-user"></i></a>
-              </li>
-  
-              <!-- Favorites Icon (Large Screen) -->
-              <li class="nav-item" id="fav_nav">
-                  <a id="wishlist-link-large" class="nav-link position-relative" href="wishlist.html">
-                      <i class="fas fa-heart text-danger"></i>
-                      <span id="fav-count-large" class="badge-count">0</span>
-                  </a>
-              </li>
-  
-              <!-- Shopping Bag Icon (Large Screen) -->
-              <li class="nav-item d-none d-lg-block">
-                  <a id="cart-link-large" class="nav-link position-relative" href="cart.html">
-                      <i class="fas fa-shopping-bag text-dark"></i>
-                      <span id="bag-count-large" class="badge-count">0</span>
-                  </a>
-              </li>
-          </ul>
-  
-          <!-- Small Device Layout (Logo, Search, Sign-in, Fav, Bag) -->
-          <div class="d-flex d-lg-none small-nav">
-              <a class="navbar-brand" href="./login/loginPage.html">
-                  <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
-              </a>
-  
-              <!-- Search Box for Small Devices -->
-              <div class="search-box">
-                  <button class="btn btn-outline-dark" id="searchBtn">
-                      <i class="fas fa-search"></i>
-                  </button>
-                  <input class="form-control search-input" type="search" placeholder="Search" id="searchInput" />
-              </div>
-  
-              <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
-  
-              <!-- Favorites Icon for Small Screens -->
-              <a id="wishlist-link-small" class="nav-link position-relative" href="wishlist.html">
-                  <i class="fas fa-heart text-danger"></i>
-                  <span id="fav-count-small" class="badge-count">0</span>
-              </a>
-  
-              <!-- Shopping Bag Icon for Small Screens -->
-              <a id="cart-link-small" class="nav-link position-relative d-lg-none" href="cart.html">
-                  <i class="fas fa-shopping-bag text-dark"></i>
-                  <span id="bag-count-small" class="badge-count">0</span>
-              </a>
-  
-              <!-- Filter Icon for Small Screens -->
-              <div class="filter-container d-lg-none">
-                  <button class="filter-btn" id="filter-toggle">
-                      <i class="fas fa-filter"></i>
-                  </button>
-                  <ul class="filter-menu" id="filter-menu">
-                      <li><a class="nav-link" href="#mens-section">Men</a></li>
-                      <li><a class="nav-link" href="#womens-section">Women</a></li>
-                      <li><a class="nav-link" href="#kids-section">Kids</a></li>
-                      <li><a class="nav-link" href="#baby-section">Baby</a></li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-  </nav>
-  
-    <!-- -----------------------Navigation Bar--------------------------section 1 end----------------- -->
+        <!-- H&M Logo (Large Devices) -->
+        <a class="navbar-brand d-none d-lg-block" href="main.html">
+          <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
+        </a>
 
-    <!-----------------carosals total 3-----------------------------------SECTION-2----------------------------------------------------------->
+        <!-- Large Device Links -->
+        <ul class="navbar-nav d-none d-lg-flex">
+          <li class="nav-item" id="nav_all">
+            <button
+              id="btn-all"
+              class="nav-link"
+              onclick="window.location.href='products.html'"
+            >
+              All
+            </button>
+          </li>
+          <li class="nav-item">
+            <a id="btn2" class="nav-link men-link" href="products.html?category=men">Men</a>
+          </li>
+          <li class="nav-item">
+            <a id="btn1" class="nav-link women-link" href="products.html?category=women">Women</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link kids-link" href="products.html?category=kids">Kids</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link baby-link" href="products.html?category=baby">Baby</a>
+          </li>
+        </ul>
+
+        <!-- Search Bar (Large Devices) -->
+        <form class="d-flex search-container" role="search" onsubmit="handleSearch(event)">
+          <input
+            id="search-input"
+            class="form-control me-2 custom-search-input"
+            type="search"
+            placeholder="Search here..."
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-dark" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+
+        <!-- No Results Message (Optional) -->
+        <p id="noResults" style="display: none;">No products found.</p>
+
+        <!-- User Actions (Large Devices) -->
+        <ul class="navbar-nav user-icons d-none d-lg-flex">
+          <li class="nav-item">
+            <a class="nav-link" href="./login/loginPage.html">
+              <i class="fas fa-user"></i>
+            </a>
+          </li>
+          <!-- Favorites Icon -->
+          <li class="nav-item" id="fav_nav">
+            <a
+              id="wishlist-link-large"
+              class="nav-link position-relative"
+              href="wishlist.html"
+            >
+              <i class="fas fa-heart text-danger"></i>
+              <span id="fav-count-large" class="badge-count">0</span>
+            </a>
+          </li>
+          <!-- Shopping Bag Icon -->
+          <li class="nav-item d-none d-lg-block">
+            <a
+              id="cart-link-large"
+              class="nav-link position-relative"
+              href="cart.html"
+            >
+              <i class="fas fa-shopping-bag text-dark"></i>
+              <span id="bag-count-large" class="badge-count">0</span>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Small Device Layout -->
+        <div class="d-flex d-lg-none small-nav">
+          <a class="navbar-brand" href="./login/loginPage.html">
+            <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
+          </a>
+
+          <!-- Search Box for Small Devices -->
+          <div class="search-box">
+            <button class="btn btn-outline-dark" id="searchBtn">
+              <i class="fas fa-search"></i>
+            </button>
+            <input
+              class="form-control search-input"
+              type="search"
+              placeholder="Search"
+              id="searchInput"
+            />
+          </div>
+
+          <a class="nav-link" href="#">
+            <i class="fas fa-user"></i>
+          </a>
+
+          <!-- Favorites Icon for Small Screens -->
+          <a
+            id="wishlist-link-small"
+            class="nav-link position-relative"
+            href="wishlist.html"
+          >
+            <i class="fas fa-heart text-danger"></i>
+            <span id="fav-count-small" class="badge-count">0</span>
+          </a>
+
+          <!-- Shopping Bag Icon for Small Screens -->
+          <a
+            id="cart-link-small"
+            class="nav-link position-relative d-lg-none"
+            href="cart.html"
+          >
+            <i class="fas fa-shopping-bag text-dark"></i>
+            <span id="bag-count-small" class="badge-count">0</span>
+          </a>
+
+          <!-- Filter Icon for Small Screens -->
+          <div class="filter-container d-lg-none">
+            <button class="filter-btn" id="filter-toggle">
+              <i class="fas fa-filter"></i>
+            </button>
+            <ul class="filter-menu" id="filter-menu">
+              <li><a class="nav-link" href="#mens-section">Men</a></li>
+              <li><a class="nav-link" href="#womens-section">Women</a></li>
+              <li><a class="nav-link" href="#kids-section">Kids</a></li>
+              <li><a class="nav-link" href="#baby-section">Baby</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Carousel Section -->
     <section class="carosal" id="home">
       <div
         id="carouselExampleCaptions"
@@ -198,14 +236,16 @@
             </div>
           </div>
         </div>
-
         <button
           class="carousel-control-prev"
           type="button"
           data-bs-target="#carouselExampleCaptions"
           data-bs-slide="prev"
         >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span
+            class="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
           <span class="visually-hidden">Previous</span>
         </button>
         <button
@@ -214,18 +254,21 @@
           data-bs-target="#carouselExampleCaptions"
           data-bs-slide="next"
         >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span
+            class="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
     </section>
-    <!-- div box of offer page-------------------------------------section 3------------------------ -->
+
+    <!-- Offer Section -->
     <div class="ob">
       <div class="offer-box">
         <h2>Weekend Offer</h2>
         <p class="offer-discount">Flat 15% off</p>
         <p>Shop t-shirts, polos & more at slashed prices.</p>
-
         <div class="offer-links">
           <a href="#mens-section" class="offer-btn">Men</a>
           <a href="#womens-section" class="offer-btn">Women</a>
@@ -235,9 +278,7 @@
       </div>
     </div>
 
-    <!-- try -->
-
-    <!-------------------------womens section-----------------------SECTION-3------------------------------------------------------------------->
+    <!-- Womens Section -->
     <section class="el3" id="womens-section">
       <article class="sec3-content">
         <h1>"Your One-Stop Style Destination"</h1>
@@ -248,7 +289,7 @@
           id="btn1"
           onclick="window.location.href='products.html?category=women'"
         >
-          Womens
+          Women
         </button>
       </article>
       <article class="sec3-img">
@@ -259,24 +300,24 @@
       </article>
     </section>
 
-    <!-- kids section-------------------------sectionn -5----------------  -->
+    <!-- Kids Section -->
     <section class="el5" id="kids-section">
       <h2 class="sec5-heading">"Explore For Your Kiddo's"</h2>
       <article class="sec5-img">
         <div class="img-container">
-          <img src="./images/c1.png" />
+          <img src="./images/c1.png" alt="Trendy Kidswear" />
           <p class="img-text">Trendy Kidswear</p>
         </div>
         <div class="img-container">
-          <img src="./images/c4.png" />
+          <img src="./images/c4.png" alt="Comfortable & Stylish" />
           <p class="img-text">Comfortable & Stylish</p>
         </div>
         <div class="img-container">
-          <img src="./images/c3.png" />
+          <img src="./images/c3.png" alt="Playtime Ready" />
           <p class="img-text">Playtime Ready</p>
         </div>
         <div class="img-container">
-          <img src="./images/c2.png" />
+          <img src="./images/c2.png" alt="Adorable Outfits" />
           <p class="img-text">Adorable Outfits</p>
         </div>
       </article>
@@ -288,29 +329,13 @@
       </button>
     </section>
 
-    <!----------------------mens sction---------------------------SECTION-4---------------------------------------------------------------------------->
+    <!-- Mens Section -->
     <section class="el4" id="mens-section">
       <article class="sec4-img">
-        <img
-          class="img5"
-          src="./images/m1.png"
-          alt="casual denim jacket with white t-shirt"
-        />
-        <img
-          class="img6"
-          src="./images/m2.png"
-          alt="formal business suit with tie"
-        />
-        <img
-          class="img7"
-          src="./images/m3.png"
-          alt="comfortable loungewear set"
-        />
-        <img
-          class="img8"
-          src="./images/m4.png"
-          alt="comfortable loungewear set"
-        />
+        <img class="img5" src="./images/m1.png" alt="Casual denim jacket with white t-shirt" />
+        <img class="img6" src="./images/m2.png" alt="Formal business suit with tie" />
+        <img class="img7" src="./images/m3.png" alt="Comfortable loungewear set" />
+        <img class="img8" src="./images/m4.png" alt="Comfortable loungewear set" />
       </article>
       <article class="sec4-content">
         <h1>"Redefine Your Style with Every Look"</h1>
@@ -326,28 +351,27 @@
       </article>
     </section>
 
-    <!-------------------------- Baby Section ---------------------- SECTION-6 ---------------------------------->
+    <!-- Baby Section -->
     <section class="el6" id="baby-section">
       <h2 class="sec6-heading">"Adorable Collections"</h2>
       <article class="sec6-img">
         <div class="img-container">
-          <img src="./images/cc3.png" />
+          <img src="./images/cc3.png" alt="Cozy Babywear" />
           <p class="img-text">Cozy Babywear</p>
         </div>
         <div class="img-container">
-          <img src="./images/cc3.png" />
+          <img src="./images/cc3.png" alt="Cute and Comfy" />
           <p class="img-text">Cute and Comfy</p>
         </div>
         <div class="img-container">
-          <img src="./images/cc3.png" />
+          <img src="./images/cc3.png" alt="Playtime Ready" />
           <p class="img-text">Playtime Ready</p>
         </div>
         <div class="img-container">
-          <img src="./images/cc3.png" />
+          <img src="./images/cc3.png" alt="Adorable Outfits" />
           <p class="img-text">Adorable Outfits</p>
         </div>
       </article>
-
       <button
         id="btn-12"
         onclick="window.location.href='products.html?category=baby'"
@@ -355,16 +379,17 @@
         <span>Explore Baby Collection</span>
       </button>
     </section>
-    <!-- premium products for life showing text -->
+
+    <!-- Sliding Products Section -->
     <p id="slide_heading">
       <i>Elite Savings on Your Unique Fashion </i> &#128150;
     </p>
-    <!-- sliding products -->
     <div
       id="sliding_products"
       style="display: flex; overflow-x: auto; gap: 30px; padding: 15px"
     ></div>
 
+    <!-- Sound Section -->
     <div class="Sound">
       <div class="sound-style-box">
         <h2>The Sound of Style just dropped</h2>
@@ -378,6 +403,8 @@
         </div>
       </div>
     </div>
+
+    <!-- Denim Section -->
     <div class="denim_box">
       <div class="denim-section">
         <h2>A New Take on Denim</h2>
@@ -385,7 +412,7 @@
       </div>
     </div>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <div class="row">
@@ -399,7 +426,6 @@
             <a href="#">Home</a><br />
             <a href="#">Magazine</a><br />
           </div>
-
           <!-- Corporate Info -->
           <div class="col-md-3">
             <h5>Corporate Info</h5>
@@ -410,7 +436,6 @@
             <a href="#">Investor Relations</a><br />
             <a href="#">Corporate Governance</a><br />
           </div>
-
           <!-- Help Section -->
           <div class="col-md-3">
             <h5>Help</h5>
@@ -423,23 +448,18 @@
             <a href="#">Cookie Notice</a><br />
             <a href="#">Cookie Settings</a><br />
           </div>
-
           <!-- Newsletter Signup -->
           <div class="col-md-3 newsletter">
             <h5>Sign Up & Stay Updated</h5>
             <p>
-              Be the first to know about exclusive offers, latest fashion news &
+              Be the first to know about exclusive offers, latest fashion news &amp;
               style tips!
             </p>
-            <h6>Contact:+91 9876543012</h6>
+            <h6>Contact: +91 9876543012</h6>
             <h5>Thank you</h5>
-            <!-- <input type="email" placeholder="Enter your email">
-                    <button>Subscribe</button> -->
           </div>
         </div>
-
         <hr class="my-4" style="border-color: #444" />
-
         <!-- Social Media Icons -->
         <div class="text-center social-icons">
           <a
@@ -448,72 +468,42 @@
           >
             <i class="fab fa-instagram"></i>
           </a>
-
-          <a href="https://www.tiktok.com/@hm" target="_blank"
-            ><i class="fab fa-tiktok"></i
-          ></a>
-          <a href="https://open.spotify.com/user/hm" target="_blank"
-            ><i class="fab fa-spotify"></i
-          ></a>
-          <a
-            href="https://www.youtube.com/user/hennesandmauritz"
-            target="_blank"
-            ><i class="fab fa-youtube"></i
-          ></a>
-          <a href="https://www.pinterest.com/hm" target="_blank"
-            ><i class="fab fa-pinterest"></i
-          ></a>
-          <a href="https://www.facebook.com/hm" target="_blank"
-            ><i class="fab fa-facebook"></i
-          ></a>
-          <a href="https://www.linkedin.com/company/h&m" target="_blank"
-            ><i class="fab fa-linkedin"></i
-          ></a>
+          <a href="https://www.tiktok.com/@hm" target="_blank">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a href="https://open.spotify.com/user/hm" target="_blank">
+            <i class="fab fa-spotify"></i>
+          </a>
+          <a href="https://www.youtube.com/user/hennesandmauritz" target="_blank">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://www.pinterest.com/hm" target="_blank">
+            <i class="fab fa-pinterest"></i>
+          </a>
+          <a href="https://www.facebook.com/hm" target="_blank">
+            <i class="fab fa-facebook"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/h&m" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
         </div>
-
-        <!-- Copyright & Country -->
+        <!-- Footer Bottom -->
         <div class="footer-bottom">
-          <p>&copy; 2025 H&M Hennes & Mauritz AB. All Rights Reserved.</p>
+          <p>&copy; 2025 H&M Hennes &amp; Mauritz AB. All Rights Reserved.</p>
           <p><strong>H&M</strong> | INDIA | Rs.</p>
         </div>
       </div>
     </footer>
 
-<!-- Notification Container -->
-<div id="notification-container"></div>
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
 
-
-
-
-    <!-- <script>
-      document.addEventListener("DOMContentLoaded", () => {
-  const userId = localStorage.getItem("userId");
-
-  // If user is not logged in, redirect to login page
-  if (!userId) {
-      alert("Please log in to access your cart and favorites.");
-      window.location.href = "./login/loginPage.html";  // Redirect to login page
-  } else {
-      // If user is logged in, you can now display their cart and favs or let them add items.
-      console.log("User is logged in:", userId);
-  }
-});
-
-    </script> -->
-
-<!-- //login thing -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js_files/nav.js"></script>
     <script src="./js_files/main.js"></script>
-    <script src="./js_files/main_products.js"></script>
+    <script src="./js_files/products.js"></script>
     <script src="./js_files/search_main.js"></script>
-   
     <script src="./js_files/search.js"></script>
-      <!-- <script src="./js_files/cart_fav.js"></script> -->
-    <!-- <script src="./js_files/main_search.js"></script> -->
-   
-   <!--  -->
-</body>
-  </html>
-
-
+  </body>
+</html>
