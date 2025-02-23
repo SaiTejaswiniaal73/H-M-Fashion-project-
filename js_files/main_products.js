@@ -100,3 +100,6 @@ function handleCategoryChange(category) {
 
 // Call the function to fetch products initially
 fetchProducts();
+document.addEventListener("DOMContentLoaded", function() {
+  updateCartBadgeCount();
+});

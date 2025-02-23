@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Checkout | H&M</title>
+    <link rel="stylesheet" href="./css_files/checkout.css" />
+  </head>
+  <body>
+    <div class="checkout-container">
+      <!-- Left Section: Customer Info -->
+      <div class="checkout-form-section">
+        <h1>Checkout</h1>
+        <h2>My Information</h2>
+        <form id="checkout-form">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Mobile Number</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+          <div class="form-group">
+            <label for="address">Street Address</label>
+            <input type="text" id="address" name="address" required />
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" required />
+          </div>
+          <div class="form-group">
+            <label for="zip">Zip/Postal Code</label>
+            <input type="text" id="zip" name="zip" required />
+          </div>
+          <p>
+            By placing this order, you agree to H&M's 
+            <a href="#">Terms and Conditions</a>.
+          </p>
+          <!-- When the user clicks this, we save the info and proceed to payment -->
+          <button type="submit" class="save-btn">Save & Continue</button>
+        </form>
+      </div>
+
+      <!-- Right Section: Order Summary (can remain as-is) -->
+      <div class="checkout-summary-section">
+        <h2>Order Summary</h2>
+        <div class="summary-box">
+          <div class="summary-row">
+            <span>Order value:</span>
+            <span id="order-value">Rs. 0</span>
+          </div>
+          <div class="summary-row">
+            <span>Discount:</span>
+            <span id="discount-amount">-Rs. 0</span>
+          </div>
+          <div class="summary-row">
+            <span>Delivery:</span>
+            <span id="delivery-fee">Rs. 0</span>
+          </div>
+          <hr />
+          <div class="summary-row total-row">
+            <span>Total:</span>
+            <span id="total-amount">Rs. 0</span>
+          </div>
+        </div>
+
+        <div class="checkout-actions">
+          <button class="apply-discount-btn">Apply discount</button>
+          <p>Sign in to see your personal offers!</p>
+        </div>
+
+        <div class="summary-footer">
+          <h3>We accept</h3>
+          <div class="payment-methods">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" alt="MasterCard" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/PayPal_Logo.png" alt="PayPal" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // When the form is submitted, prevent default submission,
+      // then redirect to payment.html.
+      document.getElementById("checkout-form").addEventListener("submit", function(e) {
+        e.preventDefault();
+        // Optionally, save user info here or validate inputs.
+        window.location.href = "payment.html";
+      });
+    </script>
+  </body>
+</html>
