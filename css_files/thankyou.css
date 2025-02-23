@@ -1,0 +1,77 @@
+/* Global Body Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    /* Use a soft gradient background */
+    background: linear-gradient(135deg, #f0f8ff, #e6e6fa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  /* Thank You Container */
+  .thankyou-container {
+    text-align: center;
+    background: #fff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .thankyou-container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .thankyou-container p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+  }
+  
+  /* Continue Shopping Button */
+  .continue-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+    /* Allow the pseudo-element to be visible outside the button */
+    overflow: visible;
+  }
+  
+  .continue-btn:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Balloon Hover Effect */
+  .continue-btn:hover::after {
+    content: "🎈";
+    position: absolute;
+    left: 50%;
+    bottom: 100%;
+    transform: translateX(-50%);
+    animation: flyBalloon 2s ease-out forwards;
+  }
+  
+  /* Balloon Fly Animation */
+  @keyframes flyBalloon {
+    0% {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(150px) translateY(-250px);
+    }
+  }
+  
