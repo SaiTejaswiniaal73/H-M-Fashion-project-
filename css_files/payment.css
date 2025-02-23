@@ -4,25 +4,43 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
   }
   
   .payment-container {
     max-width: 400px;
-    margin: 50px auto;
-    background-color: #ffffff;
+    width: 90%;
+    margin: 20px auto;
+    background-color: #fff;
     border-radius: 8px;
     padding: 30px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
   }
   
   .payment-container h1 {
-    text-align: center;
     margin-bottom: 20px;
     color: #333;
   }
   
+  .amount-display p {
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .amount-display h2 {
+    margin: 10px 0 20px;
+    color: #e60023;
+    font-size: 2rem;
+  }
+  
   .form-group {
     margin-bottom: 15px;
+    text-align: left;
   }
   
   .form-group label {

@@ -7,7 +7,7 @@
   </head>
   <body>
     <div class="checkout-container">
-      <!-- Left Section: Customer Info -->
+      <!-- Left Section: Customer Info Form -->
       <div class="checkout-form-section">
         <h1>Checkout</h1>
         <h2>My Information</h2>
@@ -41,20 +41,19 @@
             <input type="text" id="zip" name="zip" required />
           </div>
           <p>
-            By placing this order, you agree to H&M's 
+            By placing this order, you agree to H&M's
             <a href="#">Terms and Conditions</a>.
           </p>
-          <!-- When the user clicks this, we save the info and proceed to payment -->
           <button type="submit" class="save-btn">Save & Continue</button>
         </form>
       </div>
 
-      <!-- Right Section: Order Summary (can remain as-is) -->
+      <!-- Right Section: Order Summary -->
       <div class="checkout-summary-section">
         <h2>Order Summary</h2>
         <div class="summary-box">
           <div class="summary-row">
-            <span>Order value:</span>
+            <span>Order Value:</span>
             <span id="order-value">Rs. 0</span>
           </div>
           <div class="summary-row">
@@ -71,30 +70,36 @@
             <span id="total-amount">Rs. 0</span>
           </div>
         </div>
-
-        <div class="checkout-actions">
-          <button class="apply-discount-btn">Apply discount</button>
-          <p>Sign in to see your personal offers!</p>
-        </div>
-
-        <div class="summary-footer">
-          <h3>We accept</h3>
-          <div class="payment-methods">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" alt="MasterCard" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/PayPal_Logo.png" alt="PayPal" />
-          </div>
-        </div>
       </div>
     </div>
 
     <script>
-      // When the form is submitted, prevent default submission,
-      // then redirect to payment.html.
-      document.getElementById("checkout-form").addEventListener("submit", function(e) {
-        e.preventDefault();
-        // Optionally, save user info here or validate inputs.
-        window.location.href = "payment.html";
+      // Update order summary from cart stored in localStorage
+      function updateSummary() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let totalPrice = 0;
+        cart.forEach(product => {
+          totalPrice += product.price;
+        });
+        // For example, flat discount Rs.200 if there's an order, free delivery
+        let discount = totalPrice > 0 ? 200 : 0;
+        let deliveryFee = 0;
+        let finalTotal = totalPrice - discount + deliveryFee;
+        
+        document.getElementById("order-value").textContent = `Rs. ${totalPrice}`;
+        document.getElementById("discount-amount").textContent = `-Rs. ${discount}`;
+        document.getElementById("delivery-fee").textContent = `Rs. ${deliveryFee}`;
+        document.getElementById("total-amount").textContent = `Rs. ${finalTotal}`;
+      }
+      
+      document.addEventListener("DOMContentLoaded", function(){
+        updateSummary();
+        // On form submit, you may optionally validate/save data then redirect to payment page
+        document.getElementById("checkout-form").addEventListener("submit", function(e) {
+          e.preventDefault();
+          // (Optional) Save the user info here
+          window.location.href = "payment.html";
+        });
       });
     </script>
   </body>

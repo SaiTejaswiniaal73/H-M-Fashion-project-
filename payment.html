@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -32,6 +32,68 @@
         setTimeout(function(){
           window.location.href = "thankyou.html";
         }, 1000);
+      });
+    </script>
+  </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Payment | H&M</title>
+    <link rel="stylesheet" href="./css_files/payment.css" />
+  </head>
+  <body>
+    <div class="payment-container">
+      <h1>Payment Details</h1>
+      <!-- Display Amount -->
+      <div class="amount-display">
+        <p>Amount to be paid:</p>
+        <h2 id="final-amount">Rs. 0</h2>
+      </div>
+      <form id="payment-form">
+        <div class="form-group">
+          <label for="cardNumber">Card Number</label>
+          <input type="text" id="cardNumber" placeholder="Enter card number" required />
+        </div>
+        <div class="form-group">
+          <label for="expiry">Expiry Date (MM/YY)</label>
+          <input type="text" id="expiry" placeholder="MM/YY" required />
+        </div>
+        <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input type="text" id="cvv" placeholder="CVV" required />
+        </div>
+        <button type="submit" class="pay-btn">Pay Now</button>
+      </form>
+    </div>
+
+    <script>
+      // Calculate final amount from cart and update the display
+      function updatePaymentAmount() {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let totalPrice = 0;
+        cart.forEach(product => {
+          totalPrice += product.price;
+        });
+        let discount = totalPrice > 0 ? 200 : 0;
+        let deliveryFee = 0;
+        let finalTotal = totalPrice - discount + deliveryFee;
+        document.getElementById("final-amount").textContent = `Rs. ${finalTotal}`;
+      }
+      
+      document.addEventListener("DOMContentLoaded", function() {
+        updatePaymentAmount();
+        document.getElementById("payment-form").addEventListener("submit", function(e) {
+          e.preventDefault();
+          // Optionally, validate payment details here.
+          // For now, simulate a payment process and then redirect.
+          setTimeout(function() {
+            window.location.href = "thankyou.html";
+          }, 1000);
+        });
       });
     </script>
   </body>
