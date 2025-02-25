@@ -2,7 +2,9 @@
 let globalProductData = null;
 let allProducts = [];
 
-// Fetch products from API and display them based on URL parameters
+/* -------------------------------
+   API Fetch & Display Products
+---------------------------------*/
 async function fetchProducts() {
   try {
     const response = await fetch("https://679ba6ae33d316846324a4ae.mockapi.io/practise");
@@ -46,7 +48,6 @@ async function fetchProducts() {
   }
 }
 
-// Filter products by category and search query
 function filterProducts(productsData, category, searchQuery) {
   const availableCategories = ["women", "men", "kids", "baby"];
   let filtered = [];
@@ -72,7 +73,6 @@ function filterProducts(productsData, category, searchQuery) {
   return filtered;
 }
 
-// Display products in the DOM
 function displayProducts(products) {
   const container = document.getElementById("products-container");
   container.innerHTML = ""; // Clear previous content
@@ -149,20 +149,85 @@ function displayProducts(products) {
   });
 }
 
-// Find a product by its ID
+/* -------------------------------
+   Helper & Notification Functions
+---------------------------------*/
+
+// Helper function to find a product by its ID (using aggregated allProducts)
 function findProductById(productId) {
-  return allProducts.find((product) => product.id === productId);
+  return allProducts.find(product => product.id === productId);
 }
 
-// Add to Favorites function
+// Function to update the badge count for favorites or cart
+function updateBadgeCount(type, count) {
+  // type should be "fav" for favorites or "bag" for cart
+  const countElements = document.querySelectorAll(`#${type}-count-large, #${type}-count-small`);
+  countElements.forEach(el => {
+    el.textContent = count;
+    el.style.display = count > 0 ? "block" : "none";
+  });
+}
+
+// Function to update the cart badge count (for the nav bar)
+function updateCartBadgeCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const count = cart.length;
+
+  const largeBadge = document.getElementById("bag-count-large");
+  const smallBadge = document.getElementById("bag-count-small");
+
+  if (largeBadge) {
+    largeBadge.textContent = count;
+    largeBadge.style.display = count > 0 ? "block" : "none";
+  }
+  if (smallBadge) {
+    smallBadge.textContent = count;
+    smallBadge.style.display = count > 0 ? "block" : "none";
+  }
+}
+
+// Function to show a temporary notification
+function showNotification(message) {
+  const container = document.getElementById("notification-container");
+  if (!container) return;
+  const notification = document.createElement("div");
+  notification.className = "notification";
+  notification.textContent = message;
+  container.appendChild(notification);
+  setTimeout(() => {
+    notification.remove();
+  }, 2000);
+}
+
+/* -------------------------------
+   Login Check Helper
+---------------------------------*/
+// Helper function to ensure the user is logged in (not as a guest)
+function ensureUserLoggedIn() {
+  if (localStorage.getItem("isLoggedIn") !== "true") {
+    showNotification("Please sign in to add products to cart or favorites.");
+    setTimeout(function() {
+      window.location.href = "login/loginPage.html";
+    }, 1500);
+    return false;
+  }
+  return true;
+}
+
+/* -------------------------------
+   Favorites & Cart Functions
+---------------------------------*/
+// Function to add product to favorites
 function addToFavorites(productId, product) {
+  if (!ensureUserLoggedIn()) return;  // Check login first
+
   if (!product) {
     product = findProductById(productId);
   }
   if (!product) return;
 
   let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-  if (!favorites.find((item) => item.id === productId)) {
+  if (!favorites.find(item => item.id === productId)) {
     favorites.push(product);
     localStorage.setItem("favorites", JSON.stringify(favorites));
     updateBadgeCount("fav", favorites.length);
@@ -172,165 +237,35 @@ function addToFavorites(productId, product) {
   }
 }
 
-// Add to Cart function
+// Function to add a product to the cart
 function addToCart(productId, product) {
+  if (!ensureUserLoggedIn()) return;  // Check login first
+
   if (!product) {
     product = findProductById(productId);
   }
   if (!product) return;
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  if (!cart.find((item) => item.id === productId)) {
+  if (!cart.find(item => item.id === productId)) {
     cart.push(product);
     localStorage.setItem("cart", JSON.stringify(cart));
-    updateBadgeCount("bag", cart.length);
     showNotification("Added to Cart");
   } else {
     showNotification("Product already in Cart");
   }
+  
+  updateCartBadgeCount();
 }
 
-// Update badge counts for favorites and cart
-function updateBadgeCount(type, count) {
-  // type should be "fav" or "bag"
-  const countElements = document.querySelectorAll(
-    `#${type}-count-large, #${type}-count-small`
-  );
-  countElements.forEach((el) => {
-    el.textContent = count;
-    el.style.display = count > 0 ? "block" : "none";
-  });
-}
-
-// Show notification messages
-function showNotification(message) {
-  const container = document.getElementById("notification-container");
-  const notification = document.createElement("div");
-  notification.className = "alert alert-info";
-  notification.textContent = message;
-  container.appendChild(notification);
-  setTimeout(() => {
-    notification.remove();
-  }, 2000);
-}
-
-// Initial fetch on page load
-document.addEventListener("DOMContentLoaded", fetchProducts);
-
-
-// kneo ading 23-2-5:50
-
-//for logi check
-
-
-
-
-// Function to find a product by its ID (assuming allProducts is your aggregated array)
-function findProductById(productId) {
-    return allProducts.find(product => product.id === productId);
-  }
-  
-  // Function to update the favorites badge count
-  function updateBadgeCount(type, count) {
-    // Here, type is 'fav' for favorites
-    const countElements = document.querySelectorAll(`#${type}-count-large, #${type}-count-small`);
-    countElements.forEach(el => {
-      el.textContent = count;
-      el.style.display = count > 0 ? "block" : "none";
-    });
-  }
-  
-  // Function to show a temporary notification
-  function showNotification(message) {
-    const container = document.getElementById("notification-container");
-    const notification = document.createElement("div");
-    notification.className = "notification";
-    notification.textContent = message;
-    container.appendChild(notification);
-    setTimeout(() => {
-      notification.remove();
-    }, 2000);
-  }
-  
-  // Function to add product to favorites
-  function addToFavorites(productId, product) {
-    // If product isn't provided, try to find it from the global data
-    if (!product) {
-      product = findProductById(productId);
-    }
-    if (!product) return;
-  
-    // Retrieve existing favorites from localStorage
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-  
-    // Check if the product is already in favorites
-    if (!favorites.find(item => item.id === productId)) {
-      favorites.push(product);
-      localStorage.setItem("favorites", JSON.stringify(favorites));
-      updateBadgeCount("fav", favorites.length);
-      showNotification("Added to Favorites");
-    } else {
-      showNotification("Product already in Favorites");
-    }
-  }
-  
-  document.addEventListener("DOMContentLoaded", function() {
-    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    updateBadgeCount("fav", favorites.length);
-  });
-  
-
-  //for cart update
-  
-  // Function to update the cart badge count in the nav bar
-function updateCartBadgeCount() {
-    // Read the cart from localStorage (or default to an empty array)
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    
-    // Get the count of items in the cart
-    const count = cart.length;
-    
-    // Update both the large and small badge elements
-    const largeBadge = document.getElementById("bag-count-large");
-    const smallBadge = document.getElementById("bag-count-small");
-    
-    if (largeBadge) {
-      largeBadge.textContent = count;
-      largeBadge.style.display = count > 0 ? "block" : "none";
-    }
-    
-    if (smallBadge) {
-      smallBadge.textContent = count;
-      smallBadge.style.display = count > 0 ? "block" : "none";
-    }
-  }
-  
-  // Run the badge update when the DOM is loaded
-  document.addEventListener("DOMContentLoaded", function() {
-    updateCartBadgeCount();
-  });
-  
-  // Function to add a product to the cart
-  function addToCart(productId, product) {
-    // If the product is not provided, try to look it up using a helper function
-    if (!product) {
-      product = findProductById(productId);
-    }
-    if (!product) return;  // Exit if the product can't be found
-    
-    // Retrieve the cart array from localStorage (or initialize it)
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    
-    // Check if the product is already in the cart
-    if (!cart.find(item => item.id === productId)) {
-      cart.push(product);
-      localStorage.setItem("cart", JSON.stringify(cart));
-      showNotification("Added to Cart");
-    } else {
-      showNotification("Product already in Cart");
-    }
-    
-    // Update the badge count after modifying the cart
-    updateCartBadgeCount();
-  }
-  
+/* -------------------------------
+   Initial Setup
+---------------------------------*/
+document.addEventListener("DOMContentLoaded", function() {
+  // Fetch products from API
+  fetchProducts();
+  // Update badge counts for favorites and cart on load
+  const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+  updateBadgeCount("fav", favorites.length);
+  updateCartBadgeCount();
+});
