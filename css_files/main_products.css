@@ -105,3 +105,192 @@
   margin: 5px 0;
   transition: opacity 0.5s;
 }
+
+
+/* know updatiing */
+
+#products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Uniform product box height */
+.product-box {
+  background-color: #f5f5f5;
+  border: 2px solid #ddd;
+  width: 250px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 450px; /* Increase height if needed */
+}
+
+/* Increase image height dynamically */
+.product-image {
+  width: 100%;
+  height: 60%;  /* Image takes more space */
+  object-fit: cover;
+  flex-grow: 1; /* Fills extra space */
+}
+
+/* Ensure title and description don't overflow */
+.product-title {
+  font-weight: bold;
+  color: #333;
+  background-color: #f0e68c;
+  padding: 5px;
+  border-radius: 5px;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.product-description {
+  color: #555;
+  font-size: 14px;
+  background-color: #f0f8ff;
+  padding: 5px;
+  border-radius: 5px;
+  word-wrap: break-word;
+  white-space: normal;
+  flex-grow: 0; /* Ensures text doesn't take too much space */
+}
+
+/* Buttons should be at the bottom */
+.product-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: auto; /* Push buttons to bottom */
+}
+
+/* Product display styling */
+#products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.product-box {
+  background-color: #f5f5f5;
+  border: 2px solid #ddd;
+  width: 250px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 450px;
+}
+
+.product-box:hover {
+  transform: scale(1.05);
+}
+
+.product-image {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+  flex-grow: 1;
+}
+
+.product-title {
+  font-weight: bold;
+  color: #333;
+  background-color: #f0e68c;
+  padding: 5px;
+  border-radius: 5px;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+.product-description {
+  color: #555;
+  font-size: 14px;
+  background-color: #f0f8ff;
+  padding: 5px;
+  border-radius: 5px;
+  word-wrap: break-word;
+  white-space: normal;
+  flex-grow: 0;
+}
+
+/* Styling for product sizes and colors */
+.product-sizes, .product-colors {
+  margin: 5px 0;
+  padding: 5px;
+  background-color: #e6e6fa; /* Light lavender */
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* Buttons should be at the bottom */
+.product-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.heart-button {
+  background-color: #ff69b4;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s, background-color 0.3s;
+}
+
+.heart-button:hover {
+  opacity: 0.8;
+  background-color: rebeccapurple;
+}
+
+.cart-button {
+  background-color: rgb(170, 170, 4);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.3s, background-color 0.3s;
+}
+
+.cart-button:hover {
+  opacity: 0.8;
+  background-color: #45a049;
+}
+
+.notification {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px 0;
+  transition: opacity 0.5s;
+}
+.product-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #4CAF50; /* Green */
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
