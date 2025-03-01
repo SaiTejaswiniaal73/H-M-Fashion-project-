@@ -51,7 +51,7 @@ catch (error) {
   }
 }
 
-
+}
 function filterProducts(productsData, category, searchQuery) {
   const availableCategories = ["women", "men", "kids", "baby"];
   let filtered = [];
@@ -273,4 +273,4 @@ document.addEventListener("DOMContentLoaded", function() {
   updateBadgeCount("fav", favorites.length);
   updateCartBadgeCount();
 });
-}
+

@@ -200,7 +200,7 @@ body {
 /* Large Screens: Sections align horizontally */
 @media (min-width: 769px) {
   .cart-container {
-    flex-direction: row;
+    flex-direction: column;
     gap: 20px;
   }
 
