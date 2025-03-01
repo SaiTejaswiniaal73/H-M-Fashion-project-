@@ -1,0 +1,346 @@
+[
+  {
+    "id": 1,
+    "name": "Women's Floral Dress",
+    "category": "Women's Clothing",
+    "price": 49.99,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Red",
+      "Blue",
+      "Green"
+    ],
+    "image": "https://littleboxindia.com/cdn/shop/files/f1d4802c9c39391020211dc1fb328304_720x.jpg?v=1719493846"
+  },
+  {
+    "id": 2,
+    "name": "Men's Casual Shirt",
+    "category": "Men's Clothing",
+    "price": 39.99,
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "White",
+      "Black",
+      "Grey"
+    ],
+    "image": "https://littleboxindia.com/cdn/shop/files/50_1_720x.jpg?v=1720426678"
+  },
+  {
+    "id": 3,
+    "name": "Kids' Graphic T-Shirt",
+    "category": "Kids' Clothing",
+    "price": 19.99,
+    "sizes": [
+      "XS",
+      "S",
+      "M"
+    ],
+    "colors": [
+      "Yellow",
+      "Pink",
+      "Purple"
+    ],
+    "image": "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F03%2F11%2F03112c7caa51aba6faf5c95c68d94d33a48a40e7.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bkids_boys_clothing_jumperssweatshirts_hoodies_zipup%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B2%5D&call=url[file:/product/fullscreen]"
+  },
+  {
+    "id": 4,
+    "name": "Women's Denim Jeans",
+    "category": "Women's Clothing",
+    "price": 59.99,
+    "sizes": [
+      "26",
+      "28",
+      "30",
+      "32"
+    ],
+    "colors": [
+      "Blue",
+      "Black"
+    ],
+    "image": "https://littleboxindia.com/cdn/shop/files/baf2782e8c2df5d2e8281f21e6a4769e_720x.jpg?v=1722083471"
+  },
+  {
+    "id": 5,
+    "name": "Men's Leather Jacket",
+    "category": "Men's Clothing",
+    "price": 129.99,
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Black",
+      "Brown"
+    ],
+    "image": "https://littleboxindia.com/cdn/shop/files/42_1_720x.jpg?v=1713620717"
+  },
+  {
+    "id": 6,
+    "name": "Kids' Hoodie",
+    "category": "Kids' Clothing",
+    "price": 29.99,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "Red",
+      "Blue",
+      "Green"
+    ],
+    "image": "https://includ.com/cdn/shop/products/O1CN01W91K0M1ovUliWYgQV__2209824385287-0-cib_6c3b471d-5f0d-4016-98df-b58b7d669485_1024x1024.jpg?v=1712576921"
+  },
+  {
+    "id": 7,
+    "name": "Women's Casual Blouse",
+    "category": "Women's Clothing",
+    "price": 34.99,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "White",
+      "Pink",
+      "Navy"
+    ],
+    "image": "https://littleboxindia.com/cdn/shop/products/c7088e1a4553af0347d7753cd18ba82f_1024x1024.jpg?v=1684142845"
+  },
+  {
+    "id": 8,
+    "name": "Men's Chinos",
+    "category": "Men's Clothing",
+    "price": 44.99,
+    "sizes": [
+      "30",
+      "32",
+      "34",
+      "36"
+    ],
+    "colors": [
+      "Beige",
+      "Navy",
+      "Black"
+    ],
+    "image": "https://littleboxindia.com/cdn/shop/files/3ca07232d0429857d68e9ede0ed7f318_720x.jpg?v=1714666648"
+  },
+  {
+    "id": 9,
+    "name": "Kids' Leggings",
+    "category": "Kids' Clothing",
+    "price": 14.99,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "Pink",
+      "Purple",
+      "Grey"
+    ],
+    "image": "https://rukminim2.flixcart.com/image/850/1000/xif0q/kids-legging/x/a/w/4-5-years-newkids-leg-080-f-a-t-a-h-original-imaghyvez4f29ass.jpeg?q=90&crop=false"
+  },
+  {
+    "id": 10,
+    "name": "Women's Winter Coat",
+    "category": "Women's Clothing",
+    "price": 89.99,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Black",
+      "Grey",
+      "Camel"
+    ],
+    "image": "https://littleboxindia.com/cdn/shop/products/78d7e4a351c97e3a70c4a4c01721b255_720x.jpg?v=1693658624"
+  },
+  {
+    "id": 11,
+    "name": "Men's Jeans",
+    "category": "Men's Clothing",
+    "price": 59.99,
+    "sizes": [
+      "30",
+      "32",
+      "34",
+      "36"
+    ],
+    "colors": [
+      "Blue",
+      "Black"
+    ],
+    "image": "https://littleboxindia.com/cdn/shop/files/a0bd01739a223266174428961cf0c4ed_720x.jpg?v=1714668076"
+  },
+  {
+    "id": 12,
+    "name": "Kids' Shorts",
+    "category": "Kids' Clothing",
+    "price": 24.99,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "Blue",
+      "Green",
+      "Red"
+    ],
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSTE1f_2fuOhybj19RXWibIxQJ3ETDJCmz9eIZM8T-Jr82i2hs2fUnFpO0g_229kmqt9k4UnrZtio8mPfgdu5OI4xvFfBxrlkQbZzLXICBL"
+  },
+  {
+    "id": 13,
+    "name": "Women's Blazer",
+    "category": "Women's Clothing",
+    "price": 69.99,
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Black",
+      "Grey",
+      "Navy"
+    ],
+    "image": "https://littleboxindia.com/cdn/shop/files/401cf835a8036c90b69d658c1e09378e_720x.jpg?v=1718892828"
+  },
+  {
+    "id": 14,
+    "name": "Men's Sweater",
+    "category": "Men's Clothing",
+    "price": 49.99,
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Blue",
+      "Green",
+      "Grey"
+    ],
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjD-bjt43ktN_gr7edlC7vz0lDu2j6R4BKRA&s"
+  },
+  {
+    "id": 15,
+    "name": "Kids' Dress",
+    "category": "Kids' Clothing",
+    "price": 29.99,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "Pink",
+      "Yellow",
+      "White"
+    ],
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVdjb0XG8EPPy6yMvd7JfdV5NJ3ObIB2-_Pg&s"
+  },
+  {
+    "id": 16,
+    "name": "Women's Skirt",
+    "category": "Women's Clothing",
+    "price": 39.99,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "Black",
+      "Red",
+      "Blue"
+    ],
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAHKKUimMIz9WR5Jalhwap2HHAE-3YPBcoFA&s"
+  },
+  {
+    "id": 17,
+    "name": "Men's Trousers",
+    "category": "Men's Clothing",
+    "price": 54.99,
+    "sizes": [
+      "30",
+      "32",
+      "34",
+      "36"
+    ],
+    "colors": [
+      "Grey",
+      "Black",
+      "Brown"
+    ],
+    "image": "https://littleboxindia.com/cdn/shop/files/43_1_720x.jpg?v=1713763109"
+  },
+  {
+    "id": 18,
+    "name": "Kids' Pajamas",
+    "category": "Kids' Clothing",
+    "price": 19.99,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "Blue",
+      "Pink",
+      "Purple"
+    ],
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX9Yz2KNJ96s0G7bqudrNDsJ_QPTlZMq5D3Q&s"
+  },
+  {
+    "id": 19,
+    "name": "Women's Cardigan",
+    "category": "Women's Clothing",
+    "price": 44.99,
+    "sizes": [
+      "S",
+      "M",
+      "L"
+    ],
+    "colors": [
+      "White",
+      "Black",
+      "Grey"
+    ],
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpMbGn1PoetwhJleZN0z4xfxB7uosH_bVxbA&s"
+  },
+  {
+    "id": 20,
+    "name": "Men's Polo Shirt",
+    "category": "Men's Clothing",
+    "price": 34.99,
+    "sizes": [
+      "M",
+      "L",
+      "XL"
+    ],
+    "colors": [
+      "Blue",
+      "Red",
+      "White"
+    ],
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOPUDusDY25ZBQXWXIzEKsB0Jw-BMXopzXIQ&s"
+  }
+]
