@@ -426,3 +426,28 @@ html, body {
       transform: translateX(0);
   }
 }
+
+/* just chaes */
+/* For large devices (≥992px) */
+@media (min-width: 992px) {
+  #wishlist-link-large i,
+  #cart-link-large i {
+    font-size: 24px;  /* Increase as needed */
+  }
+}
+
+/* For medium devices (768px–991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  #wishlist-link-large i,
+  #cart-link-large i {
+    font-size: 22px;  /* Slightly smaller than large */
+  }
+}
+
+/* For small devices (<768px) */
+@media (max-width: 767px) {
+  #wishlist-link-small i,
+  #cart-link-small i {
+    font-size: 20px;  /* Adjust size for mobile icons */
+  }
+}

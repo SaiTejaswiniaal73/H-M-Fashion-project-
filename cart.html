@@ -5,192 +5,163 @@
     <title>Shopping Bag</title>
     <link rel="stylesheet" href="./css_files/cart.css" />
     <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-  />
-  <link rel="stylesheet" href="./css_files/nav.css" />
-  <link rel="stylesheet" href="./css_files/main_products.css" />
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css_files/nav.css" />
+    <link rel="stylesheet" href="./css_files/main_products.css" />
   </head>
   <body>
     <!-- Navigation -->
-    <nav
-      id="nav"
-      class="navbar navbar-expand-lg navbar-light w-100"
-      style="background: linear-gradient(135deg, #8a2be2, #da70d6);"
+<nav
+id="nav"
+class="navbar navbar-expand-lg navbar-light w-100"
+style="background: linear-gradient(135deg, #8a2be2, #da70d6);"
+>
+<div class="container">
+  <!-- H&M Logo (Large Devices) -->
+  <a class="navbar-brand d-none d-lg-block" href="main.html">
+    <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
+  </a>
+  <!-- Large Device Links -->
+  <ul class="navbar-nav d-none d-lg-flex">
+    <li class="nav-item" id="nav_all">
+      <button id="btn-all" class="nav-link" onclick="window.location.href='products.html'">
+        All
+      </button>
+    </li>
+    <li class="nav-item">
+      <a id="btn2" class="nav-link men-link" href="products.html?category=men">Men</a>
+    </li>
+    <li class="nav-item">
+      <a id="btn1" class="nav-link women-link" href="products.html?category=women">Women</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link kids-link" href="products.html?category=kids">Kids</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link baby-link" href="products.html?category=baby">Baby</a>
+    </li>
+  </ul>
+  <!-- Search Bar (Large Devices) -->
+  <form
+    class="d-flex search-container"
+    role="search"
+    onsubmit="handleSearch(event)"
+  >
+    <input
+      id="search-input"
+      class="form-control me-2 custom-search-input"
+      type="search"
+      placeholder="Search here..."
+      aria-label="Search"
+    />
+    <button class="btn btn-outline-dark" type="submit">
+      <i class="fas fa-search"></i>
+    </button>
+  </form>
+  <!-- Message for no results -->
+  <p id="noResults" style="display: none">No products found.</p>
+  <!-- User Actions (Large Devices) -->
+  <ul class="navbar-nav user-icons d-none d-lg-flex">
+    <li class="nav-item">
+      <a class="nav-link" href="./login/loginPage.html"><i class="fas fa-user"></i></a>
+    </li>
+    <!-- Favorites Icon (Large Screen) -->
+    <li class="nav-item" id="fav_nav">
+      <a
+        id="wishlist-link-large"
+        class="nav-link position-relative"
+        href="wishlist.html"
+        target="_blank"
+      >
+        <i class="fas fa-heart text-danger"></i>
+        <span id="fav-count-large" class="badge-count">0</span>
+      </a>
+    </li>
+    <!-- Shopping Bag Icon (Large Screen) -->
+    <li class="nav-item d-none d-lg-block">
+      <a
+        id="cart-link-large"
+        class="nav-link position-relative"
+        href="cart.html"
+        target="_blank"
+      >
+        <i class="fas fa-shopping-bag text-dark"></i>
+        <span id="bag-count-large" class="badge-count">0</span>
+      </a>
+    </li>
+  </ul>
+  <!-- Small Device Layout -->
+  <div class="d-flex d-lg-none small-nav">
+    <a class="navbar-brand" href="./login/loginPage.html">
+      <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
+    </a>
+    <!-- Search Box for Small Devices -->
+    <div class="search-box">
+      <button class="btn btn-outline-dark" id="searchBtn">
+        <i class="fas fa-search"></i>
+      </button>
+      <input
+        class="form-control search-input"
+        type="search"
+        placeholder="Search"
+        id="searchInput"
+        style="display:none;"
+      />
+    </div>
+    <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
+    <!-- Favorites Icon for Small Screens -->
+    <a
+      id="wishlist-link-small"
+      class="nav-link position-relative"
+      href="wishlist.html"
     >
-      <div class="container">
-        <!-- H&M Logo (Large Devices) -->
-        <a class="navbar-brand d-none d-lg-block" href="main.html">
-          <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
-        </a>
-
-        <!-- Large Device Links -->
-        <ul class="navbar-nav d-none d-lg-flex">
-          <li class="nav-item" id="nav_all">
-            <button
-              id="btn-all"
-              class="nav-link"
-              onclick="window.location.href='products.html'"
-            >
-              All
-            </button>
-          </li>
-          <li class="nav-item">
-            <a
-              id="btn2"
-              class="nav-link men-link"
-              href="products.html?category=men"
-              >Men</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              id="btn1"
-              class="nav-link women-link"
-              href="products.html?category=women"
-              >Women</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link kids-link" href="products.html?category=kids"
-              >Kids</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link baby-link" href="products.html?category=baby"
-              >Baby</a
-            >
-          </li>
-        </ul>
-
-        <!-- Search Bar (Large Devices) -->
-        <form
-          class="d-flex search-container"
-          role="search"
-          onsubmit="handleSearch(event)"
-        >
-          <input
-            id="search-input"
-            class="form-control me-2 custom-search-input"
-            type="search"
-            placeholder="Search here..."
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-dark" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
-
-        <!-- Message for no results (if needed) -->
-        <p id="noResults" style="display: none">No products found.</p>
-
-        <!-- User Actions (Large Devices) -->
-        <ul class="navbar-nav user-icons d-none d-lg-flex">
-          <li class="nav-item">
-            <a class="nav-link" href="./login/loginPage.html"
-              ><i class="fas fa-user"></i
-            ></a>
-          </li>
-          <!-- Favorites Icon (Large Screen) -->
-          <li class="nav-item" id="fav_nav">
-            <a id="wishlist-link-large" class="nav-link position-relative" href="wishlist.html" target="_blank">
-              <i class="fas fa-heart text-danger"></i>
-              <span id="fav-count-large" class="badge-count">0</span>
-            </a>
-          </li>
-          <!-- Shopping Bag Icon (Large Screen) -->
-          <li class="nav-item d-none d-lg-block">
-            <a
-              id="cart-link-large"
-              class="nav-link position-relative"
-              href="cart.html"
-              target="_blank"
-            >
-              <i class="fas fa-shopping-bag text-dark"></i>
-              <span id="bag-count-large" class="badge-count">0</span>
-            </a>
-          </li>
-        </ul>
-
-        <!-- Small Device Layout -->
-        <div class="d-flex d-lg-none small-nav">
-          <a class="navbar-brand" href="./login/loginPage.html">
-            <img src="./login/images/HM-logo.jpg" alt="H&M Logo" height="30" />
-          </a>
-
-          <!-- Search Box for Small Devices -->
-          <div class="search-box">
-            <button class="btn btn-outline-dark" id="searchBtn">
-              <i class="fas fa-search"></i>
-            </button>
-            <input
-              class="form-control search-input"
-              type="search"
-              placeholder="Search"
-              id="searchInput"
-              style="display:none;"
-            />
-          </div>
-
-          <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
-
-          <!-- Favorites Icon for Small Screens -->
-          <!-- <a
-            id="wishlist-link-small"
-            class="nav-link position-relative"
-            href="wishlist.html"
-          >
-            <i class="fas fa-heart text-danger"></i>
-            <span id="fav-count-small" class="badge-count">0</span>
-          </a> -->
-          <a id="wishlist-link-small" class="nav-link position-relative" href="wishlist.html">
-            <i class="fas fa-heart text-danger"></i>
-            <span id="fav-count-small" class="badge-count">0</span>
-          </a>
-
-          <!-- Shopping Bag Icon for Small Screens -->
-          <a
-            id="cart-link-small"
-            class="nav-link position-relative"
-            href="cart.html"
-          >
-            <i class="fas fa-shopping-bag text-dark"></i>
-            <span id="bag-count-small" class="badge-count">0</span>
-          </a>
-
-          <!-- Filter Icon for Small Screens -->
-          <div class="filter-container">
-            <button class="filter-btn" id="filter-toggle">
-              <i class="fas fa-filter"></i>
-            </button>
-            <ul class="filter-menu" id="filter-menu">
-              <li><a class="nav-link" href="products.html">All</a></li>
-              <li>
-                <a class="nav-link" href="products.html?category=men">Men</a>
-              </li>
-              <li>
-                <a class="nav-link" href="products.html?category=women">Women</a>
-              </li>
-              <li>
-                <a class="nav-link" href="products.html?category=kids">Kids</a>
-              </li>
-              <li>
-                <a class="nav-link" href="products.html?category=baby">Baby</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </nav>
+      <i class="fas fa-heart text-danger"></i>
+      <span id="fav-count-small" class="badge-count">0</span>
+    </a>
+    <!-- Shopping Bag Icon for Small Screens -->
+    <a
+      id="cart-link-small"
+      class="nav-link position-relative"
+      href="cart.html"
+    >
+      <i class="fas fa-shopping-bag text-dark"></i>
+      <span id="bag-count-small" class="badge-count">0</span>
+    </a>
+    <!-- Filter Icon for Small Screens -->
+    <div class="filter-container">
+      <button class="filter-btn" id="filter-toggle">
+        <i class="fas fa-filter"></i>
+      </button>
+      <ul class="filter-menu" id="filter-menu">
+        <li><a class="nav-link" href="products.html">All</a></li>
+        <li>
+          <a class="nav-link" href="products.html?category=men">Men</a>
+        </li>
+        <li>
+          <a class="nav-link" href="products.html?category=women">Women</a>
+        </li>
+        <li>
+          <a class="nav-link" href="products.html?category=kids">Kids</a>
+        </li>
+        <li>
+          <a class="nav-link" href="products.html?category=baby">Baby</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</nav>
     <!-- Cart Container -->
     <div class="cart-container">
       <!-- Left Section: Cart Items -->
       <div class="cart-items-section">
-        <h1 class="section-title">Shopping bag</h1>
+        <h1 class="section-title">Shopping Bag</h1>
         <div id="cart-items"></div>
       </div>
 
@@ -198,8 +169,9 @@
       <div class="cart-summary-section">
         <h2>Discounts</h2>
         <p>Sign in to use your personal offers!</p>
-        <button class="signin-btn">Sign in</button>
-
+        <a href="login/loginPage.html">
+          <button class="signin-btn">Sign in</button>
+        </a>
         <div class="summary">
           <div class="summary-row">
             <span>Order value:</span>
@@ -219,28 +191,29 @@
             <span id="total-amount">Rs. 0</span>
           </div>
         </div>
-
-        <!-- <button class="checkout-btn">Continue to checkout</button> -->
         <button class="checkout-btn" onclick="window.location.href='checkout.html'">
-            Continue to checkout
-          </button>
-          
+          Continue to checkout
+        </button>
 
         <div class="payment-info">
           <p>We accept:</p>
           <ul class="payment-methods">
-            <li><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" /></li>
-            <li><img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" alt="MasterCard" /></li>
-            <li><img src="https://upload.wikimedia.org/wikipedia/commons/4/41/PayPal_Logo.png" alt="PayPal" /></li>
-            <!-- Add more icons if needed -->
+            <li>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" />
+            </li>
+            <li>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/MasterCard_Logo.svg" alt="MasterCard" />
+            </li>
+            <li>
+              <img src="./images/ppaypal.png" alt="PayPal" />
+            </li>
           </ul>
         </div>
       </div>
     </div>
 
-    <!-- Script to display cart items from localStorage and update totals -->
+    <!-- Include necessary scripts -->
     <script src="./js_files/cart.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js_files/nav.js"></script>
     <script src="./js_files/products.js"></script>

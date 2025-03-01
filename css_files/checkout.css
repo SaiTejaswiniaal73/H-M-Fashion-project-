@@ -1,122 +1,226 @@
+/* General Reset and Body Styling */
+
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f7f7f7;
-  }
-  
-  /* Container for the entire checkout layout */
+  background-color: azure;
+  padding-top: 20px; /* Adjust based on navbar height */
+  overflow: auto;
+}
+
+/* Hide scrollbars globally (Chrome, Safari, Edge, Firefox) */
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  scrollbar-width: none;
+}
+
+/* Utility for containers with hidden scrollbar */
+.scroll-container {
+  overflow: auto;
+  scrollbar-width: none;
+}
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide mobile search input by default */
+.search-input {
+  display: none;
+  width: 120px;
+}
+/* Checkout Container */
+.checkout-container {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  flex-wrap: wrap; /* Allows for wrapping the sections on mobile */
+  box-sizing: border-box; /* Ensure padding does not cause overflow */
+}
+
+/* Left Section: Customer Info Form */
+.checkout-form-section {
+  flex: 2;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.checkout-form-section h1 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #9b59b6; /* Purple */
+}
+
+.checkout-form-section h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #e91e63; /* Pink */
+}
+
+#checkout-form .form-group {
+  margin-bottom: 15px;
+}
+
+#checkout-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #9b59b6; /* Purple */
+}
+
+#checkout-form input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #e91e63; /* Pink border */
+  border-radius: 5px;
+}
+
+.save-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #9b59b6; /* Purple */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.save-btn:hover {
+  background-color: #8e44ad; /* Darker Purple */
+}
+
+/* Right Section: Order Summary */
+.checkout-summary-section {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box; /* Prevent overflow */
+}
+
+.checkout-summary-section h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #e91e63; /* Pink */
+}
+
+.summary-box {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.summary-row.total-row {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #9b59b6; /* Purple */
+}
+
+.checkout-actions {
+  margin-bottom: 15px;
+}
+
+.apply-discount-btn {
+  background-color: #fff;
+  border: 1px solid #e91e63; /* Pink border */
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-right: 10px;
+  border-radius: 5px;
+  color: #e91e63; /* Pink */
+}
+
+.apply-discount-btn:hover {
+  background-color: #f9f9f9;
+}
+
+.summary-footer h3 {
+  margin-bottom: 10px;
+  color: #9b59b6; /* Purple */
+}
+
+.payment-methods img {
+  width: 40px;
+  height: auto;
+  margin-right: 10px;
+}
+
+/* ===================
+   Responsive Layout for Mobile Devices
+==================== */
+
+/* Mobile Layout (Devices with width 30px - 506px) */
+@media (max-width: 506px) {
   .checkout-container {
-    display: flex;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-    gap: 20px;
+    flex-direction: column; /* Stack sections vertically on mobile */
+    padding: 0 10px;
   }
-  
-  /* Left Section: Form */
-  .checkout-form-section {
-    flex: 2;
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-  }
-  
-  .checkout-form-section h1 {
-    margin-bottom: 10px;
-  }
-  
-  .checkout-form-section h2 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-  
-  #checkout-form .form-group {
-    margin-bottom: 15px;
-  }
-  
-  #checkout-form label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  #checkout-form input {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-  }
-  
-  .save-btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  .save-btn:hover {
-    background-color: #333;
-  }
-  
-  /* Right Section: Summary */
+
+  /* Both the checkout form and order summary sections will take 100% width */
+  .checkout-form-section,
   .checkout-summary-section {
-    flex: 1;
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    height: fit-content;
+    width: 100%;
   }
-  
-  .checkout-summary-section h2 {
-    margin-top: 0;
+
+  /* Ensure the order summary comes after the form */
+  .checkout-summary-section {
+    order: 1; /* Order summary comes after the form on mobile */
   }
-  
+
+  /* Adjust "Save & Continue" button width */
+  .save-btn {
+    width: 100%;
+  }
+
+  /* Ensure the summary content fits within the screen */
   .summary-box {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 15px;
+    padding: 12px;
   }
-  
+
   .summary-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+    font-size: 0.9rem;
   }
-  
-  .summary-row.total-row {
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  .checkout-actions {
-    margin-bottom: 15px;
-  }
-  .apply-discount-btn {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 8px 12px;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  .apply-discount-btn:hover {
-    background-color: #f9f9f9;
-  }
-  
+
+  /* Improve padding and spacing for smaller screens */
+  .checkout-summary-section h2,
   .summary-footer h3 {
-    margin-bottom: 10px;
+    font-size: 1rem;
   }
-  .payment-methods img {
-    width: 40px;
-    height: auto;
-    margin-right: 10px;
+}
+
+/* ===================
+   Large Device Layout (min-width: 507px)
+==================== */
+
+/* For large screens (e.g. desktops or tablets with min-width of 507px) */
+@media (min-width: 507px) {
+  .checkout-container {
+    flex-direction: row; /* Display sections side-by-side horizontally */
   }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .checkout-container {
-      flex-direction: column;
-    }
+
+  .checkout-form-section {
+    flex: 2; /* Form takes up 2/3 of the width */
   }
-  
+
+  .checkout-summary-section {
+    flex: 1; /* Summary takes up 1/3 of the width */
+  }
+}

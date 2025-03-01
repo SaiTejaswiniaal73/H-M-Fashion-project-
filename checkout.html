@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout | H&M</title>
     <link rel="stylesheet" href="./css_files/checkout.css" />
   </head>
   <body>
     <div class="checkout-container">
-      <!-- Left Section: Customer Info Form -->
       <div class="checkout-form-section">
         <h1>Checkout</h1>
         <h2>My Information</h2>
@@ -16,7 +16,7 @@
             <label for="firstName">First Name</label>
             <input type="text" id="firstName" name="firstName" required />
           </div>
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="lastName">Last Name</label>
             <input type="text" id="lastName" name="lastName" required />
           </div>
@@ -39,7 +39,7 @@
           <div class="form-group">
             <label for="zip">Zip/Postal Code</label>
             <input type="text" id="zip" name="zip" required />
-          </div>
+          </div> -->
           <p>
             By placing this order, you agree to H&M's
             <a href="#">Terms and Conditions</a>.
@@ -48,7 +48,6 @@
         </form>
       </div>
 
-      <!-- Right Section: Order Summary -->
       <div class="checkout-summary-section">
         <h2>Order Summary</h2>
         <div class="summary-box">
@@ -72,35 +71,6 @@
         </div>
       </div>
     </div>
-
-    <script>
-      // Update order summary from cart stored in localStorage
-      function updateSummary() {
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        let totalPrice = 0;
-        cart.forEach(product => {
-          totalPrice += product.price;
-        });
-        // For example, flat discount Rs.200 if there's an order, free delivery
-        let discount = totalPrice > 0 ? 200 : 0;
-        let deliveryFee = 0;
-        let finalTotal = totalPrice - discount + deliveryFee;
-        
-        document.getElementById("order-value").textContent = `Rs. ${totalPrice}`;
-        document.getElementById("discount-amount").textContent = `-Rs. ${discount}`;
-        document.getElementById("delivery-fee").textContent = `Rs. ${deliveryFee}`;
-        document.getElementById("total-amount").textContent = `Rs. ${finalTotal}`;
-      }
-      
-      document.addEventListener("DOMContentLoaded", function(){
-        updateSummary();
-        // On form submit, you may optionally validate/save data then redirect to payment page
-        document.getElementById("checkout-form").addEventListener("submit", function(e) {
-          e.preventDefault();
-          // (Optional) Save the user info here
-          window.location.href = "payment.html";
-        });
-      });
-    </script>
+    <script src="./js_files/checkout.js"></script>
   </body>
 </html>

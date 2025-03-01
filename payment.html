@@ -44,9 +44,59 @@
         <button type="submit" class="pay-btn">Pay Now</button>
       </form>
     </div>
-
     <script>
-      // Calculate final amount from cart and update the display
+      document.addEventListener("DOMContentLoaded", function () {
+  // Get the final total from localStorage
+  let finalTotal = localStorage.getItem("finalTotal");
+
+  // If the final total is not available, display Rs. 0
+  if (finalTotal) {
+    document.getElementById("final-amount").textContent = `Rs. ${finalTotal}`;
+  } else {
+    document.getElementById("final-amount").textContent = `Rs. 0`;
+  }
+
+  // Handle form submission for payment
+  const paymentForm = document.getElementById("payment-form");
+  paymentForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Collect card payment details
+    const cardNumber = document.getElementById("cardNumber").value.trim();
+    const expiry = document.getElementById("expiry").value.trim();
+    const cvv = document.getElementById("cvv").value.trim();
+
+    // Simple validations for the card payment form
+    const cardNumberRegex = /^\d{16}$/;
+    const expiryRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
+    const cvvRegex = /^\d{3}$/;
+
+    if (!cardNumberRegex.test(cardNumber)) {
+      alert("Please enter a valid 16-digit card number.");
+      return;
+    }
+
+    if (!expiryRegex.test(expiry)) {
+      alert("Please enter a valid expiry date in MM/YY format.");
+      return;
+    }
+
+    if (!cvvRegex.test(cvv)) {
+      alert("Please enter a valid 3-digit CVV.");
+      return;
+    }
+
+    // Simulate payment process and then redirect to the thank you page
+    setTimeout(function() {
+      window.location.href = "thankyou.html"; // Redirect to a thank you page
+    }, 1000);
+  });
+});
+
+    </script>
+
+    <!-- <script>
+      // Function to update the payment amount
       function updatePaymentAmount() {
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
         let totalPrice = 0;
@@ -56,11 +106,24 @@
         let discount = totalPrice > 0 ? 200 : 0;
         let deliveryFee = 0;
         let finalTotal = totalPrice - discount + deliveryFee;
+        
+        // Store the final total in localStorage so it can be accessed later
+        localStorage.setItem("finalTotal", finalTotal);
+        
         document.getElementById("final-amount").textContent = `Rs. ${finalTotal}`;
       }
-      
+
       document.addEventListener("DOMContentLoaded", function() {
+        // Update payment amount on page load
         updatePaymentAmount();
+        
+        // Get the final total from localStorage if already set
+        let finalTotal = localStorage.getItem("finalTotal");
+        if (finalTotal) {
+          document.getElementById("final-amount").textContent = `Rs. ${finalTotal}`;
+        }
+
+        // Handle form submission
         document.getElementById("payment-form").addEventListener("submit", function(e) {
           e.preventDefault();
           
@@ -69,7 +132,7 @@
           const expiry = document.getElementById("expiry").value.trim();
           const cvv = document.getElementById("cvv").value.trim();
           
-          // Simple validations:
+          // Simple validations
           const cardNumberRegex = /^\d{16}$/;
           const expiryRegex = /^(0[1-9]|1[0-2])\/\d{2}$/;
           const cvvRegex = /^\d{3}$/;
@@ -89,12 +152,12 @@
             return;
           }
           
-          // If validations pass, simulate payment process and then redirect to thankyou.html
+          // Simulate payment process and redirect
           setTimeout(function() {
             window.location.href = "thankyou.html";
           }, 1000);
         });
       });
-    </script>
+    </script> -->
   </body>
 </html>

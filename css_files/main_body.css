@@ -67,6 +67,43 @@ body {
   background-color: rgb(246, 183, 183);
 }
 
+/* ---------- Default styles (for large devices) ---------- */
+.carousel-item img {
+  height: 650px !important;
+  object-fit: cover;
+}
+
+/* ---------- Medium Devices (768px to 991px) ---------- */
+@media (min-width: 768px) and (max-width: 991px) {
+  .carousel-item img {
+    height: 500px !important; /* Adjust as needed */
+    object-fit: cover;
+  }
+  .carousel-caption h3 {
+    font-size: 1.8rem; /* Slightly smaller than on large screens */
+  }
+  .carousel-caption h4 {
+    font-size: 1rem;
+  }
+}
+
+/* ---------- Small Devices (<768px) ---------- */
+@media (max-width: 767px) {
+  .carousel-item img {
+    height: 40vh !important;  /* 40% of viewport height */
+    object-fit: cover;
+  }
+  .carousel-caption {
+    padding: 5px 10px;
+  }
+  .carousel-caption h3 {
+    font-size: 1.4rem;
+  }
+  .carousel-caption h4 {
+    font-size: 0.9rem;
+  }
+}
+
 /* ============================
          OFFER & OB SECTION
 =============================== */
@@ -94,6 +131,48 @@ body {
   border-radius: 10px;
   padding: 20px;
 }
+@media (max-width: 767px) {
+  /* Adjust offer box for mobile devices */
+  .offer-box {
+    width: 90%;
+    padding: 15px;
+    margin: 20px auto;
+  }
+
+  .offer-box h2 {
+    font-size: 1.8rem;  /* Slightly smaller header */
+  }
+
+  .offer-box .offer-discount {
+    font-size: 1.2rem;  /* Adjust discount font size */
+  }
+
+  .offer-box p {
+    font-size: 1rem;
+  }
+
+  /* Stack offer links vertically */
+  .offer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .offer-links a {
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  /* Adjust the overall container */
+  .ob {
+    height: auto; /* Allow height to adjust to content */
+    padding: 15px;
+  }
+}
+
 
 /* ============================
        SECTIONS: EL3, EL4, EL5, EL6

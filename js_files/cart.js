@@ -1,13 +1,15 @@
-// On DOM load, display the cart items from localStorage
-document.addEventListener("DOMContentLoaded", displayCartItems);
+document.addEventListener("DOMContentLoaded", function () {
+  displayCartItems();
+  updateCartBadgeCount();
+});
 
+// Function to display cart items
 function displayCartItems() {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   const cartItemsContainer = document.getElementById("cart-items");
 
   cartItemsContainer.innerHTML = "";
 
-  // If cart is empty
   if (cart.length === 0) {
     cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
     updateSummary(0);
@@ -17,8 +19,13 @@ function displayCartItems() {
   let totalPrice = 0;
 
   cart.forEach((product) => {
-    // Example of discount: let's assume originalPrice is product.price + 200, or set your own logic
-    const originalPrice = product.price + 200; 
+    if (!product.quantity) {
+      product.quantity = 1;
+    }
+
+    let productTotal = product.price * product.quantity;
+    totalPrice += productTotal;
+
     const itemDiv = document.createElement("div");
     itemDiv.classList.add("cart-item");
 
@@ -26,46 +33,56 @@ function displayCartItems() {
       <img src="${product.image}" alt="${product.name}">
       <div class="cart-item-details">
         <h3 class="item-name">${product.name}</h3>
-        <p class="item-price">
-          Rs. ${product.price} 
-          <span class="original-price">Rs. ${originalPrice}</span>
+        <p class="item-price" style="color: green; font-weight: bold;">
+          Rs. <span class="item-total">${productTotal}</span>
         </p>
-        <p class="item-size">Size: ${product.sizes && product.sizes.length > 0 ? product.sizes[0] : 'N/A'}</p>
-        <p class="item-color">Color: ${product.colors && product.colors.length > 0 ? product.colors[0] : 'N/A'}</p>
-        <p class="item-offer">Weekend offer</p>
-        <button class="remove-btn" onclick="removeFromCart(${product.id})">Remove</button>
+        <div class="quantity-controls">
+          <button class="minus-btn" onclick="updateQuantity(${product.id}, 'decrease')">–</button>
+          <span class="quantity-display" id="quantity-${product.id}">${product.quantity}</span>
+          <button class="plus-btn" onclick="updateQuantity(${product.id}, 'increase')">+</button>
+        </div>
+        <button class="remove-btn" onclick="removeFromCart(${product.id})" 
+          style="background-color: red; color: white; border: none; padding: 5px 10px; cursor: pointer;">
+          Remove
+        </button>
       </div>
     `;
 
     cartItemsContainer.appendChild(itemDiv);
-    totalPrice += product.price;
   });
 
-  // Update summary
   updateSummary(totalPrice);
+  updateCartBadgeCount();
 }
 
-// function removeFromCart(productId) {
-//   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-//   cart = cart.filter((item) => item.id !== productId);
-//   localStorage.setItem("cart", JSON.stringify(cart));
-//   displayCartItems(); // Refresh the cart UI
-// }
+// Function to update quantity (increase or decrease)
+function updateQuantity(productId, action) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const product = cart.find(item => item.id === productId);
 
-function removeFromCart(productId) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart = cart.filter(item => item.id !== productId);
+  if (product) {
+    if (action === "increase") {
+      product.quantity += 1;
+    } else if (action === "decrease" && product.quantity > 1) {
+      product.quantity -= 1;
+    }
     localStorage.setItem("cart", JSON.stringify(cart));
-    displayCartItems(); // Refresh cart UI
-  
-    // Update the nav badge count
-    updateCartBadgeCount();
+    displayCartItems();
   }
-  
+}
+
+// Function to remove item from cart
+function removeFromCart(productId) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart = cart.filter(item => item.id !== productId);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  displayCartItems();
+}
+
+// Function to update order summary
 function updateSummary(totalPrice) {
-  // For demonstration, let's say discount is a flat 200 if totalPrice > 0
   const discount = totalPrice > 0 ? 200 : 0;
-  const deliveryFee = 0; // e.g., free delivery
+  const deliveryFee = 0;
   const finalTotal = totalPrice - discount + deliveryFee;
 
   document.getElementById("order-value").textContent = `Rs. ${totalPrice}`;
@@ -73,7 +90,22 @@ function updateSummary(totalPrice) {
   document.getElementById("delivery-fee").textContent = `Rs. ${deliveryFee}`;
   document.getElementById("total-amount").textContent = `Rs. ${finalTotal > 0 ? finalTotal : 0}`;
 }
-document.addEventListener("DOMContentLoaded", function() {
-    updateCartBadgeCount();
-  });
-  
+
+// Function to update cart badge count
+function updateCartBadgeCount() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const count = cart.reduce((total, item) => total + item.quantity, 0);
+
+  const largeBadge = document.getElementById("bag-count-large");
+  const smallBadge = document.getElementById("bag-count-small");
+
+  if (largeBadge) {
+    largeBadge.textContent = count;
+    largeBadge.style.display = count > 0 ? "block" : "none";
+  }
+
+  if (smallBadge) {
+    smallBadge.textContent = count;
+    smallBadge.style.display = count > 0 ? "block" : "none";
+  }
+}
