@@ -269,3 +269,4 @@ document.addEventListener("DOMContentLoaded", function() {
   updateBadgeCount("fav", favorites.length);
   updateCartBadgeCount();
 });
+
