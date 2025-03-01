@@ -17,8 +17,8 @@
 
 .product-image {
   width: 100%;
-  height: auto;
-  object-fit: cover;
+  height: 200px !important;
+  object-fit: cover !important;
 }
 .main-container {
   display: flex;
@@ -42,16 +42,32 @@
 }
 .product-image {
   width: 100%;
-  height: 200px;
+  /* height: 150px; */
   object-fit: cover;
 }
-.product-title {
+/* .product-title {
   font-weight: bold;
   color: #333;
   background-color: #f0e68c;
   padding: 5px;
   border-radius: 5px;
+} */
+.product-title {
+  font-weight: lighter;
+  color: #333;
+  background-color: #f0e68c;
+  padding: 5px;
+  border-radius: 5px;
+  min-height: 50px; /* Set a fixed height for all titles */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1.2; /* Adjust line spacing */
+  white-space: normal; /* Allow wrapping */
+  font-size: medium;
 }
+
 .product-description {
   color: #555;
   font-size: 14px;
@@ -124,7 +140,7 @@
 }
 .product-image {
   width: 100%;
-  height: auto;
+  /* height:150px; */
 }
 .product-buttons {
   margin-top: 10px;
@@ -159,7 +175,7 @@
 /* Increase image height dynamically */
 .product-image {
   width: 100%;
-  height: 60%;  /* Image takes more space */
+  height: 40%;  /* Image takes more space */
   object-fit: cover;
   flex-grow: 1; /* Fills extra space */
 }
@@ -224,7 +240,7 @@
 
 .product-image {
   width: 100%;
-  height: 60%;
+  height: 40%;
   object-fit: cover;
   flex-grow: 1;
 }

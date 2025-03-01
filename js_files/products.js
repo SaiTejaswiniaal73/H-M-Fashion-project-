@@ -41,12 +41,16 @@ async function fetchProducts() {
     }
 
     displayProducts(filteredProducts);
-  } catch (error) {
-    console.error("Error fetching products:", error);
-    document.getElementById("products-container").innerHTML =
-      "<p>Error loading products.</p>";
+  } 
+catch (error) {
+  console.error("Error fetching products:", error);
+  const container = document.getElementById("products-container");
+
+  if (container) {
+      container.innerHTML = "<p>Error loading products.</p>";
   }
 }
+
 
 function filterProducts(productsData, category, searchQuery) {
   const availableCategories = ["women", "men", "kids", "baby"];
@@ -269,4 +273,4 @@ document.addEventListener("DOMContentLoaded", function() {
   updateBadgeCount("fav", favorites.length);
   updateCartBadgeCount();
 });
-
+}
